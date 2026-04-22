@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truesoulsmedia.LLP | Enterprise Cinematic</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Leonardo.ai Style Ambient Glow Background -->
+    <div class="ambient-bg">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+    </div>
+    <!-- Fixed Background Canvas for 3D Flythrough Effect -->
+    <div id="bg-canvas-container">
+        <!-- AI Glowing Orbs -->
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        
+        <!-- Image Overlay -->
+        <div class="image-overlay"></div>
+        
+        <img src="assets/hero_wedding_1776598144800.png" class="bg-layer active" data-index="0" alt="bg1">
+        <img src="assets/about_us_wedding_1776598162543.png" class="bg-layer" data-index="1" alt="bg2">
+        <img src="assets/portfolio_wedding_1776598179199.png" class="bg-layer" data-index="2" alt="bg3">
+        <img src="assets/portfolio_events_1776598196076.png" class="bg-layer" data-index="3" alt="bg4">
+    </div>
+
+    <!-- Navigation (Pill Glass) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="assets/logo.jpg" alt="True Souls Media Logo" class="nav-logo" onerror="this.style.display='none'">
+                <span class="logo-text">Truesoulsmedia</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Platform</a></li>
+                <li><a href="#services">Capabilities</a></li>
+                <li><a href="#portfolio">Showcase</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Scroll Content -->
+    <main>
+        <!-- Hero -->
+        <section id="home" class="section hero" data-bg-index="0">
+            <div class="container scroll-reveal">
+                <p class="hero-subtitle">The Intelligence of Visuals</p>
+                <h1>Capturing Legacy.</h1>
+                <p style="margin: 2rem auto;">Uncompromising high-fidelity cinematic production. We merge deep emotional storytelling with elite enterprise-grade production quality.</p>
+                <div class="hero-actions">
+                    <a href="#services" class="btn-primary">Explore Platform</a>
+                    <a href="#contact" class="btn-glass">Get Access</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="section" data-bg-index="1">
+            <div class="container">
+                <div class="glass-card scroll-reveal">
+                    <h2>Core Capabilities</h2>
+                    <p style="margin: 0 auto 3rem auto;">Precision-engineered visual architectures for high-end events and enterprise branding.</p>
+                    
+                    <div class="services-grid">
+                        <div>
+                            <i class='bx bx-camera service-icon'></i>
+                            <h3>Cinematic Engine</h3>
+                            <p>Full-frame 8K sensor capture tailored for multi-day luxury destinations.</p>
+                        </div>
+                        <div>
+                            <i class='bx bx-network-chart service-icon'></i>
+                            <h3>Digital Growth</h3>
+                            <p>Data-driven brand positioning and analytics for exclusive markets.</p>
+                        </div>
+                        <div>
+                            <i class='bx bx-podcast service-icon'></i>
+                            <h3>Audio Architecture</h3>
+                            <p>Studio-grade podcast production with acoustic engineering.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase -->
+        <section id="portfolio" class="section" data-bg-index="2">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;" class="scroll-reveal">Visual Intelligence</h2>
+                <div class="portfolio-grid scroll-reveal">
+                    <div class="portfolio-item">
+                        <img src="assets/portfolio_wedding_1776598179199.png" alt="Wedding Photography">
+                        <div class="portfolio-overlay">
+                            <h3>Wedding Photography</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/portfolio_events_1776598196076.png" alt="Event Management">
+                        <div class="portfolio-overlay">
+                            <h3>Event Management</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/portfolio_digital_1776598215494.png" alt="Digital Marketing">
+                        <div class="portfolio-overlay">
+                            <h3>Digital Marketing</h3>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/portfolio_podcast_1776598232723.png" alt="Podcast Production">
+                        <div class="portfolio-overlay">
+                            <h3>Podcast Production</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section" data-bg-index="3">
+            <div class="container" style="max-width: 600px;">
+                <div class="glass-card scroll-reveal">
+                    <h2>Initialize Protocol</h2>
+                    <p>Deploy our production team for your next major event.</p>
+                    <form class="contact-form" id="contactForm">
+                        <!-- Web3Forms Access Key (Replace with your actual key) -->
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Contact Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="location" placeholder="Location / Venue City" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="3" placeholder="Project parameters or vision..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; border:none; cursor:pointer;">Initialize Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links" style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem;">
+            <a href="https://wa.me/919061286660" target="_blank" class="social-icon"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://www.instagram.com/truesoulsmedia_" target="_blank" class="social-icon"><i class='bx bxl-instagram'></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61574503418456" target="_blank" class="social-icon"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.threads.com/@truesoulsmedia_?igshid=NTc4MTIwNjQ2YQ==" target="_blank" class="social-icon"><i class='bx bx-message-rounded-dots'></i></a>
+            <a href="https://www.linkedin.com/in/truesouls-media-b91a8b400?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="social-icon"><i class='bx bxl-linkedin'></i></a>
+        </div>
+        <p style="margin-top: 1rem;">&copy; 2026 Truesoulsmedia.LLP. Secure Enterprise Connection.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919061286660" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class='bx bxl-whatsapp'></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
