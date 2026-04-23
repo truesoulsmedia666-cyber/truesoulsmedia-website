@@ -139,6 +139,7 @@ h1 {
     -webkit-text-fill-color: transparent;
     color: transparent;
     margin-bottom: 1.5rem;
+    padding-bottom: 0.15em; /* Prevents descenders (g, y, p) from being clipped */
 }
 
 h2 { 
