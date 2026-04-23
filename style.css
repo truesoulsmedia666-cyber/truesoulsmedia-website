@@ -530,3 +530,47 @@ ul { list-style: none; }
     box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
     color: white;
 }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .navbar {
+        width: 95%;
+        padding: 0.75rem 1rem;
+        border-radius: 20px;
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+    .glass-card {
+        padding: 2.5rem 1.5rem;
+    }
+    .section {
+        padding: 6rem 0;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 2rem;
+    }
+    .btn-primary, .btn-glass {
+        width: 100%;
+        text-align: center;
+    }
+    .portfolio-item {
+        height: 300px;
+    }
+    .portfolio-overlay {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+}
