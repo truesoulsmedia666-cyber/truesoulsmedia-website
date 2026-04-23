@@ -82,7 +82,7 @@
                         <div>
                             <i class='bx bx-camera service-icon'></i>
                             <h3>Cinematic Engine</h3>
-                            <p>Full-frame 8K sensor capture tailored for multi-day luxury destinations.</p>
+                            <p>Full-frame 4K sensor capture tailored for multi-day luxury destinations.</p>
                         </div>
                         <div>
                             <i class='bx bx-network-chart service-icon'></i>
@@ -139,6 +139,9 @@
                     <h2>Initialize Protocol</h2>
                     <p>Deploy our production team for your next major event.</p>
                     <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true">
+                        
+                        <!-- Required by Netlify to detect this form -->
+                        <input type="hidden" name="form-name" value="contact">
                         
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Full Name" required>
