@@ -77,10 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.opacity = '0.7';
             
             const formData = new FormData(contactForm);
+            formData.append("form-name", "contact");
             
-            fetch("https://api.web3forms.com/submit", {
+            fetch("/", {
                 method: "POST",
-                body: formData
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
             })
             .then(() => {
                 btn.innerText = 'Protocol Confirmed';
