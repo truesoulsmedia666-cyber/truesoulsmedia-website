@@ -163,6 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let width, height;
             let particles = [];
 
+            let lastWidth = window.innerWidth;
+
             function resize() {
                 width = window.innerWidth;
                 height = window.innerHeight;
@@ -172,7 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 canvas.height = height * dpr;
                 ctx.scale(dpr, dpr);
 
-                initParticles();
+                // Only reinitialize if width changes significantly or first load
+                if (Math.abs(width - lastWidth) > 50 || particles.length === 0) {
+                    initParticles();
+                    lastWidth = width;
+                }
             }
 
             function initParticles() {
