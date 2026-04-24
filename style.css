@@ -237,11 +237,11 @@ p { line-height: 1.7; }
 
 /* ── Gradient Text ── */
 .gradient-text {
-    background: linear-gradient(135deg, #ffffff 0%, #c084fc 40%, #818cf8 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e8d0ff 40%, #a5aeff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 24px rgba(192,132,252,0.4));
+    filter: drop-shadow(0 0 28px rgba(192,132,252,0.6));
 }
 
 /* ── Hero Badge ── */
