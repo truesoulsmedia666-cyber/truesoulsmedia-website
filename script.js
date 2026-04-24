@@ -66,45 +66,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Form Submit
-    const contactForm = document.querySelector('.contact-form');
+    // 4. Form Submit — Web3Forms
+    const contactForm = document.getElementById('contactForm');
+    const formNotification = document.getElementById('formNotification');
+
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
             const btn = contactForm.querySelector('button[type="submit"]');
-            const originalText = btn.innerText;
-            btn.innerText = 'Initializing...';
+            const originalHTML = btn.innerHTML;
+
+            // Loading state
+            btn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Sending...';
             btn.style.opacity = '0.7';
-            
+            btn.disabled = true;
+
             const formData = new FormData(contactForm);
-            formData.append("form-name", "contact");
-            
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => {
-                btn.innerText = 'Protocol Confirmed';
-                btn.style.backgroundColor = '#25d366'; // Green success
-                btn.style.color = 'black';
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.backgroundColor = '';
-                    btn.style.color = '';
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success
+                    btn.innerHTML = '<i class="bx bx-check-circle"></i> Message Sent!';
+                    btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
                     btn.style.opacity = '1';
-                }, 3000);
-            })
-            .catch((error) => {
-                console.error('Form submission error:', error);
-                btn.innerText = 'Connection Failed';
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.opacity = '1';
-                }, 3000);
-            });
+                    if (formNotification) {
+                        formNotification.textContent = '✅ Thank you! We received your message and will respond within 24 hours.';
+                        formNotification.className = 'form-notification success';
+                    }
+                    contactForm.reset();
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                // Error
+                btn.innerHTML = '<i class="bx bx-x-circle"></i> Failed — Try Again';
+                btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                btn.style.opacity = '1';
+                if (formNotification) {
+                    formNotification.textContent = '❌ Something went wrong. Please WhatsApp us directly at +91 90612 86660.';
+                    formNotification.className = 'form-notification error';
+                }
+                console.error('Form error:', error);
+            }
+
+            // Reset button after 4 seconds
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            }, 4000);
         });
     }
 

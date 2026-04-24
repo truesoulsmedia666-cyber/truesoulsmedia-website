@@ -175,14 +175,17 @@
             <h2 style="margin-bottom:0.5rem;">Book Your<br><span class="gradient-text">Production</span></h2>
             <p style="margin-bottom:0.5rem;">Tell us about your project. We'll respond within 24 hours.</p>
             <div class="form-notification" id="formNotification"></div>
-            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact">
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="d9dba101-a247-42f8-8758-21a336fb9de8">
+                <input type="hidden" name="subject" value="New Client Enquiry — Truesoulsmedia">
+                <input type="hidden" name="from_name" value="Truesoulsmedia Website">
+                <input type="hidden" name="redirect" value="false">
                 <input type="text" name="name" placeholder="Your Full Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
                 <input type="tel" name="phone" placeholder="WhatsApp / Phone Number">
                 <select name="service">
                     <option value="" disabled selected>Select Service</option>
-                    <option value="wedding">Wedding Photography & Film</option>
+                    <option value="wedding">Wedding Photography &amp; Film</option>
                     <option value="events">Event Management</option>
                     <option value="digital">Digital Marketing</option>
                     <option value="podcast">Podcast Production</option>
