@@ -7,9 +7,13 @@
     <meta name="description" content="Truesoulsmedia — Kerala's premium cinematic studio. Wedding Photography, Event Management, Digital Marketing & Podcast Production.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Load fonts non-blocking to avoid render-blocking penalty -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://truesoulsmedia.com/">
 </head>
 <body>
 
@@ -25,10 +29,10 @@
     <div class="glow-orb orb-2"></div>
     <div class="glow-orb orb-3"></div>
     <div class="image-overlay"></div>
-    <img src="assets/hero_wedding_1776598144800.png" class="bg-layer active" data-index="0" alt="">
-    <img src="assets/portfolio_events_1776598196076.png" class="bg-layer" data-index="1" alt="">
-    <img src="assets/portfolio_digital_1776598215494.png" class="bg-layer" data-index="2" alt="">
-    <img src="assets/portfolio_podcast_1776598232723.png" class="bg-layer" data-index="3" alt="">
+    <img src="assets/hero_wedding_1776598144800.png" class="bg-layer active" data-index="0" alt="Kerala luxury wedding photography" fetchpriority="high">
+    <img src="assets/portfolio_events_1776598196076.png" class="bg-layer" data-index="1" alt="Event management" loading="lazy">
+    <img src="assets/portfolio_digital_1776598215494.png" class="bg-layer" data-index="2" alt="Digital marketing" loading="lazy">
+    <img src="assets/portfolio_podcast_1776598232723.png" class="bg-layer" data-index="3" alt="Podcast production" loading="lazy">
 </div>
 
 <!-- NAVBAR -->
@@ -53,6 +57,7 @@
     </div>
 </nav>
 
+<main id="main-content">
 <!-- HERO -->
 <section id="home" class="section" data-bg-index="0" style="min-height:100vh;flex-direction:column;text-align:center;padding-top:8rem;">
     <!-- Hero spotlight glow -->
@@ -188,10 +193,14 @@
                 <input type="hidden" name="subject" value="New Client Enquiry — Truesoulsmedia">
                 <input type="hidden" name="from_name" value="Truesoulsmedia Website">
                 <input type="hidden" name="redirect" value="false">
-                <input type="text" name="name" placeholder="Your Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="tel" name="phone" placeholder="WhatsApp / Phone Number">
-                <select name="service">
+                <label for="name" class="sr-only">Your Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <label for="phone" class="sr-only">WhatsApp / Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="WhatsApp / Phone Number">
+                <label for="service" class="sr-only">Select Service</label>
+                <select id="service" name="service" aria-label="Select a service">
                     <option value="" disabled selected>Select Service</option>
                     <option value="wedding">Wedding Photography &amp; Film</option>
                     <option value="events">Event Management</option>
@@ -206,15 +215,16 @@
         </div>
     </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
     <div class="social-links">
-        <a href="https://wa.me/919061286660" target="_blank" class="social-icon"><i class='bx bxl-whatsapp'></i></a>
-        <a href="https://www.instagram.com/truesoulsmedia_" target="_blank" class="social-icon"><i class='bx bxl-instagram'></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61574503418456" target="_blank" class="social-icon"><i class='bx bxl-facebook'></i></a>
-        <a href="https://www.linkedin.com/in/truesouls-media-b91a8b400" target="_blank" class="social-icon"><i class='bx bxl-linkedin'></i></a>
-        <a href="mailto:truesoulsmedia666@gmail.com" class="social-icon"><i class='bx bx-envelope'></i></a>
+        <a href="https://wa.me/919061286660" target="_blank" class="social-icon" aria-label="Chat with us on WhatsApp" rel="noopener"><i class='bx bxl-whatsapp'></i></a>
+        <a href="https://www.instagram.com/truesoulsmedia_" target="_blank" class="social-icon" aria-label="Follow us on Instagram" rel="noopener"><i class='bx bxl-instagram'></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61574503418456" target="_blank" class="social-icon" aria-label="Follow us on Facebook" rel="noopener"><i class='bx bxl-facebook'></i></a>
+        <a href="https://www.linkedin.com/in/truesouls-media-b91a8b400" target="_blank" class="social-icon" aria-label="Connect on LinkedIn" rel="noopener"><i class='bx bxl-linkedin'></i></a>
+        <a href="mailto:truesoulsmedia666@gmail.com" class="social-icon" aria-label="Email us at truesoulsmedia666@gmail.com"><i class='bx bx-envelope'></i></a>
     </div>
     <p style="margin-bottom:0.5rem;color:#fff;font-weight:600;">Truesoulsmedia LLP</p>
     <p style="font-size:0.85rem;">&copy; 2026 Truesoulsmedia LLP · Kerala, India · All rights reserved.</p>
