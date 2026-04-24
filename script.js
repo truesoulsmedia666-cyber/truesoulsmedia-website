@@ -131,6 +131,88 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.disabled = false;
             }, 4000);
         });
+    // 5. Responsive Canvas Particles
+    const canvas = document.getElementById('bg-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            // Support high-DPI displays (Retina/Mobile)
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            ctx.scale(dpr, dpr);
+            
+            initParticles();
+        }
+
+        function initParticles() {
+            particles = [];
+            // Calculate number of particles based on screen size (responsive count)
+            const numParticles = Math.min(Math.floor((width * height) / 12000), 80);
+            for (let i = 0; i < numParticles; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 1.5 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    opacity: Math.random() * 0.4 + 0.1
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Draw particles
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                
+                // Wrap around edges
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(168, 85, 247, ${p.opacity})`;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = 'rgba(168, 85, 247, 0.6)';
+                ctx.fill();
+            });
+            
+            // Connect nearby particles with lines for a constellation effect
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(168, 85, 247, ${0.15 - (distance/100) * 0.15})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        // Add resize listener and initialize
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
     }
 
 });
