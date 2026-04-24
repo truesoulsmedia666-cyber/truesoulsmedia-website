@@ -636,7 +636,7 @@ p { line-height: 1.7; }
     }
 
     .desktop-btn { display: none !important; }
-    .mobile-menu-btn { display: block !important; }
+    .mobile-menu-btn { display: flex !important; }
 
     .section { padding: 6rem 1.25rem; }
     h1 { font-size: 2.8rem; }
