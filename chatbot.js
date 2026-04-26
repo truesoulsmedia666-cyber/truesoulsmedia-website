@@ -2,7 +2,7 @@
 (function () {
   // ─── CONFIG ──────────────────────────────────────────────────────────────────
   const WEB3FORMS_KEY = "d9dba101-a247-42f8-8758-21a336fb9de8"; // ← already set in contact form
-  const NOTIFY_EMAIL  = "truesoulsmedia666@gmail.com";
+  const NOTIFY_EMAIL = "truesoulsmedia666@gmail.com";
   const CALENDLY_LINK = "https://calendly.com/truesoulsmedia666"; // update if you have Calendly
 
   // ─── CONVERSATION FLOW ───────────────────────────────────────────────────────
@@ -10,20 +10,20 @@
     welcome: {
       msg: "👋 Hey there! I'm <strong>Aria</strong>, your personal assistant at <strong>True Souls Media</strong>. What brings you here today?",
       choices: [
-        { label: "💍 Wedding Photography / Film",   next: "wedding"   },
-        { label: "🎉 Event Management",              next: "event"     },
-        { label: "📣 Digital Marketing",             next: "digital"   },
-        { label: "🎙️ Podcast Production",            next: "podcast"   },
-        { label: "🤔 Just Browsing",                 next: "browse"    },
+        { label: "💍 Wedding Photography / Film", next: "wedding" },
+        { label: "🎉 Event Management", next: "event" },
+        { label: "📣 Digital Marketing", next: "digital" },
+        { label: "🎙️ Podcast Production", next: "podcast" },
+        { label: "🤔 Just Browsing", next: "browse" },
       ],
     },
     wedding: {
       msg: "Congratulations on your upcoming wedding! 🎊 We shoot destination weddings worldwide — UK, UAE, USA, and more. When is your big day?",
       choices: [
-        { label: "Within 3 months",  next: "urgent"  },
-        { label: "3 – 6 months",     next: "capture" },
-        { label: "6+ months away",   next: "capture" },
-        { label: "Just exploring",   next: "capture" },
+        { label: "Within 3 months", next: "urgent" },
+        { label: "3 – 6 months", next: "capture" },
+        { label: "6+ months away", next: "capture" },
+        { label: "Just exploring", next: "capture" },
       ],
     },
     urgent: {
@@ -33,42 +33,42 @@
     event: {
       msg: "Amazing! We handle corporate conferences, luxury parties, brand launches — fully managed end-to-end. What type of event do you have in mind?",
       choices: [
-        { label: "🏢 Corporate Conference",   next: "capture" },
+        { label: "🏢 Corporate Conference", next: "capture" },
         { label: "🎂 Private / Social Event", next: "capture" },
-        { label: "🚀 Brand Launch",           next: "capture" },
-        { label: "🎓 Other",                  next: "capture" },
+        { label: "🚀 Brand Launch", next: "capture" },
+        { label: "🎓 Other", next: "capture" },
       ],
     },
     digital: {
       msg: "Great choice! We help businesses grow globally with SEO, social media, video content & more. What's your biggest challenge right now?",
       choices: [
-        { label: "📉 Not enough online leads",    next: "capture" },
+        { label: "📉 Not enough online leads", next: "capture" },
         { label: "📱 Weak social media presence", next: "capture" },
-        { label: "🔍 Low Google ranking",         next: "capture" },
-        { label: "🌐 Need a full strategy",       next: "capture" },
+        { label: "🔍 Low Google ranking", next: "capture" },
+        { label: "🌐 Need a full strategy", next: "capture" },
       ],
     },
     podcast: {
       msg: "Podcasts are the #1 trust-builder for brands right now! 🎤 We handle everything from recording to publishing on Spotify & Apple. How many episodes are you thinking?",
       choices: [
-        { label: "6 Episodes / month  — ₹35,000",  next: "capture" },
-        { label: "10 Episodes / month — ₹75,000",  next: "capture" },
-        { label: "One-time pilot episode",          next: "capture" },
-        { label: "Not sure yet",                   next: "capture" },
+        { label: "6 Episodes / month  — ₹35,000", next: "capture" },
+        { label: "10 Episodes / month — ₹75,000", next: "capture" },
+        { label: "One-time pilot episode", next: "capture" },
+        { label: "Not sure yet", next: "capture" },
       ],
     },
     browse: {
       msg: "No problem at all! 😊 Feel free to look around. If you have any questions about our services, I'm right here. Can I share a quick overview of what we offer?",
       choices: [
-        { label: "Yes, show me!",  next: "overview" },
-        { label: "Maybe later",    next: "bye"      },
+        { label: "Yes, show me!", next: "overview" },
+        { label: "Maybe later", next: "bye" },
       ],
     },
     overview: {
       msg: "We are a <strong>luxury cinematic studio</strong> based in Kerala, India. We offer:<br>💍 Wedding Photography & Films<br>🎉 Event Management<br>📣 Digital Marketing<br>🎙️ Podcast Production<br><br>All services available globally for English-speaking clients. Want to chat with our team?",
       choices: [
-        { label: "Yes, book a free call!",  next: "capture" },
-        { label: "Maybe later",             next: "bye"     },
+        { label: "Yes, book a free call!", next: "capture" },
+        { label: "Maybe later", next: "bye" },
       ],
     },
     capture: {
@@ -81,10 +81,10 @@
   };
 
   // ─── STATE ───────────────────────────────────────────────────────────────────
-  let state          = "welcome";
+  let state = "welcome";
   let selectedService = "";
-  let leadStep       = 0; // 0=idle, 1=waiting name, 2=waiting contact
-  let leadName       = "";
+  let leadStep = 0; // 0=idle, 1=waiting name, 2=waiting contact
+  let leadName = "";
 
   // ─── STYLES ──────────────────────────────────────────────────────────────────
   const css = `
@@ -247,11 +247,11 @@
   document.body.appendChild(win);
 
   // ─── HELPERS ─────────────────────────────────────────────────────────────────
-  const msgs    = document.getElementById("tsm-chat-messages");
+  const msgs = document.getElementById("tsm-chat-messages");
   const choices = document.getElementById("tsm-choices");
   const inputRow = document.getElementById("tsm-input-row");
-  const input   = document.getElementById("tsm-user-input");
-  const badge   = document.getElementById("tsm-chat-badge");
+  const input = document.getElementById("tsm-user-input");
+  const badge = document.getElementById("tsm-chat-badge");
 
   function scrollBottom() { msgs.scrollTop = msgs.scrollHeight; }
 
@@ -315,7 +315,7 @@
     clearChoices();
     addBubble(choice.label, "user");
     // track service for lead email
-    if (["wedding","event","digital","podcast"].includes(choice.next)) {
+    if (["wedding", "event", "digital", "podcast"].includes(choice.next)) {
       selectedService = choice.label;
     }
     await goToState(choice.next);
@@ -365,7 +365,7 @@
       await botSay(`🎉 You're all set, <strong>${name}</strong>! <strong>Abin J Antony</strong> will personally reach out to you very soon.<br><br>Want to book a free 15-min Zoom call right now?`, 1000);
       renderChoices([
         { label: "📅 Book a Zoom call now", next: "_calendly" },
-        { label: "I'll wait for the call",  next: "bye"       },
+        { label: "I'll wait for the call", next: "bye" },
       ]);
     } catch {
       await botSay("All done! We'll be in touch soon. Have a great day! ✨");
