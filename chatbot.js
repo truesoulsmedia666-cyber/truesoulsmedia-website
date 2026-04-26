@@ -72,7 +72,7 @@
       ],
     },
     capture: {
-      msg: "Perfect! Let me connect you with <strong>Abin J Antony</strong>, our Lead Producer. Drop your name and WhatsApp / email below and we'll reach out within <strong>24 hours</strong>! 🙌",
+      msg: "Perfect! Let me connect you with Abin J Antony and Noel Raju, our Lead Producers. Drop your name and WhatsApp / email below and we'll reach out within 24 hours! 🙌",
       next: "lead",
     },
     bye: {
