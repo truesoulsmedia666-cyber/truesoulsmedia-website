@@ -25,6 +25,11 @@
 - **Growth**: ₹25,000 / month (12 Posts + 2 Reels, 2 Platforms)
 - **Enterprise**: ₹60,000 / month (20 Posts + 8 Reels, 4 Platforms)
 
+### Podcast Production (`podcast.html`)
+- **Starter**: ₹18,000 / month (4 Episodes)
+- **Pro**: ₹35,000 / month (6 Episodes, Max 2 Platforms)
+- **Enterprise**: ₹75,000 / month (10 Episodes, All Platforms)
+
 ## Next Steps
 - Monitor `site:truesoulsmedia.com` on Google Search to confirm indexing.
 - Setup Google Business Profile to appear in local search maps.
