@@ -5,7 +5,7 @@
   const CALENDLY_LINK = "https://calendly.com/truesoulsmedia666";
   
   // ─── AI CONFIGURATION ────────────────────────────────────────────────────────
-  const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"; // ⚠️ REPLACE WITH YOUR REAL KEY
+  const GEMINI_API_KEY = "AIzaSyDeoocJPHd5wILMy857lKMxDJY03B-KLo8";
   const SYSTEM_PROMPT = `You are Aria, the personal AI assistant for True Souls Media, a luxury cinematic studio in Kerala, India. 
 Services offered: Wedding Photography & Films, Event Management, Digital Marketing, and Podcast Production.
 Tone: Professional, welcoming, concise, and slightly enthusiastic. Use emojis occasionally.
