@@ -3,7 +3,7 @@
   const WEB3FORMS_KEY = "d9dba101-a247-42f8-8758-21a336fb9de8"; // Keep for future use
   const NOTIFY_EMAIL = "truesoulsmedia666@gmail.com";
   const CALENDLY_LINK = "https://calendly.com/truesoulsmedia666";
-  
+
   // ─── AI CONFIGURATION ────────────────────────────────────────────────────────
   const GEMINI_API_KEY = "AIzaSyDeoocJPHd5wILMy857lKMxDJY03B-KLo8";
   const SYSTEM_PROMPT = `You are Aria, the personal AI assistant for True Souls Media, a luxury cinematic studio in Kerala, India. 
@@ -205,7 +205,7 @@ Goal: Answer user questions about our services. Keep responses relatively brief 
   async function botSay(text) {
     const typingIndicator = showTyping();
     // Artificial delay to make it feel more natural before showing AI text
-    await new Promise(r => setTimeout(r, 600)); 
+    await new Promise(r => setTimeout(r, 600));
     hideTyping(typingIndicator);
     addBubble(text, "bot");
   }
@@ -219,24 +219,24 @@ Goal: Answer user questions about our services. Keep responses relatively brief 
     chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
 
     try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ contents: chatHistory })
       });
 
       const data = await response.json();
-      
+
       if (data.error) {
         console.error("Gemini API Error:", data.error);
-        return "Sorry, I am having trouble connecting to my brain right now. Please try again later. 🧠⚡";
+        return `⚠️ <strong>API Error:</strong> ${data.error.message || "Unknown error occurred."}`;
       }
 
       const aiText = data.candidates[0].content.parts[0].text;
-      
+
       // Save AI response to history
       chatHistory.push({ role: "model", parts: [{ text: aiText }] });
-      
+
       // Basic formatting to convert markdown to HTML
       let formattedText = aiText
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -251,21 +251,21 @@ Goal: Answer user questions about our services. Keep responses relatively brief 
 
   async function handleInput() {
     if (isAiTyping) return;
-    
+
     const val = input.value.trim();
     if (!val) return;
-    
+
     input.value = "";
     addBubble(val, "user");
-    
+
     isAiTyping = true;
     const typingIndicator = showTyping();
-    
+
     const aiResponseText = await generateAiResponse(val);
-    
+
     hideTyping(typingIndicator);
     addBubble(aiResponseText, "bot");
-    
+
     isAiTyping = false;
   }
 
