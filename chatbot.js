@@ -1,90 +1,22 @@
-
 (function () {
   // ─── CONFIG ──────────────────────────────────────────────────────────────────
-  const WEB3FORMS_KEY = "d9dba101-a247-42f8-8758-21a336fb9de8"; // ← already set in contact form
+  const WEB3FORMS_KEY = "d9dba101-a247-42f8-8758-21a336fb9de8"; // Keep for future use
   const NOTIFY_EMAIL = "truesoulsmedia666@gmail.com";
-  const CALENDLY_LINK = "https://calendly.com/truesoulsmedia666"; // update if you have Calendly
-
-  // ─── CONVERSATION FLOW ───────────────────────────────────────────────────────
-  const flow = {
-    welcome: {
-      msg: "👋 Hey there! I'm <strong>Aria</strong>, your personal assistant at <strong>True Souls Media</strong>. What brings you here today?",
-      choices: [
-        { label: "💍 Wedding Photography / Film", next: "wedding" },
-        { label: "🎉 Event Management", next: "event" },
-        { label: "📣 Digital Marketing", next: "digital" },
-        { label: "🎙️ Podcast Production", next: "podcast" },
-        { label: "🤔 Just Browsing", next: "browse" },
-      ],
-    },
-    wedding: {
-      msg: "Congratulations on your upcoming wedding! 🎊 We shoot destination weddings worldwide — UK, UAE, USA, and more. When is your big day?",
-      choices: [
-        { label: "Within 3 months", next: "urgent" },
-        { label: "3 – 6 months", next: "capture" },
-        { label: "6+ months away", next: "capture" },
-        { label: "Just exploring", next: "capture" },
-      ],
-    },
-    urgent: {
-      msg: "Oh wow, that's soon! We'd love to fit you in. 🚀 Let me grab your details and our lead producer will call you within <strong>2 hours</strong>.",
-      next: "lead",
-    },
-    event: {
-      msg: "Amazing! We handle corporate conferences, luxury parties, brand launches — fully managed end-to-end. What type of event do you have in mind?",
-      choices: [
-        { label: "🏢 Corporate Conference", next: "capture" },
-        { label: "🎂 Private / Social Event", next: "capture" },
-        { label: "🚀 Brand Launch", next: "capture" },
-        { label: "🎓 Other", next: "capture" },
-      ],
-    },
-    digital: {
-      msg: "Great choice! We help businesses grow globally with SEO, social media, video content & more. What's your biggest challenge right now?",
-      choices: [
-        { label: "📉 Not enough online leads", next: "capture" },
-        { label: "📱 Weak social media presence", next: "capture" },
-        { label: "🔍 Low Google ranking", next: "capture" },
-        { label: "🌐 Need a full strategy", next: "capture" },
-      ],
-    },
-    podcast: {
-      msg: "Podcasts are the #1 trust-builder for brands right now! 🎤 We handle everything from recording to publishing on Spotify & Apple. How many episodes are you thinking?",
-      choices: [
-        { label: "6 Episodes / month  — ₹35,000", next: "capture" },
-        { label: "10 Episodes / month — ₹75,000", next: "capture" },
-        { label: "One-time pilot episode", next: "capture" },
-        { label: "Not sure yet", next: "capture" },
-      ],
-    },
-    browse: {
-      msg: "No problem at all! 😊 Feel free to look around. If you have any questions about our services, I'm right here. Can I share a quick overview of what we offer?",
-      choices: [
-        { label: "Yes, show me!", next: "overview" },
-        { label: "Maybe later", next: "bye" },
-      ],
-    },
-    overview: {
-      msg: "We are a <strong>luxury cinematic studio</strong> based in Kerala, India. We offer:<br>💍 Wedding Photography & Films<br>🎉 Event Management<br>📣 Digital Marketing<br>🎙️ Podcast Production<br><br>All services available globally for English-speaking clients. Want to chat with our team?",
-      choices: [
-        { label: "Yes, book a free call!", next: "capture" },
-        { label: "Maybe later", next: "bye" },
-      ],
-    },
-    capture: {
-      msg: "Perfect! Let me connect you with Abin J Antony and Noel Raju, our Lead Producers. Drop your name and WhatsApp / email below and we'll reach out within 24 hours! 🙌",
-      next: "lead",
-    },
-    bye: {
-      msg: "No problem! If you ever need us, just click the chat button again. Have an amazing day! ✨",
-    },
-  };
+  const CALENDLY_LINK = "https://calendly.com/truesoulsmedia666";
+  
+  // ─── AI CONFIGURATION ────────────────────────────────────────────────────────
+  const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE"; // ⚠️ REPLACE WITH YOUR REAL KEY
+  const SYSTEM_PROMPT = `You are Aria, the personal AI assistant for True Souls Media, a luxury cinematic studio in Kerala, India. 
+Services offered: Wedding Photography & Films, Event Management, Digital Marketing, and Podcast Production.
+Tone: Professional, welcoming, concise, and slightly enthusiastic. Use emojis occasionally.
+Goal: Answer user questions about our services. Keep responses relatively brief (1-3 sentences) unless asked for details. If a user seems interested in booking, encourage them to use the contact form on the website or leave their contact info here.`;
 
   // ─── STATE ───────────────────────────────────────────────────────────────────
-  let state = "welcome";
-  let selectedService = "";
-  let leadStep = 0; // 0=idle, 1=waiting name, 2=waiting contact
-  let leadName = "";
+  let chatHistory = [
+    { role: "user", parts: [{ text: SYSTEM_PROMPT }] },
+    { role: "model", parts: [{ text: "Understood. I am Aria, ready to assist." }] }
+  ];
+  let isAiTyping = false;
 
   // ─── STYLES ──────────────────────────────────────────────────────────────────
   const css = `
@@ -145,6 +77,7 @@
 
     #tsm-chat-messages {
       flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px;
+      min-height: 250px;
     }
     #tsm-chat-messages::-webkit-scrollbar { width: 4px; }
     #tsm-chat-messages::-webkit-scrollbar-track { background: #1a1a1a; }
@@ -153,6 +86,7 @@
     .tsm-bubble {
       max-width: 88%; padding: 12px 15px; border-radius: 16px;
       font-size: 14px; line-height: 1.55; animation: tsm-fadein .3s ease;
+      word-wrap: break-word;
     }
     @keyframes tsm-fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; } }
     .tsm-bubble.bot {
@@ -170,20 +104,10 @@
     .tsm-typing span:nth-child(3) { animation-delay: .30s; }
     @keyframes tsm-bounce { 0%,80%,100% { transform: scale(0); } 40% { transform: scale(1); } }
 
-    #tsm-choices { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px 14px; }
-    .tsm-choice {
-      background: rgba(212,175,55,.1); border: 1px solid rgba(212,175,55,.35);
-      color: #d4af37; font-size: 13px; font-weight: 500; border-radius: 20px;
-      padding: 8px 14px; cursor: pointer; transition: background .2s, transform .15s;
-      font-family: Inter, sans-serif;
-    }
-    .tsm-choice:hover { background: rgba(212,175,55,.22); transform: translateY(-2px); }
-
     #tsm-input-row {
-      display: none; align-items: center; gap: 8px; padding: 12px 14px;
+      display: flex; align-items: center; gap: 8px; padding: 12px 14px;
       border-top: 1px solid rgba(255,255,255,.08);
     }
-    #tsm-input-row.visible { display: flex; }
     #tsm-user-input {
       flex: 1; background: #1c1c1c; border: 1px solid rgba(212,175,55,.3);
       color: #fff; border-radius: 12px; padding: 10px 14px; font-size: 14px;
@@ -229,26 +153,24 @@
     <div id="tsm-chat-header">
       <div class="avatar">🎬</div>
       <div class="info">
-        <div class="name">Aria · True Souls Media</div>
-        <div class="status">🟢 Online — Usually replies instantly</div>
+        <div class="name">Aria · True Souls Media AI</div>
+        <div class="status">🟢 Online — AI Assistant</div>
       </div>
       <button class="close-btn" id="tsm-close-btn">×</button>
     </div>
     <div id="tsm-chat-messages"></div>
-    <div id="tsm-choices"></div>
     <div id="tsm-input-row">
-      <input id="tsm-user-input" type="text" placeholder="Type your answer…" autocomplete="off">
+      <input id="tsm-user-input" type="text" placeholder="Type your message…" autocomplete="off">
       <button id="tsm-send-btn">
         <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
       </button>
     </div>
-    <div id="tsm-chat-footer">Powered by True Souls Media AI</div>
+    <div id="tsm-chat-footer">Powered by Gemini AI</div>
   `;
   document.body.appendChild(win);
 
   // ─── HELPERS ─────────────────────────────────────────────────────────────────
   const msgs = document.getElementById("tsm-chat-messages");
-  const choices = document.getElementById("tsm-choices");
   const inputRow = document.getElementById("tsm-input-row");
   const input = document.getElementById("tsm-user-input");
   const badge = document.getElementById("tsm-chat-badge");
@@ -264,112 +186,87 @@
     return b;
   }
 
-  function showTyping(ms = 900) {
-    return new Promise(resolve => {
-      const t = document.createElement("div");
-      t.className = "tsm-bubble bot tsm-typing";
-      t.innerHTML = "<span></span><span></span><span></span>";
-      msgs.appendChild(t);
-      scrollBottom();
-      setTimeout(() => { msgs.removeChild(t); resolve(); }, ms);
-    });
-  }
-
-  function clearChoices() { choices.innerHTML = ""; }
-
-  function renderChoices(list) {
-    clearChoices();
-    inputRow.classList.remove("visible");
-    list.forEach(c => {
-      const btn = document.createElement("button");
-      btn.className = "tsm-choice";
-      btn.textContent = c.label;
-      btn.addEventListener("click", () => handleChoice(c));
-      choices.appendChild(btn);
-    });
-  }
-
-  async function botSay(text, delay = 900) {
-    await showTyping(delay);
-    addBubble(text, "bot");
+  function showTyping() {
+    const t = document.createElement("div");
+    t.className = "tsm-bubble bot tsm-typing";
+    t.id = "tsm-typing-indicator";
+    t.innerHTML = "<span></span><span></span><span></span>";
+    msgs.appendChild(t);
     scrollBottom();
+    return t;
   }
 
-  async function goToState(s) {
-    state = s;
-    const node = flow[s];
-    if (!node) return;
-
-    if (s === "lead") { await startLeadCapture(); return; }
-
-    await botSay(node.msg);
-
-    if (node.choices) {
-      renderChoices(node.choices);
-    } else if (node.next) {
-      setTimeout(() => goToState(node.next), 400);
+  function hideTyping(typingElement) {
+    if (typingElement && typingElement.parentNode) {
+      typingElement.parentNode.removeChild(typingElement);
     }
   }
 
-  async function handleChoice(choice) {
-    clearChoices();
-    addBubble(choice.label, "user");
-    // track service for lead email
-    if (["wedding", "event", "digital", "podcast"].includes(choice.next)) {
-      selectedService = choice.label;
-    }
-    await goToState(choice.next);
+  async function botSay(text) {
+    const typingIndicator = showTyping();
+    // Artificial delay to make it feel more natural before showing AI text
+    await new Promise(r => setTimeout(r, 600)); 
+    hideTyping(typingIndicator);
+    addBubble(text, "bot");
   }
 
-  // ─── LEAD CAPTURE FLOW ───────────────────────────────────────────────────────
-  async function startLeadCapture() {
-    leadStep = 1;
-    await botSay("What's your <strong>name</strong>? 😊", 700);
-    clearChoices();
-    inputRow.classList.add("visible");
-    input.focus();
+  // ─── AI INTEGRATION ──────────────────────────────────────────────────────────
+  async function generateAiResponse(userMessage) {
+    if (!GEMINI_API_KEY || GEMINI_API_KEY === "YOUR_GEMINI_API_KEY_HERE") {
+      return "⚠️ <strong>Setup Required:</strong> Please enter your Google Gemini API Key in the `chatbot.js` file (line 9) to enable AI responses.";
+    }
+
+    chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
+
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ contents: chatHistory })
+      });
+
+      const data = await response.json();
+      
+      if (data.error) {
+        console.error("Gemini API Error:", data.error);
+        return "Sorry, I am having trouble connecting to my brain right now. Please try again later. 🧠⚡";
+      }
+
+      const aiText = data.candidates[0].content.parts[0].text;
+      
+      // Save AI response to history
+      chatHistory.push({ role: "model", parts: [{ text: aiText }] });
+      
+      // Basic formatting to convert markdown to HTML
+      let formattedText = aiText
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
+
+      return formattedText;
+    } catch (err) {
+      console.error("Network Error:", err);
+      return "Oops! Network error. Please try again.";
+    }
   }
 
   async function handleInput() {
+    if (isAiTyping) return;
+    
     const val = input.value.trim();
     if (!val) return;
+    
     input.value = "";
     addBubble(val, "user");
-
-    if (leadStep === 1) {
-      leadName = val;
-      leadStep = 2;
-      await botSay(`Great to meet you, <strong>${leadName}</strong>! 🙌 Now drop your <strong>WhatsApp number or email</strong> and we'll be in touch within 24 hours!`, 900);
-    } else if (leadStep === 2) {
-      leadStep = 0;
-      inputRow.classList.remove("visible");
-      await botSay("✅ Got it! Sending your details to our team now...", 600);
-      await submitLead(leadName, val);
-    }
-  }
-
-  async function submitLead(name, contact) {
-    const body = {
-      access_key: WEB3FORMS_KEY,
-      subject: `🤖 NEW CHATBOT LEAD — ${name}`,
-      from_name: "True Souls Media AI Chatbot",
-      to: NOTIFY_EMAIL,
-      message: `New lead from website chatbot!\n\nName: ${name}\nContact: ${contact}\nService Interest: ${selectedService || "Not specified"}\n\nReply to this lead ASAP!`,
-    };
-
-    try {
-      await fetch("https://api.web3forms.com/submit", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      await botSay(`🎉 You're all set, <strong>${name}</strong>! <strong>Abin J Antony</strong> will personally reach out to you very soon.<br><br>Want to book a free 15-min Zoom call right now?`, 1000);
-      renderChoices([
-        { label: "📅 Book a Zoom call now", next: "_calendly" },
-        { label: "I'll wait for the call", next: "bye" },
-      ]);
-    } catch {
-      await botSay("All done! We'll be in touch soon. Have a great day! ✨");
-    }
+    
+    isAiTyping = true;
+    const typingIndicator = showTyping();
+    
+    const aiResponseText = await generateAiResponse(val);
+    
+    hideTyping(typingIndicator);
+    addBubble(aiResponseText, "bot");
+    
+    isAiTyping = false;
   }
 
   // ─── EVENT LISTENERS ──────────────────────────────────────────────────────────
@@ -377,7 +274,7 @@
     win.classList.toggle("open");
     badge.style.display = "none";
     if (win.classList.contains("open") && msgs.children.length === 0) {
-      setTimeout(() => goToState("welcome"), 400);
+      botSay("👋 Hey there! I'm <strong>Aria</strong>, the AI assistant at <strong>True Souls Media</strong>. How can I help you today?");
     }
   });
 
@@ -387,35 +284,6 @@
 
   document.getElementById("tsm-send-btn").addEventListener("click", handleInput);
   input.addEventListener("keydown", e => { if (e.key === "Enter") handleInput(); });
-
-  // Special choice handler for Calendly
-  document.addEventListener("click", e => {
-    if (e.target.classList.contains("tsm-choice") && e.target.dataset.next === "_calendly") return;
-    if (e.target.dataset.calendly) window.open(CALENDLY_LINK, "_blank");
-  });
-
-  // Override renderChoices to handle special _calendly action
-  const origRender = renderChoices;
-  function renderChoices(list) {
-    clearChoices();
-    inputRow.classList.remove("visible");
-    list.forEach(c => {
-      const btn = document.createElement("button");
-      btn.className = "tsm-choice";
-      btn.textContent = c.label;
-      btn.addEventListener("click", () => {
-        if (c.next === "_calendly") {
-          window.open(CALENDLY_LINK, "_blank");
-          clearChoices();
-          addBubble("📅 Book a Zoom call now", "user");
-          botSay("Perfect! We'll see you on the call. Talk soon! 🎬✨").then(() => goToState("bye"));
-        } else {
-          handleChoice(c);
-        }
-      });
-      choices.appendChild(btn);
-    });
-  }
 
   // Auto-pop after 12 seconds if user hasn't opened it yet
   setTimeout(() => {
