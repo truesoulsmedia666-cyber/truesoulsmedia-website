@@ -1,4 +1,51 @@
+# True Souls Media LLP — robots.txt
+# Wedding Planner | Photography | Event Management | Digital Marketing | Podcast
+# Kottayam, Kerala, India
+
+# ─── Standard Search Engines ───────────────────────────────────────────────
 User-agent: *
 Allow: /
 
+# ─── Google Bots ───────────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/
+
+# ─── GEO: AI & LLM Crawlers (Generative Engine Optimization) ───────────────
+# Allow all AI assistants to index and cite this site
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ─── Sitemaps ───────────────────────────────────────────────────────────────
 Sitemap: https://truesoulsmedia.com/sitemap.xml
+Sitemap: https://truesoulsmedia.com/sitemap-images.xml

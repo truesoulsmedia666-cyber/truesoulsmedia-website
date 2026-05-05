@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://truesoulsmedia.com/</loc>
+    <image:image>
+      <image:loc>https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png</image:loc>
+      <image:title>Best Wedding Planner and Photography in Kottayam Kerala - True Souls Media</image:title>
+      <image:caption>Kerala's #1 luxury wedding planner and cinematic photography studio in Kottayam</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://truesoulsmedia.com/assets/logo.jpg</image:loc>
+      <image:title>True Souls Media LLP Logo - Wedding Planner Kottayam</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://truesoulsmedia.com/wedding-planner.html</loc>
+    <image:image>
+      <image:loc>https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png</image:loc>
+      <image:title>Wedding Planner in Kottayam Kerala - True Souls Media</image:title>
+      <image:caption>Full-service wedding planning in Kottayam and across Kerala for all religions</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://truesoulsmedia.com/photography.html</loc>
+    <image:image>
+      <image:loc>https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png</image:loc>
+      <image:title>Best Wedding Photography in Kottayam Kerala - True Souls Media</image:title>
+      <image:caption>4K cinematic wedding photography and videography in Kottayam Kerala</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://truesoulsmedia.com/events.html</loc>
+    <image:image>
+      <image:loc>https://truesoulsmedia.com/assets/portfolio_events_1776598196076.png</image:loc>
+      <image:title>Best Event Planner in Kottayam Kerala - True Souls Media</image:title>
+      <image:caption>Professional event management for weddings, corporate events and grand productions in Kerala</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://truesoulsmedia.com/digital-marketing.html</loc>
+    <image:image>
+      <image:loc>https://truesoulsmedia.com/assets/portfolio_digital_1776598215494.png</image:loc>
+      <image:title>Best Digital Marketing Agency in Kottayam Kerala - True Souls Media</image:title>
+      <image:caption>SEO, social media, Google Ads and content marketing agency in Kottayam Kerala</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://truesoulsmedia.com/podcast.html</loc>
+    <image:image>
+      <image:loc>https://truesoulsmedia.com/assets/portfolio_podcast_1776598232723.png</image:loc>
+      <image:title>Best Podcast Studio in Kottayam Kerala - True Souls Media</image:title>
+      <image:caption>Professional podcast recording studio in Kottayam with Spotify and YouTube distribution</image:caption>
+    </image:image>
+  </url>
+</urlset>
