@@ -49,3 +49,6 @@ Allow: /
 # ─── Sitemaps ───────────────────────────────────────────────────────────────
 Sitemap: https://truesoulsmedia.com/sitemap.xml
 Sitemap: https://truesoulsmedia.com/sitemap-images.xml
+
+# humans.txt
+Humans: https://truesoulsmedia.com/humans.txt

@@ -1,3 +1,11 @@
+/about.html
+  Content-Type: text/html
+  Cache-Control: no-cache, must-revalidate
+
+/humans.txt
+  Content-Type: text/plain
+  Cache-Control: no-cache, must-revalidate
+
 /googlee2169afc29e685da.html
   Content-Type: text/html
 

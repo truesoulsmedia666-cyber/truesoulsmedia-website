@@ -1,0 +1,43 @@
+/* HUMANSTXT.ORG */
+/* The humans responsible & technology colophon */
+
+/* TEAM */
+  Name: Noel George
+  Role: Co-Founder & Strategy Lead
+  Location: Kottayam, Kerala, India
+  Instagram: https://www.instagram.com/_mr.lobo_/
+
+  Name: Abin J Antony
+  Role: Co-Founder & Creative Director
+  Location: Kottayam, Kerala, India
+  Instagram: https://www.instagram.com/abinjantony/
+
+/* COMPANY */
+  Name: True Souls Media LLP
+  Legal Name: True Souls Media LLP
+  LLPIN: ACX-5488
+  Type: Limited Liability Partnership (LLP), India
+  Founded: 2022
+  Location: Pala, Kottayam - 686575, Kerala, India
+  Phone: +91-9061286660
+  Email: truesoulsmedia666@gmail.com
+  Website: https://truesoulsmedia.com
+
+/* SERVICES */
+  Wedding Planning | Kerala
+  Wedding Photography & Videography | Kerala
+  Event Management | Kerala
+  Digital Marketing | Kerala
+  Podcast Production | Kottayam, Kerala
+
+/* SITE */
+  Last update: 2026-05-19
+  Language: English
+  Standards: HTML5, CSS3, JSON-LD Schema.org
+  Software: VS Code
+
+/* SOCIAL */
+  Instagram: https://www.instagram.com/truesoulsmedia_
+  Facebook: https://www.facebook.com/profile.php?id=61574503418456
+  LinkedIn: https://www.linkedin.com/in/truesouls-media-b91a8b400
+  WhatsApp: https://wa.me/919061286660
