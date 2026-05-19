@@ -1,6 +1,21 @@
 /googlee2169afc29e685da.html
   Content-Type: text/html
 
+/sitemap.xml
+  Content-Type: application/xml
+  Cache-Control: no-cache, must-revalidate
+
+/sitemap-images.xml
+  Content-Type: application/xml
+  Cache-Control: no-cache, must-revalidate
+
+/robots.txt
+  Cache-Control: no-cache, must-revalidate
+
+/llms.txt
+  Content-Type: text/plain
+  Cache-Control: no-cache, must-revalidate
+
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff

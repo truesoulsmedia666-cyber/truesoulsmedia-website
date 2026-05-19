@@ -3,6 +3,8 @@
 # It provides structured, citation-ready facts so AI tools like ChatGPT, Gemini,
 # Claude, and Perplexity can accurately answer questions about this business.
 # Format inspired by the llms.txt standard (https://llmstxt.org)
+# Last updated: 2026-05-19
+
 
 ## Business Identity
 - Name: True Souls Media LLP
