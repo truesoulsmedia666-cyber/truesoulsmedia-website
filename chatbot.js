@@ -5,8 +5,8 @@
   const CALENDLY_LINK = "https://calendly.com/truesoulsmedia666";
 
   // ─── AI CONFIGURATION ────────────────────────────────────────────────────────
-  // The API key is base64 encoded to prevent GitHub's automatic secret scanner from revoking it.
-  const GEMINI_API_KEY = atob("QUl6YVN5Qk41LXd2SnlpMGdvX3BQR3UtTTVvNGpPb256ajZnUXJZ");
+  // API key — replace with a valid Gemini key when available.
+  const GEMINI_API_KEY = "";
   const SYSTEM_PROMPT = `You are Aria, the personal AI assistant for True Souls Media, a luxury cinematic studio in Kerala, India. 
 Services offered: Wedding Photography & Films, Event Management, Digital Marketing, and Podcast Production.
 Tone: Professional, welcoming, empathetic, and persuasive. Use emojis occasionally. Provide smooth, human-like responses to make customers feel valued.
@@ -213,9 +213,11 @@ Lead Generation: If a user seems interested in our services, politely offer our 
   }
 
   // ─── AI INTEGRATION ──────────────────────────────────────────────────────────
+  const FALLBACK_MSG = "🙏 Our AI assistant is taking a short break! For instant help, please <strong><a href='https://wa.me/917025000669' target='_blank' style='color:#d4af37;text-decoration:none;'>WhatsApp us here</a></strong> or call <strong>+91 70250 00669</strong>. We'd love to help plan your dream wedding! 💍";
+
   async function generateAiResponse(userMessage) {
-    if (!GEMINI_API_KEY || GEMINI_API_KEY === "YOUR_GEMINI_API_KEY_HERE") {
-      return "⚠️ <strong>Setup Required:</strong> Please enter your Google Gemini API Key in the `chatbot.js` file (line 9) to enable AI responses.";
+    if (!GEMINI_API_KEY) {
+      return FALLBACK_MSG;
     }
 
     chatHistory.push({ role: "user", parts: [{ text: userMessage }] });
@@ -231,7 +233,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
 
       if (data.error) {
         console.error("Gemini API Error:", data.error);
-        return `⚠️ <strong>API Error:</strong> ${data.error.message || "Unknown error occurred."}`;
+        return FALLBACK_MSG;
       }
 
       const aiText = data.candidates[0].content.parts[0].text;
@@ -247,7 +249,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
       return formattedText;
     } catch (err) {
       console.error("Network Error:", err);
-      return "Oops! Network error. Please try again.";
+      return FALLBACK_MSG;
     }
   }
 
