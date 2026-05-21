@@ -213,7 +213,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
   }
 
   // ─── AI INTEGRATION ──────────────────────────────────────────────────────────
-  const FALLBACK_MSG = "🙏 Our AI assistant is taking a short break! For instant help, please <strong><a href='https://wa.me/917025000669' target='_blank' style='color:#d4af37;text-decoration:none;'>WhatsApp us here</a></strong> or call <strong>+91 70250 00669</strong>. We'd love to help plan your dream wedding! 💍";
+  const FALLBACK_MSG = "🙏 Our AI assistant is taking a short break! For instant help, please <strong><a href='https://wa.me/919061286660' target='_blank' style='color:#d4af37;text-decoration:none;'>WhatsApp us here</a></strong> or call <strong>+91 90612 86660</strong>. We'd love to help plan your dream wedding! 💍";
 
   async function generateAiResponse(userMessage) {
     if (!GEMINI_API_KEY) {
