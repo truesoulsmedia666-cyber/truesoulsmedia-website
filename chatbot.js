@@ -5,8 +5,8 @@
   const CALENDLY_LINK = "https://calendly.com/truesoulsmedia666";
 
   // ─── AI CONFIGURATION ────────────────────────────────────────────────────────
-  // API key — replace with a valid Gemini key when available.
-  const GEMINI_API_KEY = "";
+  // API key for Gemini AI (Aria chatbot).
+  const GEMINI_API_KEY = "AIzaSyCSkZe20Q5m9CfL_Iv0cVCQjgbUfPnIGuM";
   const SYSTEM_PROMPT = `You are Aria, the personal AI assistant for True Souls Media, a luxury cinematic studio in Kerala, India. 
 Services offered: Wedding Photography & Films, Event Management, Digital Marketing, and Podcast Production.
 Tone: Professional, welcoming, empathetic, and persuasive. Use emojis occasionally. Provide smooth, human-like responses to make customers feel valued.
