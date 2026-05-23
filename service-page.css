@@ -385,59 +385,6 @@
 .sp-term-item p { font-size: 0.9rem; margin: 0; color: #d1d5db; }
 .sp-term-item strong { display: block; color: #f4f4f5; font-size: 0.85rem; margin-bottom: 0.2rem; }
 
-/* ── Interactive Pricing Tabs ── */
-.sp-tabs-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3.5rem;
-}
-
-.sp-tabs-wrapper {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 0.35rem;
-    border-radius: 100px;
-    display: inline-flex;
-    gap: 0.25rem;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.sp-tab-btn {
-    background: transparent;
-    border: 1px solid transparent;
-    padding: 0.65rem 1.75rem;
-    border-radius: 100px;
-    color: #a1a1aa;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.sp-tab-btn:hover {
-    color: #f4f4f5;
-}
-
-.sp-tab-btn.active {
-    background: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.08);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 12px rgba(168, 85, 247, 0.15);
-}
-
-.sp-tab-pane {
-    display: none;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.45s ease, transform 0.45s ease;
-}
-
-.sp-tab-pane.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* ── 4-Column Responsive Grid ── */
 .sp-pricing-grid {
