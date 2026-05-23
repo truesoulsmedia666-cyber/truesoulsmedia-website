@@ -249,4 +249,27 @@ document.addEventListener('DOMContentLoaded', () => {
             animate();
         }
 
+        // 6. Pricing Tab Switcher
+        const tabButtons = document.querySelectorAll('.sp-tab-btn');
+        const tabPanes = document.querySelectorAll('.sp-tab-pane');
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+
+                // Set active button
+                tabButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Show active pane
+                tabPanes.forEach(pane => {
+                    if (pane.id === targetTab) {
+                        pane.classList.add('active');
+                    } else {
+                        pane.classList.remove('active');
+                    }
+                });
+            });
+        });
+
     });

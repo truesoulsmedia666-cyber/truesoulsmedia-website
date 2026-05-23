@@ -21,9 +21,10 @@
 - *Note: Outstation travel is billed separately for all packages.*
 
 ### Digital Marketing (`digital-marketing.html`)
-- **Starter**: ₹12,000 / month (10 Posts, 1 Platform)
-- **Growth**: ₹25,000 / month (12 Posts + 2 Reels, 2 Platforms)
-- **Enterprise**: ₹60,000 / month (20 Posts + 8 Reels, 4 Platforms)
+- **Starter**: ₹6,000 / month (12 Posts, 2 Platforms, GBP Setup)
+- **Growth**: ₹15,000 / month (20 Posts + 4 Reels, 3 Platforms, Google Ads, Blog Setup)
+- **Business**: ₹28,000 / month (30 Posts + 8 Reels, All Platforms, Ads, Blog, Newsletter)
+- **Corporate**: ₹60,000+ / month (Full team, Unlimited content, Ads, PR, Influencers)
 
 ### Podcast Production (`podcast.html`)
 - **Starter**: ₹18,000 / month (4 Episodes)
