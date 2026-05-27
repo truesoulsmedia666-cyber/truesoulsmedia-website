@@ -241,10 +241,42 @@ Lead Generation: If a user seems interested in our services, politely offer our 
       // Save AI response to history
       chatHistory.push({ role: "model", parts: [{ text: aiText }] });
 
-      // Basic formatting to convert markdown to HTML
-      let formattedText = aiText
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\n/g, '<br>');
+      // Convert markdown links and plain URLs to clickable HTML links safely
+      let links = [];
+      let formattedText = aiText;
+      
+      // 1. Extract markdown links [text](url)
+      formattedText = formattedText.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (match, text, url) => {
+        const placeholder = `__MD_LINK_${links.length}__`;
+        links.push(`<a href="${url}" target="_blank" style="color:#d4af37;text-decoration:underline;">${text}</a>`);
+        return placeholder;
+      });
+      
+      // 2. Extract plain URLs (http:// or https://)
+      formattedText = formattedText.replace(/(https?:\/\/[^\s<]+)/g, (match) => {
+        let cleanUrl = match;
+        let suffix = "";
+        const trailingPunct = /[.,!?;:]+$/;
+        if (trailingPunct.test(cleanUrl)) {
+          const matchPunct = cleanUrl.match(trailingPunct);
+          suffix = matchPunct[0];
+          cleanUrl = cleanUrl.slice(0, -suffix.length);
+        }
+        const placeholder = `__MD_LINK_${links.length}__`;
+        links.push(`<a href="${cleanUrl}" target="_blank" style="color:#d4af37;text-decoration:underline;">${cleanUrl}</a>`);
+        return placeholder + suffix;
+      });
+      
+      // 3. Restore all links
+      links.forEach((linkHtml, index) => {
+        formattedText = formattedText.replace(`__MD_LINK_${index}__`, linkHtml);
+      });
+
+      // 4. Convert double asterisks to strong tags
+      formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+      // 5. Convert newlines to break tags
+      formattedText = formattedText.replace(/\n/g, '<br>');
 
       return formattedText;
     } catch (err) {
