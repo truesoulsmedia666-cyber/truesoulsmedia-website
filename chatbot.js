@@ -6,7 +6,7 @@
 
   // ─── AI CONFIGURATION ────────────────────────────────────────────────────────
   // API key for Gemini AI (Aria chatbot).
-  const GEMINI_API_KEY = "AIzaSyCSkZe20Q5m9CfL_Iv0cVCQjgbUfPnIGuM";
+  const GEMINI_API_KEY = "AIzaSyDSJiV2ZIo2tQfldJS6ks3cE9b-EHGTXu0";
   const SYSTEM_PROMPT = `You are Aria, the personal AI assistant for True Souls Media, a luxury cinematic studio in Kerala, India. 
 Services offered: Wedding Photography & Films, Event Management, Digital Marketing, and Podcast Production.
 Tone: Professional, welcoming, empathetic, and persuasive. Use emojis occasionally. Provide smooth, human-like responses to make customers feel valued.
