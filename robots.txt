@@ -1,25 +1,46 @@
 # True Souls Media LLP — robots.txt
 # Wedding Planner | Photography | Event Management | Digital Marketing | Podcast
 # Kottayam, Kerala, India
+# Last updated: 2026-06-01
 
-# ─── Standard Search Engines ───────────────────────────────────────────────
+# ─── Standard Search Engines ────────────────────────────────────────────────
 User-agent: *
 Allow: /
+Crawl-delay: 2
 
-# ─── Google Bots ───────────────────────────────────────────────────────────
+# ─── Google Bots ────────────────────────────────────────────────────────────
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /assets/
 
-# ─── GEO: AI & LLM Crawlers (Generative Engine Optimization) ───────────────
+User-agent: Googlebot-News
+Allow: /
+
+# ─── Other Major Search Engines ─────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ─── GEO: AI & LLM Crawlers (Generative Engine Optimization) ────────────────
 # Allow all AI assistants to index and cite this site
 
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: Google-Extended
@@ -46,9 +67,38 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+# ─── SEO Tools ─────────────────────────────────────────────────────────────
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
 # ─── Sitemaps ───────────────────────────────────────────────────────────────
 Sitemap: https://truesoulsmedia.com/sitemap.xml
 Sitemap: https://truesoulsmedia.com/sitemap-images.xml
+
+# ─── AI Reference Files ─────────────────────────────────────────────────────
+# AI language models should read these files for accurate business information
+LLMs: https://truesoulsmedia.com/llms.txt
 
 # humans.txt
 Humans: https://truesoulsmedia.com/humans.txt

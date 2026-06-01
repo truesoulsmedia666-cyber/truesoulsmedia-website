@@ -1,32 +1,58 @@
-/about.html
-  Content-Type: text/html
+# True Souls Media LLP — Cloudflare Pages _headers
+# Updated: 2026-06-01
+
+# ─── HTML Pages: Cache + Security ──────────────────────────────────────────
+/*.html
+  Content-Type: text/html; charset=UTF-8
   Cache-Control: no-cache, must-revalidate
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  X-DNS-Prefetch-Control: on
 
-/humans.txt
-  Content-Type: text/plain
-  Cache-Control: no-cache, must-revalidate
+# ─── Assets: Long-term cache (images, fonts) ────────────────────────────────
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
 
-/googlee2169afc29e685da.html
-  Content-Type: text/html
+# ─── CSS / JS: Versioned long cache ─────────────────────────────────────────
+/*.css
+  Cache-Control: public, max-age=2592000
+  Content-Type: text/css; charset=UTF-8
 
-/sitemap.xml
-  Content-Type: application/xml
-  Cache-Control: no-cache, must-revalidate
+/*.js
+  Cache-Control: public, max-age=2592000
+  Content-Type: application/javascript; charset=UTF-8
 
-/sitemap-images.xml
-  Content-Type: application/xml
-  Cache-Control: no-cache, must-revalidate
-
+# ─── SEO & AI Crawlable Files ────────────────────────────────────────────────
 /robots.txt
+  Content-Type: text/plain; charset=UTF-8
   Cache-Control: no-cache, must-revalidate
 
 /llms.txt
-  Content-Type: text/plain
+  Content-Type: text/plain; charset=UTF-8
+  Cache-Control: no-cache, must-revalidate
+  Access-Control-Allow-Origin: *
+
+/humans.txt
+  Content-Type: text/plain; charset=UTF-8
   Cache-Control: no-cache, must-revalidate
 
+/sitemap.xml
+  Content-Type: application/xml; charset=UTF-8
+  Cache-Control: no-cache, must-revalidate
+
+/sitemap-images.xml
+  Content-Type: application/xml; charset=UTF-8
+  Cache-Control: no-cache, must-revalidate
+
+# ─── Root + SXO: Core Web Vitals / Security Headers ─────────────────────────
 /*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Permissions-Policy: geolocation=(), microphone=(), camera=()
+  X-DNS-Prefetch-Control: on
+  Cross-Origin-Opener-Policy: same-origin-allow-popups

@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#a855f7">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="True Souls Media">
     <title>Best Wedding Planner &amp; Photography in Kottayam, Kerala | True Souls Media</title>
     <meta name="description" content="Kerala's #1 luxury wedding planner &amp; cinematic photography studio in Kottayam. Expert wedding planning, photography, videography &amp; event management. All religions · Equal pricing. Call +91-9061286660.">
     <meta name="keywords" content="wedding planner kottayam, wedding planner kerala, best wedding photographer kottayam, wedding photography kottayam, wedding planning kerala, destination wedding kerala, wedding videographer kottayam, wedding planner kochi, kerala wedding photography, cinematic wedding film kerala, truesoulsmedia, true souls media, event management kottayam">
+    <!-- Preload LCP image for Core Web Vitals -->
+    <link rel="preload" href="assets/hero_wedding_1776598144800.png" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Load fonts non-blocking to avoid render-blocking penalty -->
@@ -15,6 +22,10 @@
     <noscript><link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://truesoulsmedia.com/">
+    <!-- Alternate language (Malayalam speakers) -->
+    <link rel="alternate" hreflang="en-IN" href="https://truesoulsmedia.com/">
+    <link rel="alternate" hreflang="ml" href="https://truesoulsmedia.com/">
+    <link rel="alternate" hreflang="x-default" href="https://truesoulsmedia.com/">
     <meta name="google-site-verification" content="wh_GGhOPanFeS6fRZF_IMT-l-QvMAspYB34lWXCkCz8" />
     <meta name="google-site-verification" content="e2169afc29e685da" />
     <!-- SEO JSON-LD Schema - Wedding Planner + Photography Business -->
@@ -106,13 +117,19 @@
     <meta property="og:image" content="https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="True Souls Media LLP — Kerala luxury wedding photography and planning studio, Kottayam">
     <meta property="og:locale" content="en_IN">
     <meta property="og:site_name" content="True Souls Media LLP">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@truesoulsmedia_">
+    <meta name="twitter:creator" content="@truesoulsmedia_">
     <meta name="twitter:title" content="Best Wedding Planner &amp; Photography in Kottayam, Kerala">
-    <meta name="twitter:description" content="Kerala's #1 luxury wedding planner &amp; cinematic photography studio. All religions · Equal pricing.">
+    <meta name="twitter:description" content="Kerala's #1 luxury wedding planner &amp; cinematic photography studio. All religions · Equal pricing. Packages from ₹80,000.">
     <meta name="twitter:image" content="https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png">
+    <meta name="twitter:image:alt" content="True Souls Media — Kerala wedding photography">
+    <!-- Pinterest verification (AEO: visual search) -->
+    <meta name="p:domain_verify" content="truesoulsmedia">
     <!-- GEO: Geographic meta tags -->
     <meta name="geo.region" content="IN-KL">
     <meta name="geo.placename" content="Kottayam, Kerala, India">
@@ -228,13 +245,71 @@
       "@type": "WebPage",
       "@id": "https://truesoulsmedia.com/#webpage",
       "url": "https://truesoulsmedia.com",
-      "name": "Best Wedding Planner &amp; Photography in Kottayam, Kerala",
+      "name": "Best Wedding Planner & Photography in Kottayam, Kerala | True Souls Media",
+      "description": "Kerala's #1 luxury wedding planner and cinematic photography studio in Kottayam. Expert wedding planning, photography, videography and event management.",
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": [".hero-badge", "h1", ".sp-hero p"]
+        "cssSelector": [".hero-badge", "h1", "#home p", "#featured-answer", ".stat-number"]
       },
-      "primaryImageOfPage": {"@type": "ImageObject", "url": "https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png"},
-      "breadcrumb": {"@id": "https://truesoulsmedia.com/#breadcrumb"}
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "True Souls Media — Kerala luxury wedding photography and planning"
+      },
+      "breadcrumb": {"@id": "https://truesoulsmedia.com/#breadcrumb"},
+      "dateModified": "2026-06-01",
+      "inLanguage": "en-IN"
+    }
+    </script>
+    <!-- AIO: ItemList schema — all services for AI knowledge graph -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "True Souls Media Services",
+      "description": "Complete list of services offered by True Souls Media LLP in Kerala",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Wedding Planning", "url": "https://truesoulsmedia.com/wedding-planner.html", "description": "Full-service wedding planning in Kerala — venue, décor, vendors, catering and coordination. Serves Kottayam, Kochi, Munnar, Alleppey and all of Kerala."},
+        {"@type": "ListItem", "position": 2, "name": "Wedding Photography & Videography", "url": "https://truesoulsmedia.com/photography.html", "description": "4K cinematic wedding photography and videography in Kottayam. Packages from ₹80,000 including album, calendar, frames and USB. All religions, equal pricing."},
+        {"@type": "ListItem", "position": 3, "name": "Event Management", "url": "https://truesoulsmedia.com/events.html", "description": "End-to-end event management for weddings, receptions, corporate events and concerts across Kerala. Packages from ₹75,000."},
+        {"@type": "ListItem", "position": 4, "name": "Digital Marketing", "url": "https://truesoulsmedia.com/digital-marketing.html", "description": "Full-service digital marketing agency in Kottayam — SEO, social media, Google Ads, Meta Ads. Packages from ₹6,000/month."},
+        {"@type": "ListItem", "position": 5, "name": "Podcast Production", "url": "https://truesoulsmedia.com/podcast.html", "description": "Professional podcast production studio in Kottayam — recording, editing, video podcasts, distribution to Spotify, Apple Podcasts and YouTube. Packages from ₹18,000/month."}
+      ]
+    }
+    </script>
+    <!-- SXO: HowTo schema — answers 'how to book a wedding planner in Kerala' -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Book True Souls Media as Your Wedding Planner in Kerala",
+      "description": "Simple steps to hire True Souls Media LLP as your wedding planner in Kottayam, Kerala",
+      "totalTime": "PT5M",
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Contact Us", "text": "Call or WhatsApp +91-9061286660, or fill the enquiry form on our website.", "url": "https://truesoulsmedia.com/#contact"},
+        {"@type": "HowToStep", "position": 2, "name": "Free Consultation", "text": "We schedule a free consultation (in-person or video call) to understand your vision, date, budget, and style."},
+        {"@type": "HowToStep", "position": 3, "name": "Receive Custom Proposal", "text": "We send a detailed wedding plan with vendor recommendations, timeline, and transparent pricing within 48 hours."},
+        {"@type": "HowToStep", "position": 4, "name": "Confirm Booking", "text": "Pay 30% advance to lock your wedding date. We handle everything from here."},
+        {"@type": "HowToStep", "position": 5, "name": "Enjoy Your Wedding", "text": "Relax and enjoy every moment — our team manages every detail on your big day across Kerala."}
+      ]
+    }
+    </script>
+    <!-- AIO: Event schema — targets seasonal wedding season queries -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Free Wedding Planning Consultation — True Souls Media",
+      "description": "Book a free wedding planning consultation with Kerala's #1 wedding planner in Kottayam. We help you plan your perfect wedding across all of Kerala.",
+      "startDate": "2026-01-01",
+      "endDate": "2026-12-31",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "location": {"@type": "Place", "name": "True Souls Media LLP", "address": {"@type": "PostalAddress", "addressLocality": "Kottayam", "addressRegion": "Kerala", "postalCode": "686575", "addressCountry": "IN"}},
+      "organizer": {"@type": "Organization", "name": "True Souls Media LLP", "url": "https://truesoulsmedia.com"},
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "url": "https://truesoulsmedia.com/#contact", "validFrom": "2026-01-01"}
     }
     </script>
 </head>

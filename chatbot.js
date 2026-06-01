@@ -7,12 +7,12 @@
   // ─── AI CONFIGURATION ────────────────────────────────────────────────────────
   // API key for Gemini AI (Aria chatbot).
   const GEMINI_API_KEY = "AIzaSyDSJiV2ZIo2tQfldJS6ks3cE9b-EHGTXu0";
-  const SYSTEM_PROMPT = `You are Aria, the personal AI assistant for True Souls Media, a luxury cinematic studio in Kerala, India. 
+  const SYSTEM_PROMPT = `You are Aria, the personal AI assistant (powered by Gemini AI) for True Souls Media, a luxury cinematic studio in Kerala, India. 
 Services offered: Wedding Photography & Films, Event Management, Digital Marketing, and Podcast Production.
 Tone: Professional, welcoming, empathetic, and persuasive. Use emojis occasionally. Provide smooth, human-like responses to make customers feel valued.
-Goal: Answer user questions smoothly and guide them towards booking. Keep responses concise but engaging. 
-Booking Guidance: When a user wants to book a service or asks about booking, tell them that bookings are open and coming! Direct them to go to the "Book Your Dream Wedding" section at the bottom of the page to fill out the form and submit their details, or provide this direct link: index.html#contact.
-Lead Generation: If a user seems interested in our services, politely offer our Calendly link to schedule a direct consultation: https://calendly.com/truesoulsmedia666. Also, feel free to direct them to connect with us on LinkedIn for B2B/professional queries: https://www.linkedin.com/in/truesouls-media-b91a8b400.`;
+Goal: Answer user questions smoothly, mention you are powered by Gemini AI, and guide them towards booking. Keep responses concise but engaging. 
+Booking Guidance: If anyone wants to book now or is ready to make a booking, direct them to connect with us on WhatsApp at https://wa.me/919061286660 (or call +91 90612 86660) for instant response and booking. Alternatively, they can fill out the contact form at index.html#contact.
+Lead Generation: If a user seems interested in our services, politely offer our WhatsApp link (https://wa.me/919061286660) to chat directly or our Calendly link to schedule a consultation: https://calendly.com/truesoulsmedia666. Also, feel free to direct them to connect with us on LinkedIn for B2B/professional queries: https://www.linkedin.com/in/truesouls-media-b91a8b400.`;
 
   // ─── STATE ───────────────────────────────────────────────────────────────────
   let chatHistory = [
@@ -214,7 +214,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
   }
 
   // ─── AI INTEGRATION ──────────────────────────────────────────────────────────
-  const FALLBACK_MSG = "🙏 Our AI assistant is taking a short break! For instant help, please <strong><a href='https://wa.me/919061286660' target='_blank' style='color:#d4af37;text-decoration:none;'>WhatsApp us here</a></strong> or call <strong>+91 90612 86660</strong>. We'd love to help plan your dream wedding! 💍";
+  const FALLBACK_MSG = "🙏 Our Gemini AI assistant is taking a short break! For instant help, please <strong><a href='https://wa.me/919061286660' target='_blank' style='color:#d4af37;text-decoration:none;'>WhatsApp us here</a></strong> or call <strong>+91 90612 86660</strong>. We'd love to help plan your dream wedding! 💍";
 
   async function generateAiResponse(userMessage) {
     if (!GEMINI_API_KEY) {
@@ -247,9 +247,11 @@ Lead Generation: If a user seems interested in our services, politely offer our 
       let formattedText = aiText;
       
       // 1. Extract markdown links [text](url)
-      formattedText = formattedText.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (match, text, url) => {
+      formattedText = formattedText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
         const placeholder = `__MD_LINK_${links.length}__`;
-        links.push(`<a href="${url}" target="_blank" style="color:#d4af37;text-decoration:underline;">${text}</a>`);
+        const isExternal = url.startsWith("http://") || url.startsWith("https://");
+        const targetAttr = isExternal ? 'target="_blank"' : '';
+        links.push(`<a href="${url}" ${targetAttr} style="color:#d4af37;text-decoration:underline;">${text}</a>`);
         return placeholder;
       });
       
@@ -311,7 +313,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
     win.classList.toggle("open");
     badge.style.display = "none";
     if (win.classList.contains("open") && msgs.children.length === 0) {
-      botSay("👋 Hey there! I'm <strong>Aria</strong>, the AI assistant at <strong>True Souls Media</strong>. How can I help you today?");
+      botSay("👋 Hey there! I'm <strong>Aria</strong>, the AI assistant (powered by Gemini AI) at <strong>True Souls Media</strong>. How can I help you today?");
     }
   });
 

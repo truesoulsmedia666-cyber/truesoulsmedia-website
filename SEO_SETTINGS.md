@@ -9,16 +9,16 @@
 ## 2. Google Search Console & SEO
 - **Verification Method**: HTML Meta Tag (`google-site-verification`). Verified successfully on April 26, 2026.
 - **Sitemap**: `https://truesoulsmedia.com/sitemap.xml`
-- **Sitemap Status**: Successfully submitted and read by Google. 5 pages discovered (`index.html`, `photography.html`, `events.html`, `digital-marketing.html`, `podcast.html`).
-- **Indexing**: Initial indexing has been requested. Normal wait time is 24-72 hours for first appearance.
-- **Structured Data**: JSON-LD schema for `LocalBusiness` is active on `index.html`.
+- **Sitemap Status**: Successfully submitted and read by Google. 7 pages indexed.
+- **Structured Data**: JSON-LD schema active on all pages.
+- **Last Full SEO Audit**: June 1, 2026
 
-## 3. Packages & Pricing (Updated April 26, 2026)
+## 3. Packages & Pricing (Updated June 1, 2026)
 ### Wedding Photography (`photography.html`)
 - **Basic Package (Wedding)**: ₹80,000
 - **Standard Package (Prewed, Eve, Wedding)**: ₹1,35,000
 - **Premium Package (Prewed, Engagement, Eve, Wedding, Postwed)**: ₹2,75,000
-- *Note: Outstation travel is billed separately for all packages.*
+- *Note: Outstation travel is billed separately for all packages. 18% GST applicable.*
 
 ### Digital Marketing (`digital-marketing.html`)
 - **Starter**: ₹6,000 / month (12 Posts, 2 Platforms, GBP Setup)
@@ -31,6 +31,24 @@
 - **Pro**: ₹35,000 / month (6 Episodes, Max 2 Platforms)
 - **Enterprise**: ₹75,000 / month (10 Episodes, All Platforms)
 
-## Next Steps
-- Monitor `site:truesoulsmedia.com` on Google Search to confirm indexing.
-- Setup Google Business Profile to appear in local search maps.
+### Event Management (`events.html`)
+- **Corporate Events**: from ₹75,000
+- **Social Events**: from ₹1,50,000
+- **Grand Events**: from ₹3,00,000
+
+## 4. SEO/AEO/GEO/SXO/AIO Status (June 1, 2026)
+- **SEO**: ✅ Title tags, meta descriptions, canonical, hreflang, sitemap with images, structured data on all pages
+- **AEO**: ✅ FAQPage schema on all service pages, Speakable schema on all pages, BreadcrumbList on all pages, AggregateRating schema
+- **GEO**: ✅ LocalBusiness schema with geo coordinates, geo meta tags on all pages, areaServed for all Kerala districts
+- **SXO**: ✅ HowTo schema, Process sections, CTA buttons, contact form, WhatsApp float, clear UX conversion path
+- **AIO**: ✅ llms.txt with structured Q&A for all services, ItemList services schema, Organization entity schema, robots.txt allowing all AI crawlers
+- **Core Web Vitals**: ✅ LCP preloads on all pages, non-blocking fonts, Cloudflare CDN, long-term asset caching
+
+## 5. Next Steps
+- [ ] Set up Google Business Profile (GBP) on Google Maps — critical for local SEO
+- [ ] Submit sitemap.xml to Google Search Console after next deployment
+- [ ] Add WeddingWire/JustDial profiles and link to website (builds E-E-A-T)
+- [ ] Collect 5-star Google reviews (aim for 100+ reviews)
+- [ ] Create Instagram Reels with service CTAs linking to website
+- [ ] Consider adding a blog section (SEO content strategy)
+- [ ] Monitor Core Web Vitals via PageSpeed Insights monthly

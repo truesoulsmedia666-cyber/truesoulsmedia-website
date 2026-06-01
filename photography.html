@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#a855f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="True Souls Media">
     <title>Best Wedding Photography &amp; Videography in Kottayam, Kerala | True Souls Media</title>
     <meta name="description" content="Award-winning cinematic wedding photography &amp; videography in Kottayam by True Souls Media. 4K films, drone shots, luxury albums. All religions · Equal pricing. Packages from ₹80,000.">
     <meta name="keywords" content="wedding photography kottayam, wedding photographer kottayam, best wedding photographer kerala, cinematic wedding film kerala, wedding videographer kottayam, drone wedding photography kerala, pre-wedding shoot kottayam, true souls media wedding, wedding photography packages kerala, luxury wedding photography kottayam">
+    <!-- Preload LCP image -->
+    <link rel="preload" href="assets/hero_wedding_1776598144800.png" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -16,6 +21,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="service-page.css">
     <link rel="canonical" href="https://truesoulsmedia.com/photography.html">
+    <link rel="alternate" hreflang="en-IN" href="https://truesoulsmedia.com/photography.html">
+    <link rel="alternate" hreflang="x-default" href="https://truesoulsmedia.com/photography.html">
     <!-- AEO: FAQPage schema — targets "who is best wedding photographer in Kerala" -->
     <script type="application/ld+json">
     {
@@ -60,13 +67,21 @@
         }
       ]
     }
-    </script>
-    <!-- SEO: OG meta -->
+    </script>    <!-- SEO: OG meta -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://truesoulsmedia.com/photography.html">
-    <meta property="og:title" content="Best Wedding Photographer in Kottayam & Kerala | True Souls Media">
-    <meta property="og:description" content="4K cinematic wedding photography & videography in Kottayam. Drone shots, candid, luxury albums. All religions. Packages from ₹80,000.">
+    <meta property="og:title" content="Best Wedding Photographer in Kottayam &amp; Kerala | True Souls Media">
+    <meta property="og:description" content="4K cinematic wedding photography &amp; videography in Kottayam. Drone shots, candid, luxury albums. All religions. Packages from ₹80,000.">
     <meta property="og:image" content="https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png">
+    <meta property="og:image:alt" content="True Souls Media — Best Wedding Photography in Kottayam, Kerala">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="True Souls Media LLP">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@truesoulsmedia_">
+    <meta name="twitter:title" content="Best Wedding Photographer in Kottayam &amp; Kerala">
+    <meta name="twitter:description" content="4K cinematic wedding photography &amp; videography. Drone shots, luxury albums. Packages from ₹80,000.">
+    <meta name="twitter:image" content="https://truesoulsmedia.com/assets/hero_wedding_1776598144800.png">
     <meta name="geo.region" content="IN-KL">
     <meta name="geo.placename" content="Kottayam, Kerala, India">
     <meta name="author" content="True Souls Media LLP">
@@ -80,6 +95,39 @@
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://truesoulsmedia.com/"},
         {"@type": "ListItem", "position": 2, "name": "Photography", "item": "https://truesoulsmedia.com/photography.html"}
       ]
+    }
+    </script>
+    <!-- AEO: Speakable + PriceSpecification schema for package rich results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://truesoulsmedia.com/photography.html#webpage",
+      "url": "https://truesoulsmedia.com/photography.html",
+      "name": "Best Wedding Photography &amp; Videography in Kottayam, Kerala | True Souls Media",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-badge", "h1", ".sp-hero p"]
+      },
+      "dateModified": "2026-06-01",
+      "inLanguage": "en-IN",
+      "breadcrumb": {"@id": "https://truesoulsmedia.com/photography.html#breadcrumb"}
+    }
+    </script>
+    <!-- AIO: Product schema for packages (enables rich results with pricing) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Wedding Photography &amp; Videography Package — True Souls Media",
+      "description": "Professional 4K cinematic wedding photography and videography in Kottayam, Kerala. Packages include album, calendar, frames, and USB delivery.",
+      "brand": {"@type": "Brand", "name": "True Souls Media LLP"},
+      "offers": [
+        {"@type": "Offer", "name": "Basic Package", "price": "80000", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "description": "1 Photographer + 1 Videographer, 6-8 hours, 200+ edited photos, 3-min film, album, calendar, frames, USB."},
+        {"@type": "Offer", "name": "Standard Package", "price": "135000", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "description": "2 Photographers + 2 Videographers, full day, 400+ photos, pre-wedding shoot, drone, 5-min film, same-day edit."},
+        {"@type": "Offer", "name": "Premium Package", "price": "275000", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "description": "3 Photographers + 2 Videographers + Drone team, multi-day, unlimited photos, 8-min film, 2 albums, 4 frames."}
+      ],
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5"}
     }
     </script>
 </head>
