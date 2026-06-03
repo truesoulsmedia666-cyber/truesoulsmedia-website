@@ -1,14 +1,14 @@
-# True Souls Media LLP — robots.txt
+# True Souls Media LLP - robots.txt
 # Wedding Planner | Photography | Event Management | Digital Marketing | Podcast
 # Kottayam, Kerala, India
 # Last updated: 2026-06-03
 
-# ─── Standard Search Engines ────────────────────────────────────────────────
+# === Standard Search Engines ===
 User-agent: *
 Allow: /
 Crawl-delay: 2
 
-# ─── Google Bots ────────────────────────────────────────────────────────────
+# === Google Bots ===
 User-agent: Googlebot
 Allow: /
 
@@ -18,7 +18,7 @@ Allow: /assets/
 User-agent: Googlebot-News
 Allow: /
 
-# ─── Other Major Search Engines ─────────────────────────────────────────────
+# === Other Major Search Engines ===
 User-agent: Bingbot
 Allow: /
 
@@ -31,7 +31,7 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# ─── GEO: AI & LLM Crawlers (Generative Engine Optimization) ────────────────
+# === GEO: AI & LLM Crawlers ===
 # Allow all AI assistants to index and cite this site
 
 User-agent: GPTBot
@@ -82,8 +82,8 @@ Allow: /
 User-agent: PetalBot
 Allow: /
 
-# ─── SEO Tools ─────────────────────────────────────────────────────────────
-User-agent: Screaming Frog SEO Spider
+# === SEO Tools ===
+User-agent: ScreamingFrogSEOSpider
 Allow: /
 
 User-agent: SemrushBot
@@ -92,6 +92,6 @@ Allow: /
 User-agent: AhrefsBot
 Allow: /
 
-# ─── Sitemaps ───────────────────────────────────────────────────────────────
+# === Sitemaps ===
 Sitemap: https://www.truesoulsmedia.com/sitemap.xml
 Sitemap: https://www.truesoulsmedia.com/sitemap-images.xml

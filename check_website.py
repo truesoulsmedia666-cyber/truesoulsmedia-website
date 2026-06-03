@@ -17,7 +17,8 @@ HTML_FILES = [
     "photography.html",
     "events.html",
     "digital-marketing.html",
-    "podcast.html"
+    "podcast.html",
+    "404.html"
 ]
 
 report = []
