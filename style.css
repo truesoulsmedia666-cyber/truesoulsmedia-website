@@ -5,6 +5,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* Force font-display:swap on all third-party web fonts (boxicons, Inter) to fix PageSpeed font-display warning */
+@font-face {
+    font-family: 'boxicons';
+    src: url('https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2') format('woff2'),
+         url('https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff') format('woff');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

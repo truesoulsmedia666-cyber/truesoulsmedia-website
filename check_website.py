@@ -3,7 +3,7 @@ import re
 import socket
 import ssl
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 WEBSITE_DIR = "J:/Website"
@@ -122,7 +122,7 @@ try:
             # Format: 'May 24 23:59:59 2026 GMT'
             expire_str = cert['notAfter']
             expire_date = datetime.strptime(expire_str, '%b %d %H:%M:%S %Y %Z')
-            days_left = (expire_date - datetime.utcnow()).days
+            days_left = (expire_date - datetime.now(timezone.utc).replace(tzinfo=None)).days
             
             if days_left < 15:
                 report.append(f"- ⚠️ **WARNING**: SSL Certificate expires in {days_left} days! (Expiry: {expire_str})")

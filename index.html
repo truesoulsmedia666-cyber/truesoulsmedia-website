@@ -18,9 +18,38 @@
     <!-- Load fonts non-blocking to avoid render-blocking penalty -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <!-- Preload boxicons font to avoid font-display flash -->
+    <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="style.css">
+    <!-- Critical CSS inlined to prevent render-blocking -->
+    <style>
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{scroll-behavior:smooth}
+      body{font-family:'Inter',system-ui,sans-serif;background:#000;color:#9ca3af;line-height:1.6;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+      .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:70px;display:flex;align-items:center;background:rgba(0,0,0,0.7);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.05)}
+      .nav-container{max-width:1280px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+      .logo{text-decoration:none;display:flex;align-items:center;gap:.6rem}
+      .logo-text{font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+      .nav-logo{width:36px;height:36px;border-radius:8px;object-fit:cover}
+      main{position:relative;z-index:10}
+      .gradient-text{background:linear-gradient(135deg,#fff 0%,#e8d0ff 40%,#a5aeff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+      h1{font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:#fff;padding-bottom:.15em}
+      .section{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:8rem 2rem;position:relative}
+      .scroll-reveal{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+      .scroll-reveal.active{opacity:1;transform:translateY(0)}
+      .ambient-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+      #bg-canvas{position:fixed;top:0;left:0;width:100vw;height:100dvh;z-index:1;pointer-events:none}
+      #bg-canvas-container{position:fixed;inset:0;z-index:2;pointer-events:none}
+      .bg-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease}
+      .bg-layer.active{opacity:.22}
+      .image-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.65) 100%)}
+      .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#a855f7 0%,#6366f1 100%);color:#fff;border:none;padding:.9rem 2.2rem;border-radius:999px;font-size:.95rem;font-weight:600;text-decoration:none;cursor:pointer;transition:all .4s cubic-bezier(.2,.8,.2,1)}
+      .whatsapp-float{position:fixed;bottom:2rem;right:2rem;z-index:9999;width:56px;height:56px;background:linear-gradient(135deg,#25d366,#128c7e);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6rem;text-decoration:none}
+    </style>
+    <!-- Full CSS loaded asynchronously (non-render-blocking) -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
     <link rel="canonical" href="https://www.truesoulsmedia.com/">
     <!-- Alternate language tags -->
     <link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/">
@@ -326,17 +355,17 @@
     <div class="glow-orb orb-2"></div>
     <div class="glow-orb orb-3"></div>
     <div class="image-overlay"></div>
-    <img src="assets/hero_wedding_1776598144800.png" class="bg-layer active" data-index="0" alt="Kerala luxury wedding photography" fetchpriority="high">
-    <img src="assets/portfolio_events_1776598196076.png" class="bg-layer" data-index="1" alt="Event management" loading="lazy">
-    <img src="assets/portfolio_digital_1776598215494.png" class="bg-layer" data-index="2" alt="Digital marketing" loading="lazy">
-    <img src="assets/portfolio_podcast_1776598232723.png" class="bg-layer" data-index="3" alt="Podcast production" loading="lazy">
+    <img src="assets/hero_wedding_1776598144800.png" class="bg-layer active" data-index="0" alt="Kerala luxury wedding photography" fetchpriority="high" width="1920" height="1080">
+    <img src="assets/portfolio_events_1776598196076.png" class="bg-layer" data-index="1" alt="Event management" loading="lazy" width="1920" height="1080">
+    <img src="assets/portfolio_digital_1776598215494.png" class="bg-layer" data-index="2" alt="Digital marketing" loading="lazy" width="1920" height="1080">
+    <img src="assets/portfolio_podcast_1776598232723.png" class="bg-layer" data-index="3" alt="Podcast production" loading="lazy" width="1920" height="1080">
 </div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
         <a href="#home" class="logo">
-            <img src="assets/logo.png" alt="Truesoulsmedia" class="nav-logo" onerror="this.style.display='none'">
+            <img src="assets/logo.png" alt="Truesoulsmedia" class="nav-logo" width="36" height="36" onerror="this.style.display='none'">
             <span class="logo-text">Truesoulsmedia</span>
         </a>
         <ul class="nav-links">
@@ -441,7 +470,7 @@
         </div>
         <div class="portfolio-grid scroll-reveal">
             <div class="portfolio-item">
-                <img src="assets/portfolio_wedding_1776598179199.png" alt="Wedding Photography" loading="lazy">
+                <img src="assets/portfolio_wedding_1776598179199.png" alt="Wedding Photography" loading="lazy" width="600" height="400">
                 <div class="portfolio-overlay">
                     <div>
                         <h3>Wedding Photography</h3>
@@ -451,7 +480,7 @@
                 <a href="photography.html" aria-label="Wedding Photography">View Wedding Photography</a>
             </div>
             <div class="portfolio-item">
-                <img src="assets/portfolio_events_1776598196076.png" alt="Event Management" loading="lazy">
+                <img src="assets/portfolio_events_1776598196076.png" alt="Event Management" loading="lazy" width="600" height="400">
                 <div class="portfolio-overlay">
                     <div>
                         <h3>Event Management</h3>
@@ -461,7 +490,7 @@
                 <a href="events.html" aria-label="Event Management">View Event Management</a>
             </div>
             <div class="portfolio-item">
-                <img src="assets/portfolio_digital_1776598215494.png" alt="Digital Marketing" loading="lazy">
+                <img src="assets/portfolio_digital_1776598215494.png" alt="Digital Marketing" loading="lazy" width="600" height="400">
                 <div class="portfolio-overlay">
                     <div>
                         <h3>Digital Marketing</h3>
@@ -471,7 +500,7 @@
                 <a href="digital-marketing.html" aria-label="Digital Marketing">View Digital Marketing</a>
             </div>
             <div class="portfolio-item">
-                <img src="assets/portfolio_podcast_1776598232723.png" alt="Podcast Production" loading="lazy">
+                <img src="assets/portfolio_podcast_1776598232723.png" alt="Podcast Production" loading="lazy" width="600" height="400">
                 <div class="portfolio-overlay">
                     <div>
                         <h3>Podcast Production</h3>
@@ -578,7 +607,7 @@
     <i class='bx bxl-whatsapp'></i>
 </a>
 
-<script src="script.js"></script>
-<script src="chatbot.js"></script>
+<script src="script.js" defer></script>
+<script src="chatbot.js" defer></script>
 </body>
 </html>
