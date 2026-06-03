@@ -457,22 +457,34 @@ p { line-height: 1.7; }
 }
 
 .portfolio-action {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 2;
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    color: #c084fc;
-    margin-top: 0.75rem;
-    transition: color 0.3s ease;
+    color: #cbd5e1;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    padding: 0.45rem 1.05rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .portfolio-item:hover .portfolio-action {
     color: #ffffff;
+    background: rgba(168, 85, 247, 0.35);
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.35);
 }
 
 .portfolio-action i {
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: transform 0.3s ease;
 }
 
