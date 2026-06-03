@@ -1,7 +1,7 @@
 # True Souls Media LLP — robots.txt
 # Wedding Planner | Photography | Event Management | Digital Marketing | Podcast
 # Kottayam, Kerala, India
-# Last updated: 2026-06-01
+# Last updated: 2026-06-03
 
 # ─── Standard Search Engines ────────────────────────────────────────────────
 User-agent: *
@@ -93,12 +93,5 @@ User-agent: AhrefsBot
 Allow: /
 
 # ─── Sitemaps ───────────────────────────────────────────────────────────────
-Sitemap: https://truesoulsmedia.com/sitemap.xml
-Sitemap: https://truesoulsmedia.com/sitemap-images.xml
-
-# ─── AI Reference Files ─────────────────────────────────────────────────────
-# AI language models should read these files for accurate business information
-LLMs: https://truesoulsmedia.com/llms.txt
-
-# humans.txt
-Humans: https://truesoulsmedia.com/humans.txt
+Sitemap: https://www.truesoulsmedia.com/sitemap.xml
+Sitemap: https://www.truesoulsmedia.com/sitemap-images.xml

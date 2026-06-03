@@ -454,6 +454,8 @@ p { line-height: 1.7; }
     inset: 0;
     z-index: 3;
     display: block;
+    text-indent: -9999px;
+    overflow: hidden;
 }
 
 /* ── Contact Form ── */

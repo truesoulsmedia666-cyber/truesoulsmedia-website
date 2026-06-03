@@ -1,9 +1,9 @@
-# True Souls Media LLP — llms.txt
-# This file is for AI language models (LLMs) and generative search engines.
-# It provides structured, citation-ready facts so AI tools like ChatGPT, Gemini,
-# Claude, Perplexity, Copilot, and Grok can accurately answer questions about this business.
-# Format inspired by the llms.txt standard (https://llmstxt.org)
-# Last updated: 2026-06-01
+# True Souls Media LLP
+
+> Kerala's #1 wedding planner and cinematic photography studio based in Kottayam. Legally registered LLP (LLPIN: ACX-5488). Founded 2022. Serving all 14 districts of Kerala for wedding planning, photography, event management, digital marketing, and podcast production.
+
+Website: https://www.truesoulsmedia.com
+Last updated: 2026-06-03
 
 
 ## Legal Entity & Registration
