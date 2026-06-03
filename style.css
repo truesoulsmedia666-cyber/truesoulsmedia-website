@@ -456,6 +456,30 @@ p { line-height: 1.7; }
     margin-top: 0.25rem;
 }
 
+.portfolio-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #c084fc;
+    margin-top: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-action {
+    color: #ffffff;
+}
+
+.portfolio-action i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-action i {
+    transform: translateX(4px);
+}
+
 .portfolio-item:hover .portfolio-overlay {
     background: linear-gradient(to top, rgba(88,28,220,0.7) 0%, rgba(0,0,0,0.5) 55%, transparent 100%);
 }
@@ -465,6 +489,9 @@ p { line-height: 1.7; }
     inset: 0;
     z-index: 3;
     display: block;
+    font-size: 0;
+    color: transparent;
+    line-height: 0;
     text-indent: -9999px;
     overflow: hidden;
 }
