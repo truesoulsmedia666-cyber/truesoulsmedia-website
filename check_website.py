@@ -45,15 +45,22 @@ def verify_local_reference(source_file, ref_path):
     if not clean_path:
         target_file = os.path.join(WEBSITE_DIR, source_file)
     else:
-        target_file = os.path.normpath(os.path.join(WEBSITE_DIR, clean_path))
+        # Strip leading slash to prevent normpath from treating it as root on Windows
+        clean_path_rel = clean_path.lstrip('/')
+        target_file = os.path.normpath(os.path.join(WEBSITE_DIR, clean_path_rel))
         
-    if not os.path.exists(target_file):
+    actual_target = target_file
+    if not os.path.exists(actual_target) and not os.path.isdir(actual_target):
+        if os.path.exists(target_file + ".html"):
+            actual_target = target_file + ".html"
+            
+    if not os.path.exists(actual_target):
         local_errors.append(f"- **{source_file}**: Broken reference `{ref_path}` (File not found at `{os.path.relpath(target_file, WEBSITE_DIR)}`)")
         return False
         
     # Check anchor fragment
-    if fragment and target_file.endswith(".html"):
-        with open(target_file, "r", encoding="utf-8") as f:
+    if fragment and actual_target.endswith(".html"):
+        with open(actual_target, "r", encoding="utf-8") as f:
             content = f.read()
         id_pattern = rf'id=["\']{re.escape(fragment)}["\']'
         name_pattern = rf'name=["\']{re.escape(fragment)}["\']'
