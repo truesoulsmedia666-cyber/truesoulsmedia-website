@@ -218,6 +218,79 @@ body {
 
 .nav-links a:hover { color: var(--text-white); }
 
+/* ── Nav Dropdown ── */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.nav-dropdown > a .bx-chevron-down {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover > a .bx-chevron-down {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 220px;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 0.75rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.2,0.8,0.2,1);
+    z-index: 1001;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    list-style: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu li a:hover {
+    background: rgba(168,85,247,0.12);
+    color: var(--text-white);
+}
+
+.nav-dropdown-menu li a i {
+    font-size: 1.1rem;
+    color: var(--purple);
+    width: 20px;
+    text-align: center;
+}
+
 /* ── Page Layout ── */
 main { position: relative; z-index: 10; }
 
@@ -699,6 +772,50 @@ p { line-height: 1.7; }
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
+    }
+
+    /* Mobile dropdown: inline, no floating */
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        min-width: 100%;
+        background: rgba(255,255,255,0.03);
+        border: none;
+        border-radius: 12px;
+        padding: 0.5rem;
+        margin-top: 0.75rem;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        display: none;
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+        display: block;
+    }
+
+    .nav-dropdown-menu li a {
+        justify-content: center;
+        padding: 0.75rem 1rem;
+    }
+
+    /* Minimum tap target size (WCAG) */
+    .nav-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        min-width: 44px;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-glass,
+    .social-icon,
+    .whatsapp-float,
+    .mobile-menu-btn {
+        min-height: 44px;
+        min-width: 44px;
     }
 
     .desktop-btn { display: none !important; }

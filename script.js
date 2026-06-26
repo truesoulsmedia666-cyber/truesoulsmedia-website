@@ -90,6 +90,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuBtn.innerHTML = svgMenu;
             });
         });
+
+        // Mobile dropdown toggle
+        const dropdowns = document.querySelectorAll('.nav-dropdown');
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector(':scope > a');
+            if (trigger) {
+                trigger.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            }
+        });
     }
 
     // 4. Form Submit — Web3Forms
@@ -217,8 +232,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
                     ctx.fillStyle = `rgba(168, 85, 247, ${p.opacity})`;
-                    ctx.shadowBlur = 8;
-                    ctx.shadowColor = 'rgba(168, 85, 247, 0.6)';
+                    if (width > 768) {
+                        ctx.shadowBlur = 8;
+                        ctx.shadowColor = 'rgba(168, 85, 247, 0.6)';
+                    } else {
+                        ctx.shadowBlur = 0;
+                    }
                     ctx.fill();
                 });
 

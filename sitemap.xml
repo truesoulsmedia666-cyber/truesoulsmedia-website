@@ -4,20 +4,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.truesoulsmedia.com/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/"/>
     <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/hero_wedding_1776598144800.png</image:loc>
+      <image:loc>https://www.truesoulsmedia.com/assets/hero_wedding_1776598144800.webp</image:loc>
       <image:title>True Souls Media — Kerala luxury wedding photography and planning</image:title>
       <image:caption>Kerala's #1 wedding planner and photography studio in Kottayam</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.truesoulsmedia.com/about</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/about"/>
@@ -25,61 +25,61 @@
   </url>
   <url>
     <loc>https://www.truesoulsmedia.com/wedding-planner</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/wedding-planner"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/wedding-planner"/>
     <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_wedding_1776598179199.png</image:loc>
+      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_wedding_1776598179199.webp</image:loc>
       <image:title>Wedding Planning Services Kerala — True Souls Media</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.truesoulsmedia.com/photography</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/photography"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/photography"/>
     <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_wedding_1776598179199.png</image:loc>
+      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_wedding_1776598179199.webp</image:loc>
       <image:title>Wedding Photography Kottayam Kerala — True Souls Media</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.truesoulsmedia.com/events</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/events"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/events"/>
     <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_events_1776598196076.png</image:loc>
+      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_events_1776598196076.webp</image:loc>
       <image:title>Event Management Kerala — True Souls Media</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.truesoulsmedia.com/digital-marketing</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/digital-marketing"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/digital-marketing"/>
     <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_digital_1776598215494.png</image:loc>
+      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_digital_1776598215494.webp</image:loc>
       <image:title>Digital Marketing Agency Kottayam Kerala — True Souls Media</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.truesoulsmedia.com/podcast</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/podcast"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/podcast"/>
     <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_podcast_1776598232723.png</image:loc>
+      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_podcast_1776598232723.webp</image:loc>
       <image:title>Podcast Production Studio Kottayam Kerala — True Souls Media</image:title>
     </image:image>
   </url>
