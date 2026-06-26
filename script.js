@@ -183,6 +183,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 6. Custom Select Dropdown for Contact Form
+    const customSelectWrapper = document.querySelector('.custom-select-wrapper');
+    if (customSelectWrapper) {
+        const trigger = customSelectWrapper.querySelector('#customSelectTrigger');
+        const triggerText = trigger.querySelector('span');
+        const optionsList = customSelectWrapper.querySelector('#customSelectOptions');
+        const customOptions = customSelectWrapper.querySelectorAll('.custom-option');
+        const nativeSelect = customSelectWrapper.querySelector('#service');
+
+        // Toggle dropdown open/close
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            trigger.classList.toggle('active');
+            optionsList.classList.toggle('open');
+        });
+
+        // Click on an option
+        customOptions.forEach(opt => {
+            opt.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                const val = opt.getAttribute('data-value');
+
+                // Update trigger appearance
+                triggerText.textContent = opt.textContent.trim();
+                trigger.style.color = 'var(--text-white)'; // make it look selected
+
+                // Update native select value
+                nativeSelect.value = val;
+                nativeSelect.dispatchEvent(new Event('change'));
+
+                // Update selected option state
+                customOptions.forEach(o => o.classList.remove('selected'));
+                opt.classList.add('selected');
+
+                // Close dropdown
+                trigger.classList.remove('active');
+                optionsList.classList.remove('open');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!customSelectWrapper.contains(e.target)) {
+                trigger.classList.remove('active');
+                optionsList.classList.remove('open');
+            }
+        });
+
+        // Reset custom select when form is reset
+        if (contactForm) {
+            contactForm.addEventListener('reset', () => {
+                triggerText.textContent = 'Select Service';
+                trigger.style.color = '';
+                customOptions.forEach(o => o.classList.remove('selected'));
+            });
+        }
+    }
+
     // 5. Responsive Canvas Particles
         const canvas = document.getElementById('bg-canvas');
         if (canvas) {
