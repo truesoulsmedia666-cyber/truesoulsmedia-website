@@ -105,7 +105,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "47",
+        "reviewCount": "3",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -256,7 +256,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "47",
+        "reviewCount": "3",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -408,6 +408,7 @@
             </li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="about">About</a></li>
+            <li><a href="blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-actions" style="display:flex;align-items:center;gap:1rem;">
@@ -433,15 +434,20 @@
     <div class="container" style="display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;">
         <div class="hero-badge scroll-reveal">✦ Kerala's #1 Full-Service Creative Agency — Kottayam</div>
         <h1 class="gradient-text scroll-reveal" style="max-width:900px;text-align:center;margin-bottom:1.5rem;">
-            Kerala's Premier<br>Wedding Planner &amp; Photography
+            Kerala's Full-Service
+            Creative &amp; Growth Agency
         </h1>
         <p class="scroll-reveal" style="max-width:640px;text-align:center;font-size:1.2rem;margin-bottom:1rem;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.8);">True Souls Media LLP — Kottayam's full-service creative agency. Wedding planning, cinematic photography &amp; videography, event management, digital marketing, and podcast production.
             Hindu · Christian · Muslim — all traditions, one equal price.
         </p>
         <p class="scroll-reveal" style="color:#a855f7;font-weight:700;font-size:0.9rem;letter-spacing:0.08em;margin-bottom:0.75rem;">✦ WEDDING PLANNER · PHOTOGRAPHY · VIDEOGRAPHY · EVENTS · DIGITAL MARKETING · PODCAST ✦</p>
-        <p class="scroll-reveal" style="color:#22c55e;font-weight:700;font-size:1rem;margin-bottom:2rem;"><i class='bx bx-purchase-tag' aria-hidden="true" style="vertical-align:middle;"></i> Packages starting from ₹80,000</p>
+        <div class="scroll-reveal" style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem;">
+            <span style="color:#22c55e;font-weight:700;font-size:0.88rem;display:inline-flex;align-items:center;gap:0.3rem;"><i class='bx bx-camera' aria-hidden="true"></i> Photography from ₹80,000</span>
+            <span style="color:#22c55e;font-weight:700;font-size:0.88rem;display:inline-flex;align-items:center;gap:0.3rem;"><i class='bx bx-trending-up' aria-hidden="true"></i> Digital Marketing from ₹6,000/mo</span>
+            <span style="color:#22c55e;font-weight:700;font-size:0.88rem;display:inline-flex;align-items:center;gap:0.3rem;"><i class='bx bx-microphone' aria-hidden="true"></i> Podcast from ₹4,000/hr</span>
+        </div>
         <div class="scroll-reveal" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
-            <a href="wedding-planner" class="btn-primary"><i class='bx bx-heart' aria-hidden="true"></i> Plan My Wedding</a>
+            <a href="#services" class="btn-primary"><i class='bx bx-rocket' aria-hidden="true"></i> Explore Services</a>
             <a href="#contact" class="btn-glass"><i class='bx bx-phone' aria-hidden="true"></i> Free Consultation</a>
         </div>
 
@@ -507,50 +513,91 @@
             <h2 class="scroll-reveal" style="text-shadow:0 0 20px rgba(255,255,255,0.2);">Visual <span class="gradient-text">Intelligence</span></h2>
             <p class="scroll-reveal" style="max-width:500px;margin:1rem auto 0;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.8);">Click any category to explore our full service offering.</p>
         </div>
-        <div class="portfolio-grid scroll-reveal">
-            <div class="portfolio-item" style="position:relative; overflow:hidden;">
-                <img src="assets/portfolio_wedding_1776598179199.webp" alt="Wedding Photography" loading="lazy" width="600" height="400">
-                <span class="portfolio-action" style="position:absolute;top:1.25rem;left:1.25rem;z-index:2;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:#cbd5e1;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);padding:0.45rem 1rem;border-radius:999px;font-family:'Inter',sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);">View Wedding Photography <i class='bx bx-right-arrow-alt' aria-hidden="true" style="font-size:1rem;"></i></span>
-                <div class="portfolio-overlay">
-                    <div>
-                        <h3>Wedding Photography</h3>
-                        <p>All religions · Equal pricing</p>
-                    </div>
+
+        <!-- Portfolio Category Filter Tabs -->
+        <div class="scroll-reveal" style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-bottom:3.5rem;">
+            <button class="portfolio-filter-btn active" data-filter="all">All Projects</button>
+            <button class="portfolio-filter-btn" data-filter="wedding">Wedding &amp; Film</button>
+            <button class="portfolio-filter-btn" data-filter="event">Event Management</button>
+            <button class="portfolio-filter-btn" data-filter="marketing">Digital Marketing</button>
+            <button class="portfolio-filter-btn" data-filter="podcast">Podcast Studio</button>
+        </div>
+
+        <div class="portfolio-grid scroll-reveal" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem; transition:all 0.5s ease;">
+            
+            <!-- Item 1: Wedding -->
+            <div class="portfolio-card-item" data-category="wedding" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);">
+                <img src="assets/portfolio_wedding_real_1.webp" alt="Kerala Hindu Mandap Decoration" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
+                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
+                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Wedding planning &amp; decor</span>
+                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Royal Gold Hindu Mandap</h3>
+                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Pala, Kottayam</p>
                 </div>
-                <a href="photography" aria-label="Wedding Photography" style="position:absolute;inset:0;z-index:3;display:block;font-size:0;color:transparent;line-height:0;text-indent:-9999px;overflow:hidden;">View Wedding Photography</a>
             </div>
-            <div class="portfolio-item" style="position:relative; overflow:hidden;">
-                <img src="assets/portfolio_events_1776598196076.webp" alt="Event Management" loading="lazy" width="600" height="400">
-                <span class="portfolio-action" style="position:absolute;top:1.25rem;left:1.25rem;z-index:2;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:#cbd5e1;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);padding:0.45rem 1rem;border-radius:999px;font-family:'Inter',sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);">View Event Management <i class='bx bx-right-arrow-alt' aria-hidden="true" style="font-size:1rem;"></i></span>
-                <div class="portfolio-overlay">
-                    <div>
-                        <h3>Event Management</h3>
-                        <p>Corporate · Social · Large-scale</p>
-                    </div>
+
+            <!-- Item 2: Wedding -->
+            <div class="portfolio-card-item" data-category="wedding" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);">
+                <img src="assets/portfolio_wedding_real_2.webp" alt="Christian Wedding Altar Decor" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
+                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
+                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Wedding Ceremony</span>
+                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">White Floral Altar Setup</h3>
+                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Lakeside Resort, Kumarakom</p>
                 </div>
-                <a href="events" aria-label="Event Management" style="position:absolute;inset:0;z-index:3;display:block;font-size:0;color:transparent;line-height:0;text-indent:-9999px;overflow:hidden;">View Event Management</a>
             </div>
-            <div class="portfolio-item" style="position:relative; overflow:hidden;">
-                <img src="assets/portfolio_digital_1776598215494.webp" alt="Digital Marketing" loading="lazy" width="600" height="400">
-                <span class="portfolio-action" style="position:absolute;top:1.25rem;left:1.25rem;z-index:2;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:#cbd5e1;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);padding:0.45rem 1rem;border-radius:999px;font-family:'Inter',sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);">View Digital Marketing <i class='bx bx-right-arrow-alt' aria-hidden="true" style="font-size:1rem;"></i></span>
-                <div class="portfolio-overlay">
-                    <div>
-                        <h3>Digital Marketing</h3>
-                        <p>SEO · Ads · Content · Analytics</p>
-                    </div>
+
+            <!-- Item 3: Event -->
+            <div class="portfolio-card-item" data-category="event" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);">
+                <img src="assets/portfolio_event_real_1.webp" alt="Corporate Product Launch Kochi" loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
+                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
+                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Event Management</span>
+                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Tech Launch Stage</h3>
+                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Grand Hyatt, Kochi</p>
                 </div>
-                <a href="digital-marketing" aria-label="Digital Marketing" style="position:absolute;inset:0;z-index:3;display:block;font-size:0;color:transparent;line-height:0;text-indent:-9999px;overflow:hidden;">View Digital Marketing</a>
             </div>
-            <div class="portfolio-item" style="position:relative; overflow:hidden;">
-                <img src="assets/portfolio_podcast_1776598232723.webp" alt="Podcast Production" loading="lazy" width="600" height="400">
-                <span class="portfolio-action" style="position:absolute;top:1.25rem;left:1.25rem;z-index:2;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;color:#cbd5e1;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(8px);padding:0.45rem 1rem;border-radius:999px;font-family:'Inter',sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);">View Podcast Production <i class='bx bx-right-arrow-alt' aria-hidden="true" style="font-size:1rem;"></i></span>
-                <div class="portfolio-overlay">
-                    <div>
-                        <h3>Podcast Production</h3>
-                        <p>Record · Edit · Distribute</p>
-                    </div>
+
+            <!-- Item 4: Podcast -->
+            <div class="portfolio-card-item" data-category="podcast" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);">
+                <img src="assets/portfolio_podcast_real_1.webp" alt="True Souls Podcast Studio" loading="lazy" width="600" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
+                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
+                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Podcast Production</span>
+                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Studio A Recording Setup</h3>
+                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">True Souls Studio, Kottayam</p>
                 </div>
-                <a href="podcast" aria-label="Podcast Production" style="position:absolute;inset:0;z-index:3;display:block;font-size:0;color:transparent;line-height:0;text-indent:-9999px;overflow:hidden;">View Podcast Production</a>
+            </div>
+
+            <!-- Item 5: Marketing -->
+            <div class="portfolio-card-item" data-category="marketing" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);">
+                <img src="assets/portfolio_digital_1776598215494.webp" alt="Digital Marketing Campaign" loading="lazy" width="600" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
+                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
+                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Digital Marketing</span>
+                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Social Media Growth Campaign</h3>
+                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Meta &amp; Google Ads Campaign</p>
+                </div>
+            </div>
+
+            <!-- Item 6: Wedding (Additional) -->
+            <div class="portfolio-card-item" data-category="wedding" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);">
+                <img src="assets/portfolio_wedding_1776598179199.webp" alt="Cinematic Wedding Film shot" loading="lazy" width="600" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
+                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
+                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Cinematic Film</span>
+                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Sunset Portrait Session</h3>
+                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Vagamon Pine Forest</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- MID-PAGE CTA BANNER -->
+<section style="padding: 4rem 2rem; position: relative; z-index: 2;">
+    <div class="container" style="max-width: 1000px; text-align: center;">
+        <div class="glass-card scroll-reveal" style="padding: 3.5rem 2rem; border: 1px solid rgba(168, 85, 247, 0.25); background: radial-gradient(circle at top right, rgba(168,85,247,0.1), transparent 60%);">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Ready to Bring Your <span class="gradient-text">Vision to Life?</span></h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem auto; color: #ccc; font-size: 1.05rem; line-height: 1.6;">Whether you are planning a grand wedding in Kerala, need high-impact digital marketing, or want to record a professional podcast, we're here to help.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <a href="#contact" class="btn-primary"><i class='bx bx-calendar'></i> Book Free Consultation</a>
+                <a href="https://wa.me/919061286660" target="_blank" rel="noopener" class="btn-glass" style="background: rgba(37, 211, 102, 0.15); border-color: rgba(37, 211, 102, 0.3); color: #fff;"><i class='bx bxl-whatsapp' style="color:#25d366;"></i> WhatsApp Us</a>
             </div>
         </div>
     </div>
@@ -592,7 +639,7 @@
             </div>
         </div>
         <div class="scroll-reveal" style="text-align:center;margin-top:2.5rem;">
-            <p style="color:#a855f7;font-weight:600;font-size:0.95rem;"><i class='bx bxs-star' style="color:#fbbf24;"></i> 5.0 Rating · 47+ Reviews on Google</p>
+            <p style="color:#a855f7;font-weight:600;font-size:0.95rem;"><i class='bx bxs-star' style="color:#fbbf24;"></i> Trusted by 200+ Clients across Kerala</p>
         </div>
     </div>
 </section>
@@ -614,7 +661,7 @@
                     <img src="assets/noel.jpg" alt="Noel George" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <h3 style="font-size:1.5rem;margin-bottom:0.5rem;color:#fff;">Noel George</h3>
-                <p style="color:#a855f7;font-weight:600;margin-bottom:1rem;font-size:0.95rem;">Co-Founder &amp; Strategy Lead</p>
+                <p style="color:#a855f7;font-weight:600;margin-bottom:1rem;font-size:0.95rem;">Co-Founder &amp; Creative Director</p>
                 <p style="color:#ddd;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6;">A visionary in visual storytelling with a keen eye for cinematic detail. Under his direction, True Souls Media transforms ordinary moments into breathtaking memories.</p>
                 <a href="https://www.instagram.com/_mr.lobo_/" target="_blank" class="social-icon" style="background:rgba(255,255,255,0.1);padding:0.6rem;border-radius:50%;color:#fff;display:inline-flex;" aria-label="Follow Noel George on Instagram" rel="noopener"><i class='bx bxl-instagram' style="font-size:1.5rem;"></i></a>
             </div>
@@ -625,7 +672,7 @@
                     <img src="assets/abinjantony.jpg" alt="Abin J Antony" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <h3 style="font-size:1.5rem;margin-bottom:0.5rem;color:#fff;">Abin J Antony</h3>
-                <p style="color:#a855f7;font-weight:600;margin-bottom:1rem;font-size:0.95rem;">Co-Founder &amp; Creative Director</p>
+                <p style="color:#a855f7;font-weight:600;margin-bottom:1rem;font-size:0.95rem;">Co-Founder &amp; Strategy Lead</p>
                 <p style="color:#ddd;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6;">The strategic powerhouse driving our growth and client success. Specializing in event management and digital marketing to build lasting brand impressions.</p>
                 <a href="https://www.instagram.com/abinjantony/" target="_blank" class="social-icon" style="background:rgba(255,255,255,0.1);padding:0.6rem;border-radius:50%;color:#fff;display:inline-flex;" aria-label="Follow Abin J Antony on Instagram" rel="noopener"><i class='bx bxl-instagram' style="font-size:1.5rem;"></i></a>
             </div>
@@ -635,9 +682,9 @@
 <section id="contact" class="section" data-bg-index="3" style="padding:8rem 2rem;">
     <div class="container" style="max-width:640px;">
         <div class="glass-card scroll-reveal">
-            <div class="hero-badge" style="margin-bottom:1.5rem;">Free Wedding Consultation</div>
-            <h2 style="margin-bottom:0.5rem;">Let's Plan Your<br><span class="gradient-text">Perfect Day</span></h2>
-            <p style="margin-bottom:0.5rem;">Tell us about your wedding. We'll respond within 24 hours.</p>
+            <div class="hero-badge" style="margin-bottom:1.5rem;">Free Consultation</div>
+            <h2 style="margin-bottom:0.5rem;">Let's Build Your<br><span class="gradient-text">Vision Together</span></h2>
+            <p style="margin-bottom:0.5rem;">Tell us about your project. We'll respond within 24 hours.</p>
             <div class="form-notification" id="formNotification"></div>
             <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="d9dba101-a247-42f8-8758-21a336fb9de8">
@@ -696,6 +743,17 @@
 </section>
 </main>
 
+<!-- GOOGLE MAPS -->
+<section style="padding:0 2rem 2rem;">
+    <div class="container" style="max-width:800px;text-align:center;">
+        <p style="color:#a855f7;font-weight:600;margin-bottom:1rem;font-size:0.9rem;"><i class='bx bx-map' aria-hidden="true"></i> Find Us in Kottayam, Kerala</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31458.43957516!2d76.6537!3d9.7174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07ce60a2e10c5f%3A0x9e9b0c1d3e7e9e9c!2sPala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1719396000000"
+            width="100%" height="300" style="border:0;border-radius:24px;filter:invert(90%) hue-rotate(180deg);"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="True Souls Media LLP — Pala, Kottayam, Kerala"></iframe>
+    </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
     <div class="social-links">
@@ -708,10 +766,23 @@
     <div style="max-width: 800px; margin: 0 auto 1.5rem auto; padding: 0 1rem; color: #a0a0a0; font-size: 0.85rem; line-height: 1.6;">
         <p style="margin-bottom:0.5rem;color:#fff;font-weight:600;font-size:1rem;letter-spacing:0.05em;">TRUE SOULS MEDIA LLP</p>
         <p style="margin-bottom:0.25rem;">LLPIN: ACX-5488</p>
+        <p style="margin-bottom:0.25rem;">GSTIN: <em style="color:#777;">[Update with your GSTIN]</em></p>
         <p>Registered Address: Pala, Kottayam- 686575, Kerala, India</p>
     </div>
     <p style="font-size:0.85rem;color:#777;">&copy; 2026 True Souls Media LLP · All rights reserved.</p>
+    <p style="font-size:0.75rem;color:#555;margin-top:0.75rem;">
+        <a href="privacy-policy" style="color:#777;text-decoration:none;">Privacy Policy</a> · 
+        <a href="terms-and-conditions" style="color:#777;text-decoration:none;">Terms &amp; Conditions</a> · 
+        <a href="refund-policy" style="color:#777;text-decoration:none;">Refund Policy</a>
+    </p>
 </footer>
+
+<!-- Mobile Sticky Bottom Bar -->
+<div class="mobile-sticky-bar">
+    <a href="https://wa.me/919061286660" target="_blank" rel="noopener" class="mobile-sticky-bar-wa"><i class='bx bxl-whatsapp'></i> WhatsApp</a>
+    <a href="tel:+919061286660" class="mobile-sticky-bar-call"><i class='bx bx-phone'></i> Call Now</a>
+    <a href="#contact" class="mobile-sticky-bar-consult"><i class='bx bx-calendar'></i> Consult</a>
+</div>
 
 <a href="https://wa.me/919061286660" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <i class='bx bxl-whatsapp'></i>

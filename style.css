@@ -946,3 +946,91 @@ p { line-height: 1.7; }
     .stats-row { gap: 2rem; }
     .portfolio-item { height: 300px; }
 }
+
+/* ── Mobile Sticky Bottom Bar ── */
+.mobile-sticky-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(168, 85, 247, 0.3);
+    padding: 0.6rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .mobile-sticky-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+    }
+    body {
+        padding-bottom: 70px;
+    }
+    .whatsapp-float {
+        display: none !important;
+    }
+}
+
+.mobile-sticky-bar a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.mobile-sticky-bar-wa {
+    background: #25d366;
+    color: #fff !important;
+}
+
+.mobile-sticky-bar-call {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+}
+
+.mobile-sticky-bar-consult {
+    background: #a855f7;
+    color: #fff !important;
+}
+
+/* ── Portfolio Gallery Expansion ── */
+.portfolio-filter-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #cbd5e1;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+.portfolio-filter-btn:hover, .portfolio-filter-btn.active {
+    background: rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.5);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+    transform: translateY(-1px);
+}
+
+.portfolio-card-item:hover img {
+    transform: scale(1.06);
+}
+
+

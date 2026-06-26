@@ -335,4 +335,39 @@ document.addEventListener('DOMContentLoaded', () => {
             resize();
             animate();
         }
+
+        // 7. Portfolio Filter
+        const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+        const portfolioCards = document.querySelectorAll('.portfolio-card-item');
+
+        if (filterBtns.length > 0 && portfolioCards.length > 0) {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    portfolioCards.forEach(card => {
+                        // Reset animations
+                        card.style.opacity = '0.1';
+                        card.style.transform = 'scale(0.95)';
+                        
+                        setTimeout(() => {
+                            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'block';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'scale(1)';
+                                }, 50);
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }, 200);
+                    });
+                });
+            });
+        }
     });
