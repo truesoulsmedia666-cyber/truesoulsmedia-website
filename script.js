@@ -74,25 +74,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const svgMenu = '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
         const svgClose = '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
 
+        const dropdowns = document.querySelectorAll('.nav-dropdown');
+
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             if (navLinks.classList.contains('active')) {
                 mobileMenuBtn.innerHTML = svgClose;
             } else {
                 mobileMenuBtn.innerHTML = svgMenu;
+                // Clean reset dropdowns when closing menu
+                dropdowns.forEach(d => d.classList.remove('open'));
             }
         });
 
         // Close menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // If it is the main Services dropdown trigger, do not close the mobile menu
+                if (link.parentElement.classList.contains('nav-dropdown')) {
+                    return;
+                }
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = svgMenu;
+                // Reset dropdowns
+                dropdowns.forEach(d => d.classList.remove('open'));
             });
         });
 
         // Mobile dropdown toggle
-        const dropdowns = document.querySelectorAll('.nav-dropdown');
         dropdowns.forEach(dropdown => {
             const trigger = dropdown.querySelector(':scope > a');
             if (trigger) {
