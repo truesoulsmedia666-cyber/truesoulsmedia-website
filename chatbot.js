@@ -30,13 +30,8 @@ Lead Generation: If a user seems interested in our services, politely offer our 
       border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
       box-shadow: 0 4px 20px rgba(212,175,55,.55);
       transition: transform .25s, box-shadow .25s;
-      animation: tsm-pulse 2.5s infinite;
     }
     #tsm-chatbot-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(212,175,55,.75); }
-    @keyframes tsm-pulse {
-      0%,100% { box-shadow: 0 4px 20px rgba(212,175,55,.55); }
-      50%      { box-shadow: 0 4px 32px rgba(212,175,55,.9); }
-    }
     #tsm-chatbot-btn svg { width: 28px; height: 28px; fill: #0a0a0a; }
 
     #tsm-chat-badge {
