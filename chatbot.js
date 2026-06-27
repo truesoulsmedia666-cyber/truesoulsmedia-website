@@ -144,6 +144,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
   // ─── BUILD HTML ───────────────────────────────────────────────────────────────
   const btn = document.createElement("button");
   btn.id = "tsm-chatbot-btn";
+  btn.setAttribute("aria-label", "Open Chatbot");
   btn.innerHTML = `
     <span id="tsm-chat-badge">1</span>
     <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
@@ -159,12 +160,12 @@ Lead Generation: If a user seems interested in our services, politely offer our 
         <div class="name">Aria · True Souls Media AI</div>
         <div class="status">🟢 Online — AI Assistant</div>
       </div>
-      <button class="close-btn" id="tsm-close-btn">×</button>
+      <button class="close-btn" id="tsm-close-btn" aria-label="Close Chatbot">×</button>
     </div>
     <div id="tsm-chat-messages"></div>
     <div id="tsm-input-row">
       <input id="tsm-user-input" type="text" placeholder="Type your message…" autocomplete="off">
-      <button id="tsm-send-btn">
+      <button id="tsm-send-btn" aria-label="Send Message">
         <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
       </button>
     </div>
