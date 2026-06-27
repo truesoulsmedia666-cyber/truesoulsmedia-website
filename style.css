@@ -1022,12 +1022,24 @@ p { line-height: 1.7; }
     font-family: 'Inter', sans-serif;
 }
 
-.portfolio-filter-btn:hover, .portfolio-filter-btn.active {
-    background: rgba(168, 85, 247, 0.2);
-    border-color: rgba(168, 85, 247, 0.5);
+.portfolio-filter-btn:hover {
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.4);
     color: #fff;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
     transform: translateY(-1px);
+}
+
+.portfolio-filter-btn.active {
+    background: rgba(168, 85, 247, 0.35);
+    border-color: rgba(168, 85, 247, 0.7);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    transform: translateY(-1px);
+}
+
+.portfolio-card-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .portfolio-card-item:hover img {
