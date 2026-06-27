@@ -311,17 +311,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Connect nearby particles with lines for a constellation effect
                 for (let i = 0; i < particles.length; i++) {
+                    const pi = particles[i];
                     for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        const pj = particles[j];
+                        const dx = pi.x - pj.x;
+                        const dy = pi.y - pj.y;
+                        const distSq = dx * dx + dy * dy;
 
-                        if (distance < 100) {
+                        if (distSq < 10000) { // 100px threshold squared (100 * 100)
+                            const distance = Math.sqrt(distSq);
                             ctx.beginPath();
                             ctx.strokeStyle = `rgba(168, 85, 247, ${0.15 - (distance / 100) * 0.15})`;
                             ctx.lineWidth = 0.5;
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.moveTo(pi.x, pi.y);
+                            ctx.lineTo(pj.x, pj.y);
                             ctx.stroke();
                         }
                     }
@@ -330,10 +333,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 requestAnimationFrame(animate);
             }
 
-            // Add resize listener and initialize
+            // Add resize listener and initialize deferred
             window.addEventListener('resize', resize);
-            resize();
-            animate();
+            
+            if (window.requestIdleCallback) {
+                window.requestIdleCallback(() => {
+                    resize();
+                    animate();
+                });
+            } else {
+                setTimeout(() => {
+                    resize();
+                    animate();
+                }, 200);
+            }
         }
 
         // 7. Portfolio Filter
