@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let width, height;
             let particles = [];
 
-            let lastWidth = window.innerWidth;
+            let lastWidth = 0;
 
             function resize() {
                 width = window.innerWidth;

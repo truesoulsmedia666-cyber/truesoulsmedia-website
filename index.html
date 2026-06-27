@@ -80,10 +80,18 @@
       .portfolio-card-item:hover img {
           transform: scale(1.06);
       }
+      .hero-spotlight {
+          display: block;
+      }
+      @media (max-width: 768px) {
+          .hero-spotlight {
+              display: none !important;
+          }
+      }
     </style>
     <!-- Full CSS loaded asynchronously (non-render-blocking) -->
-    <link rel="stylesheet" href="style.css?v=8" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style.css?v=8"></noscript>
+    <link rel="stylesheet" href="style.css?v=9" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css?v=9"></noscript>
     <link rel="canonical" href="https://www.truesoulsmedia.com/">
     <!-- Alternate language tags -->
     <link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/">
@@ -423,7 +431,7 @@
 <nav class="navbar">
     <div class="nav-container">
         <a href="#home" class="logo">
-            <img src="assets/logo.png" alt="Truesoulsmedia" class="nav-logo" width="36" height="36" onerror="this.style.display='none'">
+            <img src="assets/logo.webp" alt="Truesoulsmedia" class="nav-logo" width="36" height="36" onerror="this.style.display='none'">
             <span class="logo-text">Truesoulsmedia</span>
         </a>
         <ul class="nav-links">
@@ -462,7 +470,7 @@
 <!-- HERO -->
 <section id="home" class="section" data-bg-index="0" style="min-height:100vh;flex-direction:column;text-align:center;padding-top:8rem;">
     <!-- Hero spotlight glow -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:900px;height:600px;background:radial-gradient(ellipse at center, rgba(168,85,247,0.18) 0%, rgba(99,102,241,0.08) 50%, transparent 75%);pointer-events:none;z-index:0;"></div>
+    <div class="hero-spotlight" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:900px;height:600px;background:radial-gradient(ellipse at center, rgba(168,85,247,0.18) 0%, rgba(99,102,241,0.08) 50%, transparent 75%);pointer-events:none;z-index:0;"></div>
     <div class="container" style="display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;">
         <div class="hero-badge scroll-reveal">✦ Kerala's #1 Full-Service Creative Agency — Kottayam</div>
         <h1 class="gradient-text scroll-reveal" style="max-width:900px;text-align:center;margin-bottom:1.5rem;">
@@ -819,7 +827,7 @@
     <i class='bx bxl-whatsapp'></i>
 </a>
 
-<script src="script.js?v=3" defer></script>
+<script src="script.js?v=4" defer></script>
 <script src="chatbot.js" defer></script>
 </body>
 </html>
