@@ -796,6 +796,11 @@ p { line-height: 1.7; }
     box-shadow: 0 12px 32px rgba(37,211,102,0.5);
 }
 
+.whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+}
+
 /* ── Scroll Reveal ── */
 .scroll-reveal {
     opacity: 0;

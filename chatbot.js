@@ -241,7 +241,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
       // Convert markdown links and plain URLs to clickable HTML links safely
       let links = [];
       let formattedText = aiText;
-      
+
       // 1. Extract markdown links [text](url)
       formattedText = formattedText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
         const placeholder = `__MD_LINK_${links.length}__`;
@@ -250,7 +250,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
         links.push(`<a href="${url}" ${targetAttr} style="color:#d4af37;text-decoration:underline;">${text}</a>`);
         return placeholder;
       });
-      
+
       // 2. Extract plain URLs (http:// or https://)
       formattedText = formattedText.replace(/(https?:\/\/[^\s<]+)/g, (match) => {
         let cleanUrl = match;
@@ -265,7 +265,7 @@ Lead Generation: If a user seems interested in our services, politely offer our 
         links.push(`<a href="${cleanUrl}" target="_blank" style="color:#d4af37;text-decoration:underline;">${cleanUrl}</a>`);
         return placeholder + suffix;
       });
-      
+
       // 3. Restore all links
       links.forEach((linkHtml, index) => {
         formattedText = formattedText.replace(`__MD_LINK_${index}__`, linkHtml);

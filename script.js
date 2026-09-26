@@ -383,4 +383,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
+
+        // 8. Local file protocol link resolution (ensures file:/// navigation works seamlessly)
+        if (window.location.protocol === 'file:') {
+            document.addEventListener('click', (e) => {
+                const link = e.target.closest('a');
+                if (!link) return;
+                const href = link.getAttribute('href');
+                if (!href || href.startsWith('#') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+                
+                const [path, hash] = href.split('#');
+                if (path && !path.endsWith('.html') && !path.endsWith('/')) {
+                    e.preventDefault();
+                    const target = path + '.html' + (hash ? '#' + hash : '');
+                    window.location.href = target;
+                }
+            });
+        }
     });
