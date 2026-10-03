@@ -55,17 +55,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(sec => bgObserver.observe(sec));
 
-    // 2b. On service pages: fade out the fixed bg image once hero scrolls away
+    // 2b. On service pages: fade out hero bg image as user scrolls past hero
+    // Using scroll listener (not IntersectionObserver) for reliable mobile support
     const bgCanvas = document.getElementById('bg-canvas-container');
     const spHero = document.querySelector('.sp-hero');
     if (bgCanvas && spHero) {
-        const heroFadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // Fade out when hero is no longer intersecting
-                bgCanvas.style.opacity = entry.isIntersecting ? '1' : '0';
-            });
-        }, { threshold: 0.05 });
-        heroFadeObserver.observe(spHero);
+        const updateBgOpacity = () => {
+            const heroBottom = spHero.getBoundingClientRect().bottom;
+            const vh = window.innerHeight;
+            // Start fading when hero bottom crosses 80% of viewport, fully gone at -50px
+            if (heroBottom >= vh * 0.8) {
+                bgCanvas.style.opacity = '1';
+            } else if (heroBottom <= -50) {
+                bgCanvas.style.opacity = '0';
+            } else {
+                const range = vh * 0.8 + 50;
+                const progress = (vh * 0.8 - heroBottom) / range;
+                bgCanvas.style.opacity = String(Math.max(0, 1 - progress));
+            }
+        };
+        window.addEventListener('scroll', updateBgOpacity, { passive: true });
+        updateBgOpacity(); // run once on load
     }
 
     // 3. Smooth scrolling for nav links
