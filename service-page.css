@@ -49,11 +49,9 @@
     padding: 6rem 0;
     position: relative;
     z-index: 10;
-    background: #000000;
 }
 
 .sp-cta {
-    background: #000000;
     position: relative;
     z-index: 10;
 }
@@ -68,8 +66,10 @@
 
 /* Feature Cards */
 .sp-feature {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.07);
     border-radius: 20px;
     padding: 2rem;
     transition: all 0.4s cubic-bezier(0.2,0.8,0.2,1);
@@ -77,8 +77,8 @@
 }
 
 .sp-feature:hover {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(168,85,247,0.25);
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(168,85,247,0.35);
     transform: translateY(-4px);
 }
 
@@ -94,8 +94,10 @@
 
 /* ── Package Cards ── */
 .sp-package {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 24px;
     padding: 2.5rem;
     text-align: left;
