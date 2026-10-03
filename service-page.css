@@ -13,18 +13,7 @@
     --silver-glow: rgba(148,163,184,0.15);
 }
 
-/* Background Image Layer scoped to Hero on Service Pages */
-#bg-canvas-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    min-height: 100dvh;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 2;
-}
+
 
 /* Hero */
 .sp-hero {

@@ -55,6 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(sec => bgObserver.observe(sec));
 
+    // 2b. On service pages: fade out the fixed bg image once hero scrolls away
+    const bgCanvas = document.getElementById('bg-canvas-container');
+    const spHero = document.querySelector('.sp-hero');
+    if (bgCanvas && spHero) {
+        const heroFadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Fade out when hero is no longer intersecting
+                bgCanvas.style.opacity = entry.isIntersecting ? '1' : '0';
+            });
+        }, { threshold: 0.05 });
+        heroFadeObserver.observe(spHero);
+    }
+
     // 3. Smooth scrolling for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

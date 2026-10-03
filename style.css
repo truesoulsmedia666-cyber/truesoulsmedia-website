@@ -122,6 +122,8 @@ body {
     inset: 0;
     z-index: 2;
     pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.6s ease;
 }
 
 .bg-layer {
