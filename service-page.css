@@ -49,6 +49,13 @@
     padding: 6rem 0;
     position: relative;
     z-index: 10;
+    background: #000000;
+}
+
+.sp-cta {
+    background: #000000;
+    position: relative;
+    z-index: 10;
 }
 
 /* 3-Column Grid */

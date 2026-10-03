@@ -16,13 +16,13 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# ─── CSS / JS: Versioned long cache ─────────────────────────────────────────
+# ─── CSS / JS: Fast revalidation for active updates ──────────────────────────
 /*.css
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=0, must-revalidate
   Content-Type: text/css; charset=UTF-8
 
 /*.js
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=0, must-revalidate
   Content-Type: application/javascript; charset=UTF-8
 
 # ─── SEO & AI Crawlable Files ────────────────────────────────────────────────

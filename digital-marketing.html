@@ -24,8 +24,39 @@
     <noscript>
         
     </noscript>
-    <link rel="stylesheet" href="style.css?v=10">
-    <link rel="stylesheet" href="service-page.css?v=2">
+    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="service-page.css?v=3">
+    <style>
+        /* Immediate Visibility & High Contrast Guarantee */
+        .sp-section,
+        .sp-pricing-grid,
+        .sp-package,
+        .glass-card,
+        .sp-feature,
+        .scroll-reveal {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+        .sp-section,
+        .sp-cta {
+            background: #000000 !important;
+            position: relative;
+            z-index: 10;
+        }
+        @media (max-width: 768px) {
+            .sp-pricing-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            .sp-package {
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+        }
+    </style>
     <link rel="canonical" href="https://www.truesoulsmedia.com/digital-marketing">
     <link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/digital-marketing">
     <link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/digital-marketing">
@@ -156,7 +187,7 @@
     </nav>
 
     <main>
-        <section class="sp-hero scroll-reveal">
+        <section class="sp-hero">
             <div class="hero-badge">#1 Digital Marketing &amp; Automation Agency — Kottayam, Kerala</div>
             <h1 class="gradient-text">Digital Marketing &amp; Automation<br>Agency in Kottayam &amp; Kerala</h1>
             <p style="max-width:700px;margin:1rem auto 0.75rem;font-size:1.1rem;">True Souls Media LLP helps local businesses grow with powerful digital marketing and smart automation. Get more leads, more sales, and more time back — all from one team.</p>
@@ -170,14 +201,14 @@
             </div>
             
             <!-- Stats -->
-            <div class="stats-row scroll-reveal" style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);">
+            <div class="stats-row" style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);">
                 <div class="stat-item"><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
                 <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Brands Powered</div></div>
                 <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Client Satisfaction</div></div>
             </div>
         </section>
 
-        <section class="sp-section scroll-reveal">
+        <section class="sp-section">
             <div class="container">
                 <div class="glass-card">
                     <h2>Our Services</h2>
@@ -229,7 +260,7 @@
         </section>
 
         <!-- Mid-page CTA -->
-        <section class="sp-section scroll-reveal" style="padding:4rem 0 0;">
+        <section class="sp-section" style="padding:4rem 0 0;">
             <div class="container" style="max-width:800px;">
                 <div class="glass-card" style="text-align:center;background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(99,102,241,0.1));border:1px solid rgba(168,85,247,0.25);">
                     <h3 style="font-size:1.6rem;margin-bottom:1rem;">Ready to Grow Your Business?</h3>
@@ -244,7 +275,7 @@
             </div>
         </section>
 
-        <section class="sp-section scroll-reveal">
+        <section class="sp-section">
             <div class="container">
                 
                 <!-- 1. One-Time Services -->
@@ -517,7 +548,7 @@
             </div>
         </section>
 
-        <section class="sp-section scroll-reveal">
+        <section class="sp-section">
             <div class="container">
                 <div class="glass-card">
                     <h2>Our Process</h2>
@@ -559,7 +590,7 @@
             </div>
         </section>
 
-        <section class="sp-section scroll-reveal">
+        <section class="sp-section">
             <div class="container" style="max-width:800px;">
                 <h2 style="text-align:center;margin-bottom:3rem;">Frequently Asked Questions</h2>
                 <div class="sp-faq">
@@ -586,7 +617,7 @@
             </div>
         </section>
 
-        <section class="sp-cta scroll-reveal">
+        <section class="sp-cta">
             <h2>Ready to Grow Your Business?</h2>
             <p>Get a Free Digital Growth Audit — we'll analyse your current online presence and show you exactly how to get more leads and sales.</p>
             <p style="margin-top:0.5rem;font-size:0.95rem;opacity:0.75;">or WhatsApp us: <a href="https://wa.me/919061286660" target="_blank" style="color:#25d366;font-weight:700;text-decoration:none;">+91 9061286660</a></p>
