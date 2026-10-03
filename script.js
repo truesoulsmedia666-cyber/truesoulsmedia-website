@@ -2,17 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Scroll Reveal Animation for Glass Cards
     const revealOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0,
+        rootMargin: "0px 0px 50px 0px"
     };
 
     const revealOnScroll = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optional: observer.unobserve(entry.target); // remove if you want them to animate out when scrolling up
-            } else {
-                entry.target.classList.remove('active'); // Retrigger on scroll up
+                observer.unobserve(entry.target); // Keep visible once revealed
             }
         });
     }, revealOptions);
@@ -21,6 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         revealOnScroll.observe(el);
     });
+
+    // Safety fallback: reveal all sections after 2s in case observer fails
+    setTimeout(() => {
+        revealElements.forEach(el => el.classList.add('active'));
+    }, 2000);
 
     // 2. Background Canvas Layer Switching
     const sections = document.querySelectorAll('.section');
@@ -78,7 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
+            const isActive = navLinks.classList.contains('active');
+            document.body.classList.toggle('menu-open', isActive);
+            if (isActive) {
                 mobileMenuBtn.innerHTML = svgClose;
             } else {
                 mobileMenuBtn.innerHTML = svgMenu;
@@ -95,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
                 navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
                 mobileMenuBtn.innerHTML = svgMenu;
                 // Reset dropdowns
                 dropdowns.forEach(d => d.classList.remove('open'));

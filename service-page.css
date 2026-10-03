@@ -13,9 +13,22 @@
     --silver-glow: rgba(148,163,184,0.15);
 }
 
+/* Background Image Layer scoped to Hero on Service Pages */
+#bg-canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
 /* Hero */
 .sp-hero {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,6 +37,7 @@
     padding: 10rem 2rem 6rem;
     position: relative;
     z-index: 10;
+    overflow: hidden;
 }
 
 /* Hero spotlight behind heading */
@@ -32,7 +46,7 @@
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -55%);
-    width: 800px; height: 600px;
+    width: min(800px, 100vw); height: 600px;
     background: radial-gradient(ellipse at center,
         rgba(168,85,247,0.22) 0%,
         rgba(99,102,241,0.10) 45%,
@@ -171,7 +185,7 @@
 
 /* Price */
 .sp-price {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 6vw, 2.8rem);
     font-weight: 900;
     color: #fff;
     letter-spacing: -0.05em;
@@ -580,11 +594,30 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-    .sp-hero { padding: 8rem 1.5rem 4rem; }
-    .sp-section { padding: 4rem 0; }
+    .sp-hero { 
+        padding: 5.5rem 1.25rem 2.5rem; 
+        min-height: auto; 
+    }
+    .sp-hero::before {
+        width: 100vw;
+        height: 350px;
+    }
+    .sp-hero p {
+        font-size: 0.95rem !important;
+        line-height: 1.55;
+    }
+    .sp-section { padding: 3rem 0; }
     .sp-step { flex-direction: column; gap: 0.75rem; }
-    .sp-package { padding: 2rem 1.5rem; }
-    .sp-faq-item { padding: 1.25rem 1.5rem; }
-    .sp-cta { padding: 5rem 1.5rem; }
-    .sp-terms { padding: 1.75rem; }
+    .sp-package { padding: 1.75rem 1.25rem; }
+    .sp-faq-item { padding: 1.25rem 1.25rem; }
+    .sp-cta { padding: 3.5rem 1.25rem; }
+    .sp-terms { padding: 1.5rem 1.25rem; }
+    .sp-grid-3 { grid-template-columns: 1fr; }
+    .sp-pricing-grid { grid-template-columns: 1fr; }
+    .sp-addons-grid { grid-template-columns: 1fr; }
+    .sp-deliverables { padding: 1rem 1.25rem; }
+    .sp-info-banner { padding: 1rem 1.25rem; }
+    .sp-addon-card { flex-direction: column; align-items: flex-start; }
+    .sp-addon-price { text-align: left; }
+    #audit { margin-bottom: 2rem !important; }
 }

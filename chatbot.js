@@ -126,8 +126,23 @@ Lead Generation: If a user seems interested in our services, politely offer our 
       color: rgba(255,255,255,.25); font-family: Inter, sans-serif;
     }
 
-    @media (max-width: 420px) {
-      #tsm-chat-window { width: calc(100vw - 24px); right: 12px; bottom: 96px; }
+    @media (max-width: 768px) {
+      #tsm-chatbot-btn {
+        bottom: 84px;
+        right: 14px;
+        width: 44px;
+        height: 44px;
+      }
+      #tsm-chatbot-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      #tsm-chat-window {
+        width: calc(100vw - 24px);
+        right: 12px;
+        bottom: 140px;
+        max-height: calc(100dvh - 160px);
+      }
     }
   `;
 
