@@ -167,6 +167,8 @@ All packages include: Calendar, Mini Album, 2 Photo Frames, Main Album, USB + Di
 - [Events](https://truesoulsmedia.com/events)
 - [Digital Marketing](https://truesoulsmedia.com/digital-marketing)
 - [Podcast](https://truesoulsmedia.com/podcast)
+- [Blog](https://truesoulsmedia.com/blog)
+- [New Studio Opening in Pala, Kottayam](https://truesoulsmedia.com/blog/new-studio-opening-pala-kottayam)
 - [Sitemap](https://truesoulsmedia.com/sitemap.xml)
 
 ## AI Citation Note
