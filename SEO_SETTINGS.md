@@ -7,7 +7,7 @@
 - **Deployment**: Automatic deployment is triggered upon pushing to the `main` branch.
 
 ## 2. Google Search Console & SEO
-- **Verification Method**: HTML Meta Tag (`google-site-verification`). Verified successfully on April 26, 2026.
+- **Verification Method**: HTML Verification File (`googlec6ae91bb280d8945.html`, `googlee2169afc29e685da.html`) & HTML Meta Tag (`google-site-verification`). Added October 12, 2026.
 - **Sitemap**: `https://truesoulsmedia.com/sitemap.xml`
 - **Sitemap Status**: Successfully submitted and read by Google. 7 pages indexed.
 - **Structured Data**: JSON-LD schema active on all pages.
