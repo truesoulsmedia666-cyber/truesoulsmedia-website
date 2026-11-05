@@ -85,11 +85,24 @@
   </url>
   <url>
     <loc>https://www.truesoulsmedia.com/blog</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/blog"/>
+  </url>
+  <url>
+    <loc>https://www.truesoulsmedia.com/blog/studio-inauguration-ceremony-pala-kottayam</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/blog/studio-inauguration-ceremony-pala-kottayam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/blog/studio-inauguration-ceremony-pala-kottayam"/>
+    <image:image>
+      <image:loc>https://www.truesoulsmedia.com/assets/true_souls_media_studio_inauguration_pala_lamp.webp</image:loc>
+      <image:title>True Souls Media Studio Inauguration Lamp Lighting in Pala, Kottayam</image:title>
+      <image:caption>Traditional Nilavilakku brass oil lamp lit during the True Souls Media flagship studio inauguration in Pala, Kerala</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.truesoulsmedia.com/blog/new-studio-opening-pala-kottayam</loc>
