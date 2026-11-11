@@ -13,6 +13,8 @@ LIVE_URL = f"https://{LIVE_DOMAIN}"
 HTML_FILES = [
     "index.html",
     "about.html",
+    "careers.html",
+    "blog.html",
     "wedding-planner.html",
     "photography.html",
     "events.html",

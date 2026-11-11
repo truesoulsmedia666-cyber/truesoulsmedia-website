@@ -24,6 +24,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/about"/>
   </url>
   <url>
+    <loc>https://www.truesoulsmedia.com/careers</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/careers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/careers"/>
+  </url>
+  <url>
     <loc>https://www.truesoulsmedia.com/wedding-planner</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>

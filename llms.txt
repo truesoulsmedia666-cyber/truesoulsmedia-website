@@ -162,6 +162,7 @@ All packages include: Calendar, Mini Album, 2 Photo Frames, Main Album, USB + Di
 ## Site Pages
 - [Home Page](https://truesoulsmedia.com/)
 - [About Us](https://truesoulsmedia.com/about)
+- [Careers — Work With Us](https://truesoulsmedia.com/careers)
 - [Wedding Planner](https://truesoulsmedia.com/wedding-planner)
 - [Photography & Film](https://truesoulsmedia.com/photography)
 - [Events](https://truesoulsmedia.com/events)
