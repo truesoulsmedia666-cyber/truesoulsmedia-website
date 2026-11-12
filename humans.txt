@@ -1,43 +1,29 @@
-/* HUMANSTXT.ORG */
-/* The humans responsible & technology colophon */
-
 /* TEAM */
-  Name: Noel George
-  Role: Co-Founder & Strategy Lead
-  Location: Kottayam, Kerala, India
-  Instagram: https://www.instagram.com/_mr.lobo_/
+Company: True Souls Media LLP
+LLPIN: ACX-5488
+GSTIN: 32AAZFT9777C1ZF
+Founders & Designated Partners: Noel George, Abin Joseph Antony
+Location: Flagship Studio — Njondimakkal Jn, Pala-Thodupuzha Rd, Pala, Kottayam, Kerala 686575, India
+Contact: truesoulsmedia666@gmail.com
+Phone / WhatsApp: +91 90612 86660
+Instagram (Digital & Ads): https://www.instagram.com/truesoulsads/
+Instagram (Studio & Production): https://www.instagram.com/truesoulsstudio/
+Instagram (Weddings & Films): https://www.instagram.com/truesoulsmedia/
 
-  Name: Abin J Antony
-  Role: Co-Founder & Creative Director
-  Location: Kottayam, Kerala, India
-  Instagram: https://www.instagram.com/abinjantony/
-
-/* COMPANY */
-  Name: True Souls Media LLP
-  Legal Name: True Souls Media LLP
-  LLPIN: ACX-5488
-  Type: Limited Liability Partnership (LLP), India
-  Founded: 2022
-  Location: Pala, Kottayam - 686575, Kerala, India
-  Phone: +91-9061286660
-  Email: truesoulsmedia666@gmail.com
-  Website: https://truesoulsmedia.com
-
-/* SERVICES */
-  Wedding Planning | Kerala
-  Wedding Photography & Videography | Kerala
-  Event Management | Kerala
-  Digital Marketing | Kerala
-  Podcast Production | Kottayam, Kerala
+/* SERVICES (2026-2027) */
+- Website Design & Development (Business Websites, E-Commerce, Custom Web Apps)
+- Digital Marketing & SEO (Local SEO, Regional & National SEO)
+- Social Media Management & Monthly Growth Retainers
+- Meta Ads & Google Ads Performance Marketing
+- Marketing Automation, WhatsApp API & AI CRM Integration
+- Branding, Visual Identity & Commercial Product/Ad Shoots
+- Multi-Cam 4K Podcast Production Studio (Pala, Kottayam)
+- Wedding Photography & 4K Cinematography
+- Full-Service Wedding Planning
+- Corporate & Social Event Management
 
 /* SITE */
-  Last update: 2026-05-19
-  Language: English
-  Standards: HTML5, CSS3, JSON-LD Schema.org
-  Software: VS Code
-
-/* SOCIAL */
-  Instagram: https://www.instagram.com/truesoulsmedia_
-  Facebook: https://www.facebook.com/profile.php?id=61574503418456
-  LinkedIn: https://www.linkedin.com/in/true-souls-media-llp-b91a8b400/
-  WhatsApp: https://wa.me/919061286660
+Last update: 2026-11-12
+Language: English (India)
+Standards: HTML5, CSS3, ES2022, Schema.org JSON-LD, WCAG 2.1 AA
+Doctype: HTML5

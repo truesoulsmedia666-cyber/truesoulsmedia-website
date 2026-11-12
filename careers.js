@@ -172,8 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
     fileInput.addEventListener('change', () => {
         const f = fileInput.files[0];
         clearError(fileInput);
-        if (!f) { fileLabel.innerHTML = '<strong>Click to upload</strong> or drag your CV here · PDF, max 5MB'; return; }
-        fileLabel.innerHTML = `📄 <strong>${f.name.replace(/[<>&"]/g, '')}</strong> · ${(f.size / 1048576).toFixed(2)} MB`;
+        if (!f) { fileLabel.innerHTML = '<strong>Select your CV PDF</strong> (optional · max 5MB · attach on WhatsApp after submitting)'; return; }
+        const modeHint = CAREERS_CONFIG.FILE_MODE === 'none' ? ' · Attach via WhatsApp Fast-Track after submitting' : '';
+        fileLabel.innerHTML = `📄 <strong>${f.name.replace(/[<>&"]/g, '')}</strong> · ${(f.size / 1048576).toFixed(2)} MB${modeHint}`;
     });
 
     /* ── 6. Validation ── */

@@ -123,10 +123,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const preselectedService = urlParams.get('service');
         const preselectedPackage = urlParams.get('package');
+        const sourcePageParam = urlParams.get('source_page');
         if (preselectedService) {
             const serviceSelect = contactForm.querySelector('[name="service"]');
             if (serviceSelect) {
                 serviceSelect.value = preselectedService;
+                // Fallback fuzzy match if exact option string differs
+                if (serviceSelect.value !== preselectedService) {
+                    const lowerTarget = preselectedService.toLowerCase();
+                    for (const opt of serviceSelect.options) {
+                        const optVal = (opt.value || opt.textContent || '').toLowerCase();
+                        if (optVal && (optVal.includes(lowerTarget) || lowerTarget.includes(optVal))) {
+                            serviceSelect.value = opt.value;
+                            break;
+                        }
+                    }
+                }
             }
         }
         if (preselectedPackage) {
@@ -139,22 +151,73 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            // Prevent duplicate submissions while a request is in flight
+            if (contactForm.dataset.submitting === 'true') {
+                return;
+            }
+
             // Honeypot anti-spam check
             const honeypot = contactForm.querySelector('[name="botcheck"], [name="website_hp"]');
             if (honeypot && honeypot.value) {
                 return;
             }
 
+            // Client-side validation (name, phone, email, service)
+            const nameInput = contactForm.querySelector('[name="name"]');
+            const phoneInput = contactForm.querySelector('[name="phone"]');
+            const emailInput = contactForm.querySelector('[name="email"]');
+            const serviceInput = contactForm.querySelector('[name="service"]');
+
+            const cleanPhone = phoneInput ? phoneInput.value.replace(/[\s\-()]/g, '') : '';
+            const phoneDigitsOnly = cleanPhone.replace(/^\+?91/, '');
+            const phoneValid = /^(\+?[1-9]\d{7,14}|[6-9]\d{9})$/.test(cleanPhone) || /^[6-9]\d{9}$/.test(phoneDigitsOnly);
+            const emailValid = !emailInput || !emailInput.value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+
+            if (nameInput && nameInput.value.trim().length < 2) {
+                if (formNotification) {
+                    formNotification.innerHTML = '⚠️ Please enter your full name.';
+                    formNotification.className = 'form-notification error';
+                }
+                nameInput.focus();
+                return;
+            }
+            if (phoneInput && !phoneValid) {
+                if (formNotification) {
+                    formNotification.innerHTML = '⚠️ Please enter a valid 10-digit Indian mobile number or international WhatsApp number.';
+                    formNotification.className = 'form-notification error';
+                }
+                phoneInput.focus();
+                return;
+            }
+            if (emailInput && emailInput.required && !emailValid) {
+                if (formNotification) {
+                    formNotification.innerHTML = '⚠️ Please enter a valid email address.';
+                    formNotification.className = 'form-notification error';
+                }
+                emailInput.focus();
+                return;
+            }
+            if (serviceInput && serviceInput.required && !serviceInput.value) {
+                if (formNotification) {
+                    formNotification.innerHTML = '⚠️ Please select the primary service you need.';
+                    formNotification.className = 'form-notification error';
+                }
+                serviceInput.focus();
+                return;
+            }
+
+            contactForm.dataset.submitting = 'true';
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalHTML = btn.innerHTML;
 
-            btn.innerHTML = 'Sending to True Souls CRM...';
+            btn.innerHTML = 'Sending Inquiry...';
             btn.style.opacity = '0.75';
             btn.disabled = true;
 
             const formData = new FormData(contactForm);
             formData.set('crm_pipeline', 'TRUE SOULS — SALES CRM');
             formData.set('crm_stage', 'New Inquiry');
+            formData.set('source_page', sourcePageParam || document.referrer || window.location.pathname);
             formData.set('lead_source_url', window.location.href);
             formData.set('submitted_at_ist', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
 
@@ -164,25 +227,32 @@ document.addEventListener('DOMContentLoaded', () => {
             // Build WhatsApp Fast-Track URL with submitted details
             const waText = encodeURIComponent(
                 `Hello True Souls Media LLP! 👋\n\n` +
-                `*New Project Inquiry (TRUE SOULS — SALES CRM)*\n` +
+                `*New Project Inquiry*\n` +
                 `• *Name:* ${object.name || '-'}\n` +
                 `• *Business:* ${object.company || '-'}\n` +
                 `• *Service:* ${object.service || '-'}\n` +
                 `• *Budget:* ${object.budget || '-'}\n` +
                 `• *Timeline:* ${object.timeline || '-'}\n` +
                 `• *Location:* ${object.city || '-'}\n` +
+                `• *Source:* ${object.source_page || '-'}\n` +
                 `• *Details:* ${object.message || '-'}`
             );
             const waFastTrackUrl = `https://wa.me/919061286660?text=${waText}`;
 
             try {
-                // Optional secondary CRM webhook (Google Sheets / Make / Airtable)
+                // Optional secondary CRM webhook (Make / Zapier / Airtable backend proxy)
+                let crmWebhookSynced = false;
                 if (window.TSM_CRM_WEBHOOK_URL) {
-                    fetch(window.TSM_CRM_WEBHOOK_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: json
-                    }).catch(() => {});
+                    try {
+                        const whRes = await fetch(window.TSM_CRM_WEBHOOK_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: json
+                        });
+                        crmWebhookSynced = whRes.ok;
+                    } catch (_) {
+                        crmWebhookSynced = false;
+                    }
                 }
 
                 const response = await fetch('https://api.web3forms.com/submit', {
@@ -197,12 +267,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
 
                 if (result.success) {
-                    btn.innerHTML = '✓ Logged in TRUE SOULS — SALES CRM';
+                    btn.innerHTML = crmWebhookSynced ? '✓ Synced to True Souls CRM' : '✓ Inquiry Sent to Sales Desk';
                     btn.style.background = '#C8FF00';
                     btn.style.color = '#090A0C';
                     btn.style.opacity = '1';
                     if (formNotification) {
-                        formNotification.innerHTML = `✅ <strong>Inquiry Received!</strong> Your request is logged in <strong>TRUE SOULS — SALES CRM</strong> (Stage: <em>New Inquiry</em>). We will respond within 2–4 business hours.<br><a href="${waFastTrackUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.65rem;padding:0.5rem 1rem;background:#25d366;color:#fff;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.84rem;">⚡ Instant WhatsApp Fast-Track →</a>`;
+                        const deliveryNote = crmWebhookSynced
+                            ? 'synced to <strong>TRUE SOULS — SALES CRM</strong> and emailed to our sales desk'
+                            : 'delivered to our sales desk (<strong>truesoulsmedia666@gmail.com</strong>) with structured CRM tags';
+                        formNotification.innerHTML = `✅ <strong>Inquiry Received!</strong> Your project inquiry has been ${deliveryNote}. We will respond within 2–4 business hours.<br><a href="${waFastTrackUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.65rem;padding:0.5rem 1rem;background:#25d366;color:#fff;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.84rem;">⚡ Instant WhatsApp Fast-Track →</a>`;
                         formNotification.className = 'form-notification success';
                     }
                     contactForm.reset();
@@ -210,12 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error(result.message || 'Submission failed');
                 }
             } catch (error) {
-                btn.innerHTML = 'Redirecting to WhatsApp...';
+                btn.innerHTML = 'Continue on WhatsApp →';
                 btn.style.opacity = '1';
                 if (formNotification) {
-                    formNotification.innerHTML = `⚡ Connect with our team directly on WhatsApp to fast-track your quote: <a href="${waFastTrackUrl}" target="_blank" rel="noopener" style="color:#C8FF00;font-weight:700;text-decoration:underline;">Open WhatsApp with your details →</a>`;
+                    formNotification.innerHTML = `⚡ Email gateway busy — connect with our team directly on WhatsApp with your pre-filled inquiry: <a href="${waFastTrackUrl}" target="_blank" rel="noopener" style="color:#C8FF00;font-weight:700;text-decoration:underline;">Open WhatsApp with your details →</a>`;
                     formNotification.className = 'form-notification success';
                 }
+            } finally {
+                contactForm.dataset.submitting = 'false';
             }
 
             setTimeout(() => {
