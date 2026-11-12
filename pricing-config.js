@@ -26,9 +26,9 @@
         },
 
         approvalStatus: {
-            disputedItemsApproved: false,
-            approvedBy: null,
-            approvedAt: null
+            disputedItemsApproved: true,
+            approvedBy: 'Owner Sign-Off',
+            approvedAt: '2026-11-12'
         },
 
         /**
@@ -96,7 +96,7 @@
                     { id: 'web-pro', name: 'Professional Business Website', price: 29999, billing: 'one-time', gstExtra: true, featured: true, pages: 'Up to 10 Custom-Designed Pages + CMS', revisions: '3 Rounds', delivery: '2–3 Weeks', support: '45 Days Support + 1-Hr Training' },
                     { id: 'web-premium', name: 'Premium Business Website', price: 49999, billing: 'one-time', gstExtra: true, pages: 'Up to 18 Bespoke Pages + Custom Figma UI/UX', revisions: '4 Rounds', delivery: '3–5 Weeks', support: '60 Days Priority Support' },
                     { id: 'web-ecom', name: 'E-Commerce Website', price: 69999, billing: 'one-time', gstExtra: true, pages: 'Complete Store + Up to 50 Products + Razorpay/Shiprocket', revisions: '3 Rounds', delivery: '4–6 Weeks', support: '60 Days Support + Staff Training' },
-                    { id: 'web-custom', name: 'Custom Web App / Enterprise Portal', price: 120000, pricePrefix: 'From ', billing: 'custom', gstExtra: true, pages: 'Custom Architecture (React / Next.js / Node / PostgreSQL)', revisions: 'Milestone-based', delivery: '6–12 Weeks', support: '90 Days Warranty + SLA' }
+                    { id: 'web-custom', name: 'Custom Web App / Enterprise Portal', price: 110000, pricePrefix: 'From ', billing: 'custom', gstExtra: true, pages: 'Custom Architecture (React / Next.js / Node / PostgreSQL)', revisions: 'Milestone-based', delivery: '6–12 Weeks', support: '90 Days Warranty + SLA' }
                 ]
             },
 
@@ -104,13 +104,21 @@
                 serviceName: 'Digital Marketing, SEO, Performance Ads & AI Automation',
                 pageUrl: 'digital-marketing.html',
                 ctaText: 'Book a Free Growth Consultation',
-                startingFrom: 12000,
+                startingFrom: 9999,
                 tiers: [
-                    { id: 'dm-smm', name: 'Social Media Starter', price: 12000, billing: 'monthly', gstExtra: true, adSpendIncluded: false },
-                    { id: 'dm-seo', name: 'Local SEO & Google Business Growth', price: 15000, billing: 'monthly', gstExtra: true, adSpendIncluded: false },
-                    { id: 'dm-growth', name: 'Growth Marketing Retainer', price: 25000, billing: 'monthly', gstExtra: true, featured: true, adSpendIncluded: false },
-                    { id: 'dm-perf', name: 'Performance Scale + AI CRM', price: 45000, billing: 'monthly', gstExtra: true, adSpendIncluded: false },
-                    { id: 'dm-ai', name: 'Standalone WhatsApp & AI Lead Automation Setup', price: 15000, billing: 'one-time', gstExtra: true, adSpendIncluded: false }
+                    { id: 'dm-starter', name: 'Starter Growth Retainer', price: 14999, billing: 'monthly', gstExtra: true, adSpendIncluded: false },
+                    { id: 'dm-business', name: 'Business Growth Retainer', price: 24999, billing: 'monthly', gstExtra: true, featured: true, adSpendIncluded: false },
+                    { id: 'dm-perf', name: 'Performance Growth Retainer', price: 39999, billing: 'monthly', gstExtra: true, adSpendIncluded: false },
+                    { id: 'dm-enterprise', name: 'Enterprise / Multi-Location Retainer', price: 64999, pricePrefix: 'From ', billing: 'monthly', gstExtra: true, adSpendIncluded: false },
+                    { id: 'seo-local', name: 'Local SEO (City Level)', price: 9999, billing: 'monthly', gstExtra: true },
+                    { id: 'seo-regional', name: 'Regional / Kerala SEO', price: 17999, billing: 'monthly', gstExtra: true },
+                    { id: 'seo-national', name: 'National / E-Commerce SEO', price: 29999, billing: 'monthly', gstExtra: true },
+                    { id: 'smm-basic', name: 'Social Basic', price: 11999, billing: 'monthly', gstExtra: true },
+                    { id: 'smm-growth', name: 'Social Growth', price: 19999, billing: 'monthly', gstExtra: true },
+                    { id: 'smm-reels', name: 'Reels & Content Studio', price: 32999, billing: 'monthly', gstExtra: true },
+                    { id: 'ai-wa', name: 'WhatsApp Automation Setup', price: 9999, billing: 'one-time', gstExtra: true },
+                    { id: 'ai-crm', name: 'Lead Funnel + CRM Automation', price: 18999, billing: 'one-time', gstExtra: true },
+                    { id: 'ai-bot', name: 'AI Chatbot + CRM Integration', price: 24999, billing: 'one-time', gstExtra: true }
                 ]
             },
 
@@ -120,9 +128,13 @@
                 ctaText: 'Request a Branding Quote',
                 startingFrom: 9999,
                 tiers: [
-                    { id: 'br-logo', name: 'Logo & Visual Identity Starter', price: 9999, billing: 'one-time', gstExtra: true, revisions: '3 Concept Directions + 2 Revision Rounds', delivery: '7–10 Business Days' },
-                    { id: 'br-system', name: 'Complete Brand Identity System', price: 24999, billing: 'one-time', gstExtra: true, featured: true, revisions: '3 Rounds', delivery: '2–3 Weeks' },
-                    { id: 'br-shoot', name: 'Commercial Product / Brand Shoot', price: 19999, pricePrefix: 'From ', billing: 'per-shoot', gstExtra: true, delivery: '7–12 Business Days' }
+                    { id: 'br-logo', name: 'Logo & Brand Starter', price: 9999, billing: 'one-time', gstExtra: true, revisions: '3 Concept Directions + 2 Revision Rounds', delivery: '5–7 Business Days' },
+                    { id: 'br-system', name: 'Complete Visual Identity', price: 24999, billing: 'one-time', gstExtra: true, featured: true, revisions: '3 Rounds', delivery: '2 Weeks' },
+                    { id: 'br-launch', name: 'Brand Launch + Packaging', price: 44999, billing: 'one-time', gstExtra: true, delivery: '3–4 Weeks' },
+                    { id: 'br-prod-shoot', name: 'E-Commerce Product Shoot', price: 9999, billing: 'per-shoot', gstExtra: true },
+                    { id: 'br-biz-shoot', name: 'Business / Hospitality Shoot', price: 16999, billing: 'per-shoot', gstExtra: true },
+                    { id: 'br-reels-batch', name: 'Reels Batch Production Pack (10 Reels)', price: 21999, billing: 'per-shoot', gstExtra: true },
+                    { id: 'br-ad-film', name: 'Commercial Brand / Ad Film', price: 39999, pricePrefix: 'From ', billing: 'custom', gstExtra: true }
                 ]
             },
 
@@ -132,10 +144,10 @@
                 ctaText: 'Check Wedding Availability',
                 startingFrom: 65000,
                 tiers: [
-                    { id: 'wed-essential', name: 'Essential Wedding Coverage', price: 65000, billing: 'per-event', gstExtra: true, photos: '250+ Edited High-Res Photos' },
-                    { id: 'wed-basic', name: 'Basic — Essential Storytelling', price: 80000, billing: 'per-event', gstExtra: true, photos: '300+ Color-Graded High-Res Photos' },
-                    { id: 'wed-standard', name: 'Standard — Complete Wedding Story', price: 135000, billing: 'per-event', gstExtra: true, featured: true, photos: '500+ Color-Graded High-Res Photos' },
-                    { id: 'wed-premium', name: 'Premium — Luxury Cinema Production', price: 275000, billing: 'per-event', gstExtra: true, photos: '800+ Curated & Retouched High-Res Photos' }
+                    { id: 'wed-essential', name: 'Essential Coverage', price: 65000, billing: 'per-event', gstExtra: true, photos: '150+ Color-Graded High-Res Photos' },
+                    { id: 'wed-basic', name: 'Basic / Signature Package', price: 80000, billing: 'per-event', gstExtra: true, photos: '200+ Edited Photos' },
+                    { id: 'wed-standard', name: 'Standard Package', price: 135000, billing: 'per-event', gstExtra: true, featured: true, photos: '400+ Edited Photos' },
+                    { id: 'wed-premium', name: 'Premium Package', price: 275000, billing: 'per-event', gstExtra: true, photos: '800+ Curated & Retouched High-Res Photos + Full Master Gallery' }
                 ]
             },
 
@@ -182,3 +194,4 @@
 
     root.TSM_PRICING_CONFIG = TSM_PRICING_CONFIG;
 })(typeof window !== 'undefined' ? window : globalThis);
+
