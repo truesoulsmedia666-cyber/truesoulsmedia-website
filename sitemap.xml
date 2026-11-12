@@ -1,176 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.truesoulsmedia.com/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/"/>
-    <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/hero_wedding_1776598144800.webp</image:loc>
-      <image:title>True Souls Media — Kerala luxury wedding photography and planning</image:title>
-      <image:caption>Kerala's #1 wedding planner and photography studio in Kottayam</image:caption>
-    </image:image>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/about</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/about"/>
-  </url>
-  <url>
-    <loc>https://www.truesoulsmedia.com/careers</loc>
-    <lastmod>2026-11-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/careers"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/careers"/>
-  </url>
-  <url>
-    <loc>https://www.truesoulsmedia.com/wedding-planner</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/website-development.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/wedding-planner"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/wedding-planner"/>
-    <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_wedding_1776598179199.webp</image:loc>
-      <image:title>Wedding Planning Services Kerala — True Souls Media</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/photography</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/digital-marketing.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/photography"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/photography"/>
-    <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_wedding_1776598179199.webp</image:loc>
-      <image:title>Wedding Photography Kottayam Kerala — True Souls Media</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/events</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/branding.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.truesoulsmedia.com/pricing.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.truesoulsmedia.com/podcast.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/events"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/events"/>
-    <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_events_1776598196076.webp</image:loc>
-      <image:title>Event Management Kerala — True Souls Media</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/digital-marketing</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/photography.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/digital-marketing"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/digital-marketing"/>
-    <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_digital_1776598215494.webp</image:loc>
-      <image:title>Digital Marketing Agency Kottayam Kerala — True Souls Media</image:title>
-    </image:image>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/podcast</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/wedding-planner.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/podcast"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/podcast"/>
-    <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/portfolio_podcast_1776598232723.webp</image:loc>
-      <image:title>Podcast Production Studio Kottayam Kerala — True Souls Media</image:title>
-    </image:image>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/blog</loc>
-    <lastmod>2026-11-05</lastmod>
+    <loc>https://www.truesoulsmedia.com/events.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.truesoulsmedia.com/about.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.truesoulsmedia.com/careers.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/blog"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/blog"/>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/blog/studio-inauguration-ceremony-pala-kottayam</loc>
-    <lastmod>2026-11-05</lastmod>
+    <loc>https://www.truesoulsmedia.com/blog.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.truesoulsmedia.com/blog/new-studio-opening-pala-kottayam.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/blog/studio-inauguration-ceremony-pala-kottayam"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/blog/studio-inauguration-ceremony-pala-kottayam"/>
-    <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/true_souls_media_studio_inauguration_pala_lamp.webp</image:loc>
-      <image:title>True Souls Media Studio Inauguration Lamp Lighting in Pala, Kottayam</image:title>
-      <image:caption>Traditional Nilavilakku brass oil lamp lit during the True Souls Media flagship studio inauguration in Pala, Kerala</image:caption>
-    </image:image>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/blog/new-studio-opening-pala-kottayam</loc>
-    <lastmod>2026-10-11</lastmod>
+    <loc>https://www.truesoulsmedia.com/blog/studio-inauguration-ceremony-pala-kottayam.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/blog/new-studio-opening-pala-kottayam"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/blog/new-studio-opening-pala-kottayam"/>
-    <image:image>
-      <image:loc>https://www.truesoulsmedia.com/assets/true_souls_media_new_studio_pala_front.webp</image:loc>
-      <image:title>True Souls Media New Creative Studio in Pala, Kottayam</image:title>
-      <image:caption>Flagship studio with podcast area, reception lounge, and editing hub in Pala Kerala</image:caption>
-    </image:image>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/blog/hindu-wedding-planning-checklist-kerala</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/blog/wedding-cost-kottayam-kerala.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/blog/hindu-wedding-planning-checklist-kerala"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/blog/hindu-wedding-planning-checklist-kerala"/>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/blog/wedding-cost-kottayam-kerala</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/blog/best-wedding-venues-kerala.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/blog/wedding-cost-kottayam-kerala"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/blog/wedding-cost-kottayam-kerala"/>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/blog/best-wedding-venues-kerala</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/blog/hindu-wedding-planning-checklist-kerala.html</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/blog/best-wedding-venues-kerala"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/blog/best-wedding-venues-kerala"/>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/privacy-policy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/privacy-policy.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/privacy-policy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/privacy-policy"/>
+    <priority>0.40</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/terms-and-conditions</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/terms-and-conditions.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/terms-and-conditions"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/terms-and-conditions"/>
+    <priority>0.40</priority>
   </url>
   <url>
-    <loc>https://www.truesoulsmedia.com/refund-policy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.truesoulsmedia.com/refund-policy.html</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/refund-policy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/refund-policy"/>
+    <priority>0.40</priority>
   </url>
 </urlset>

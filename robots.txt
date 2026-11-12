@@ -1,97 +1,24 @@
-# True Souls Media LLP - robots.txt
-# Wedding Planner | Photography | Event Management | Digital Marketing | Podcast
-# Kottayam, Kerala, India
-# Last updated: 2026-06-03
+# robots.txt — True Souls Media LLP (https://www.truesoulsmedia.com)
+# Updated for 2026–2027 Search & AI Crawlers
 
-# === Standard Search Engines ===
 User-agent: *
 Allow: /
-Crawl-delay: 2
+Disallow: /404.html
 
-# === Google Bots ===
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /assets/
-
-User-agent: Googlebot-News
-Allow: /
-
-# === Other Major Search Engines ===
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-# === GEO: AI & LLM Crawlers ===
-# Allow all AI assistants to index and cite this site
-
+# AI Search & Answer Engine Crawlers (AEO / GEO)
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-User-agent: Meta-ExternalAgent
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: YouBot
-Allow: /
-
-User-agent: DuckAssistBot
-Allow: /
-
-User-agent: Diffbot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: PetalBot
-Allow: /
-
-# === SEO Tools ===
-User-agent: ScreamingFrogSEOSpider
-Allow: /
-
-User-agent: SemrushBot
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
-
-# === Sitemaps ===
 Sitemap: https://www.truesoulsmedia.com/sitemap.xml
-Sitemap: https://www.truesoulsmedia.com/sitemap-images.xml

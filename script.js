@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Keep visible once revealed
+                observer.unobserve(entry.target);
             }
         });
     }, revealOptions);
@@ -20,18 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll.observe(el);
     });
 
-    // Safety fallback: reveal all sections after 2s in case observer fails
+    // Safety fallback: reveal all sections after 1.8s in case observer fails
     setTimeout(() => {
         revealElements.forEach(el => el.classList.add('active'));
-    }, 2000);
+    }, 1800);
 
     // 2. Background Canvas Layer Switching
     const sections = document.querySelectorAll('.section');
     const bgLayers = document.querySelectorAll('.bg-layer');
 
-    // We'll use an intersection observer to detect which section is currently focused in the viewport
     const bgObserverOptions = {
-        threshold: 0.5 // trigger when section is 50% visible
+        threshold: 0.45
     };
 
     const bgObserver = new IntersectionObserver((entries) => {
@@ -40,10 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetIndex = entry.target.getAttribute('data-bg-index');
 
                 if (targetIndex !== null) {
-                    // Deactivate all layers
                     bgLayers.forEach(layer => layer.classList.remove('active'));
-
-                    // Activate target layer
                     const targetLayer = document.querySelector(`.bg-layer[data-index="${targetIndex}"]`);
                     if (targetLayer) {
                         targetLayer.classList.add('active');
@@ -59,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            if (!targetId || targetId === '#') return;
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
@@ -69,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile Menu Toggle
+    // 4. Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.querySelector('.nav-links');
 
@@ -87,27 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuBtn.innerHTML = svgClose;
             } else {
                 mobileMenuBtn.innerHTML = svgMenu;
-                // Clean reset dropdowns when closing menu
                 dropdowns.forEach(d => d.classList.remove('open'));
             }
         });
 
-        // Close menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                // If it is the main Services dropdown trigger, do not close the mobile menu
+            link.addEventListener('click', () => {
                 if (link.parentElement.classList.contains('nav-dropdown')) {
                     return;
                 }
                 navLinks.classList.remove('active');
                 document.body.classList.remove('menu-open');
                 mobileMenuBtn.innerHTML = svgMenu;
-                // Reset dropdowns
                 dropdowns.forEach(d => d.classList.remove('open'));
             });
         });
 
-        // Mobile dropdown toggle
         dropdowns.forEach(dropdown => {
             const trigger = dropdown.querySelector(':scope > a');
             if (trigger) {
@@ -122,27 +113,78 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Form Submit — Web3Forms
-    const contactForm = document.getElementById('contactForm');
-    const formNotification = document.getElementById('formNotification');
+    // 5. TRUE SOULS — SALES CRM Lead Capture & Web3Forms Submission
+    const contactForms = document.querySelectorAll('#contactForm, .tsm-crm-form');
 
-    if (contactForm) {
+    contactForms.forEach((contactForm) => {
+        const formNotification = contactForm.parentElement.querySelector('.form-notification') || document.getElementById('formNotification');
+
+        // Pre-select service if URL has ?service= or ?package=
+        const urlParams = new URLSearchParams(window.location.search);
+        const preselectedService = urlParams.get('service');
+        const preselectedPackage = urlParams.get('package');
+        if (preselectedService) {
+            const serviceSelect = contactForm.querySelector('[name="service"]');
+            if (serviceSelect) {
+                serviceSelect.value = preselectedService;
+            }
+        }
+        if (preselectedPackage) {
+            const msgField = contactForm.querySelector('[name="message"]');
+            if (msgField && !msgField.value) {
+                msgField.value = `Interested Package: ${preselectedPackage}\n`;
+            }
+        }
+
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            // Honeypot anti-spam check
+            const honeypot = contactForm.querySelector('[name="botcheck"], [name="website_hp"]');
+            if (honeypot && honeypot.value) {
+                return;
+            }
 
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalHTML = btn.innerHTML;
 
-            // Loading state
-            btn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Sending...';
-            btn.style.opacity = '0.7';
+            btn.innerHTML = 'Sending to True Souls CRM...';
+            btn.style.opacity = '0.75';
             btn.disabled = true;
 
             const formData = new FormData(contactForm);
+            formData.set('crm_pipeline', 'TRUE SOULS — SALES CRM');
+            formData.set('crm_stage', 'New Inquiry');
+            formData.set('lead_source_url', window.location.href);
+            formData.set('submitted_at_ist', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }));
+
             const object = Object.fromEntries(formData);
             const json = JSON.stringify(object);
 
+            // Build WhatsApp Fast-Track URL with submitted details
+            const waText = encodeURIComponent(
+                `Hello True Souls Media LLP! 👋\n\n` +
+                `*New Project Inquiry (TRUE SOULS — SALES CRM)*\n` +
+                `• *Name:* ${object.name || '-'}\n` +
+                `• *Business:* ${object.company || '-'}\n` +
+                `• *Service:* ${object.service || '-'}\n` +
+                `• *Budget:* ${object.budget || '-'}\n` +
+                `• *Timeline:* ${object.timeline || '-'}\n` +
+                `• *Location:* ${object.city || '-'}\n` +
+                `• *Details:* ${object.message || '-'}`
+            );
+            const waFastTrackUrl = `https://wa.me/919061286660?text=${waText}`;
+
             try {
+                // Optional secondary CRM webhook (Google Sheets / Make / Airtable)
+                if (window.TSM_CRM_WEBHOOK_URL) {
+                    fetch(window.TSM_CRM_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: json
+                    }).catch(() => {});
+                }
+
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: {
@@ -155,12 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
 
                 if (result.success) {
-                    // Success
-                    btn.innerHTML = '<i class="bx bx-check-circle"></i> Message Sent!';
-                    btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+                    btn.innerHTML = '✓ Logged in TRUE SOULS — SALES CRM';
+                    btn.style.background = '#C8FF00';
+                    btn.style.color = '#090A0C';
                     btn.style.opacity = '1';
                     if (formNotification) {
-                        formNotification.textContent = '✅ Thank you! We received your message and will respond within 24 hours.';
+                        formNotification.innerHTML = `✅ <strong>Inquiry Received!</strong> Your request is logged in <strong>TRUE SOULS — SALES CRM</strong> (Stage: <em>New Inquiry</em>). We will respond within 2–4 business hours.<br><a href="${waFastTrackUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.65rem;padding:0.5rem 1rem;background:#25d366;color:#fff;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.84rem;">⚡ Instant WhatsApp Fast-Track →</a>`;
                         formNotification.className = 'form-notification success';
                     }
                     contactForm.reset();
@@ -168,69 +210,55 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error(result.message || 'Submission failed');
                 }
             } catch (error) {
-                // Error
-                btn.innerHTML = '<i class="bx bx-x-circle"></i> Failed — Try Again';
-                btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                btn.innerHTML = 'Redirecting to WhatsApp...';
                 btn.style.opacity = '1';
                 if (formNotification) {
-                    formNotification.textContent = '❌ Something went wrong. Please WhatsApp us directly at +91 90612 86660.';
-                    formNotification.className = 'form-notification error';
+                    formNotification.innerHTML = `⚡ Connect with our team directly on WhatsApp to fast-track your quote: <a href="${waFastTrackUrl}" target="_blank" rel="noopener" style="color:#C8FF00;font-weight:700;text-decoration:underline;">Open WhatsApp with your details →</a>`;
+                    formNotification.className = 'form-notification success';
                 }
-                console.error('Form error:', error);
             }
 
-            // Reset button after 4 seconds
             setTimeout(() => {
                 btn.innerHTML = originalHTML;
                 btn.style.background = '';
+                btn.style.color = '';
                 btn.style.opacity = '1';
                 btn.disabled = false;
-            }, 4000);
+            }, 5000);
         });
-    }
+    });
 
-    // 6. Custom Select Dropdown for Contact Form
-    const customSelectWrapper = document.querySelector('.custom-select-wrapper');
-    if (customSelectWrapper) {
-        const trigger = customSelectWrapper.querySelector('#customSelectTrigger');
-        const triggerText = trigger.querySelector('span');
-        const optionsList = customSelectWrapper.querySelector('#customSelectOptions');
+    // 6. Custom Select Dropdowns
+    document.querySelectorAll('.custom-select-wrapper').forEach((customSelectWrapper) => {
+        const trigger = customSelectWrapper.querySelector('.custom-select-trigger');
+        const optionsList = customSelectWrapper.querySelector('.custom-select-options');
         const customOptions = customSelectWrapper.querySelectorAll('.custom-option');
-        const nativeSelect = customSelectWrapper.querySelector('#service');
+        const nativeSelect = customSelectWrapper.querySelector('select');
 
-        // Toggle dropdown open/close
+        if (!trigger || !optionsList || !nativeSelect) return;
+        const triggerText = trigger.querySelector('span');
+
         trigger.addEventListener('click', (e) => {
             e.stopPropagation();
             trigger.classList.toggle('active');
             optionsList.classList.toggle('open');
         });
 
-        // Click on an option
         customOptions.forEach(opt => {
             opt.addEventListener('click', (e) => {
                 e.stopPropagation();
-                
                 const val = opt.getAttribute('data-value');
-
-                // Update trigger appearance
-                triggerText.textContent = opt.textContent.trim();
-                trigger.style.color = 'var(--text-white)'; // make it look selected
-
-                // Update native select value
+                if (triggerText) triggerText.textContent = opt.textContent.trim();
+                trigger.style.color = 'var(--text-white)';
                 nativeSelect.value = val;
                 nativeSelect.dispatchEvent(new Event('change'));
-
-                // Update selected option state
                 customOptions.forEach(o => o.classList.remove('selected'));
                 opt.classList.add('selected');
-
-                // Close dropdown
                 trigger.classList.remove('active');
                 optionsList.classList.remove('open');
             });
         });
 
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!customSelectWrapper.contains(e.target)) {
                 trigger.classList.remove('active');
@@ -238,172 +266,167 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Reset custom select when form is reset
-        if (contactForm) {
-            contactForm.addEventListener('reset', () => {
-                triggerText.textContent = 'Select Service';
+        const parentForm = customSelectWrapper.closest('form');
+        if (parentForm) {
+            parentForm.addEventListener('reset', () => {
+                if (triggerText) triggerText.textContent = 'Select Primary Service';
                 trigger.style.color = '';
                 customOptions.forEach(o => o.classList.remove('selected'));
             });
         }
+    });
+
+    // 7. Responsive Canvas Particles (Controlled Electric Lime)
+    const canvas = document.getElementById('bg-canvas');
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (canvas && !prefersReducedMotion) {
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let lastWidth = 0;
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            ctx.scale(dpr, dpr);
+
+            if (Math.abs(width - lastWidth) > 50 || particles.length === 0) {
+                initParticles();
+                lastWidth = width;
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const numParticles = Math.min(Math.floor((width * height) / 14000), 65);
+            for (let i = 0; i < numParticles; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 1.4 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.35,
+                    vy: (Math.random() - 0.5) * 0.35,
+                    opacity: Math.random() * 0.32 + 0.08
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(200, 255, 0, ${p.opacity})`;
+                ctx.fill();
+            });
+
+            for (let i = 0; i < particles.length; i++) {
+                const pi = particles[i];
+                for (let j = i + 1; j < particles.length; j++) {
+                    const pj = particles[j];
+                    const dx = pi.x - pj.x;
+                    const dy = pi.y - pj.y;
+                    const distSq = dx * dx + dy * dy;
+
+                    if (distSq < 10000) {
+                        const distance = Math.sqrt(distSq);
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(200, 255, 0, ${0.11 - (distance / 100) * 0.11})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(pi.x, pi.y);
+                        ctx.lineTo(pj.x, pj.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+
+        if (window.requestIdleCallback) {
+            window.requestIdleCallback(() => {
+                resize();
+                animate();
+            });
+        } else {
+            setTimeout(() => {
+                resize();
+                animate();
+            }, 200);
+        }
     }
 
-    // 5. Responsive Canvas Particles
-        const canvas = document.getElementById('bg-canvas');
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-            let width, height;
-            let particles = [];
+    // 8. Portfolio Filter
+    const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card-item');
 
-            let lastWidth = 0;
+    if (filterBtns.length > 0 && portfolioCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-            function resize() {
-                width = window.innerWidth;
-                height = window.innerHeight;
-                // Support high-DPI displays (Retina/Mobile)
-                const dpr = window.devicePixelRatio || 1;
-                canvas.width = width * dpr;
-                canvas.height = height * dpr;
-                ctx.scale(dpr, dpr);
+                const filterValue = btn.getAttribute('data-filter');
 
-                // Only reinitialize if width changes significantly or first load
-                if (Math.abs(width - lastWidth) > 50 || particles.length === 0) {
-                    initParticles();
-                    lastWidth = width;
-                }
-            }
+                portfolioCards.forEach(card => {
+                    card.style.opacity = '0.1';
+                    card.style.transform = 'scale(0.96)';
 
-            function initParticles() {
-                particles = [];
-                // Calculate number of particles based on screen size (responsive count)
-                const numParticles = Math.min(Math.floor((width * height) / 12000), 80);
-                for (let i = 0; i < numParticles; i++) {
-                    particles.push({
-                        x: Math.random() * width,
-                        y: Math.random() * height,
-                        radius: Math.random() * 1.5 + 0.5,
-                        vx: (Math.random() - 0.5) * 0.4,
-                        vy: (Math.random() - 0.5) * 0.4,
-                        opacity: Math.random() * 0.4 + 0.1
-                    });
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-
-                // Draw particles
-                particles.forEach(p => {
-                    p.x += p.vx;
-                    p.y += p.vy;
-
-                    // Wrap around edges
-                    if (p.x < 0) p.x = width;
-                    if (p.x > width) p.x = 0;
-                    if (p.y < 0) p.y = height;
-                    if (p.y > height) p.y = 0;
-
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(168, 85, 247, ${p.opacity})`;
-                    if (width > 768) {
-                        ctx.shadowBlur = 8;
-                        ctx.shadowColor = 'rgba(168, 85, 247, 0.6)';
-                    } else {
-                        ctx.shadowBlur = 0;
-                    }
-                    ctx.fill();
-                });
-
-                // Connect nearby particles with lines for a constellation effect
-                for (let i = 0; i < particles.length; i++) {
-                    const pi = particles[i];
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const pj = particles[j];
-                        const dx = pi.x - pj.x;
-                        const dy = pi.y - pj.y;
-                        const distSq = dx * dx + dy * dy;
-
-                        if (distSq < 10000) { // 100px threshold squared (100 * 100)
-                            const distance = Math.sqrt(distSq);
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(168, 85, 247, ${0.15 - (distance / 100) * 0.15})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.moveTo(pi.x, pi.y);
-                            ctx.lineTo(pj.x, pj.y);
-                            ctx.stroke();
+                    setTimeout(() => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 40);
+                        } else {
+                            card.style.display = 'none';
                         }
-                    }
-                }
-
-                requestAnimationFrame(animate);
-            }
-
-            // Add resize listener and initialize deferred
-            window.addEventListener('resize', resize);
-            
-            if (window.requestIdleCallback) {
-                window.requestIdleCallback(() => {
-                    resize();
-                    animate();
-                });
-            } else {
-                setTimeout(() => {
-                    resize();
-                    animate();
-                }, 200);
-            }
-        }
-
-        // 7. Portfolio Filter
-        const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
-        const portfolioCards = document.querySelectorAll('.portfolio-card-item');
-
-        if (filterBtns.length > 0 && portfolioCards.length > 0) {
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    btn.classList.add('active');
-
-                    const filterValue = btn.getAttribute('data-filter');
-
-                    portfolioCards.forEach(card => {
-                        // Reset animations
-                        card.style.opacity = '0.1';
-                        card.style.transform = 'scale(0.95)';
-                        
-                        setTimeout(() => {
-                            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                                card.style.display = 'block';
-                                setTimeout(() => {
-                                    card.style.opacity = '1';
-                                    card.style.transform = 'scale(1)';
-                                }, 50);
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }, 200);
-                    });
+                    }, 180);
                 });
             });
-        }
+        });
+    }
 
-        // 8. Local file protocol link resolution (ensures file:/// navigation works seamlessly)
-        if (window.location.protocol === 'file:') {
-            document.addEventListener('click', (e) => {
-                const link = e.target.closest('a');
-                if (!link) return;
-                const href = link.getAttribute('href');
-                if (!href || href.startsWith('#') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
-                
-                const [path, hash] = href.split('#');
-                if (path && !path.endsWith('.html') && !path.endsWith('/')) {
-                    e.preventDefault();
-                    const target = path + '.html' + (hash ? '#' + hash : '');
-                    window.location.href = target;
-                }
-            });
-        }
-    });
+    // 9. Local file protocol link resolution
+    if (window.location.protocol === 'file:') {
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (!link) return;
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+            if (href === '/') {
+                e.preventDefault();
+                window.location.href = 'index.html';
+                return;
+            }
+            if (href.startsWith('/#')) {
+                e.preventDefault();
+                window.location.href = 'index.html' + href.substring(1);
+                return;
+            }
+            const cleanHref = href.startsWith('/') ? href.substring(1) : href;
+            const parts = cleanHref.split('#');
+            if (parts[0] && !parts[0].includes('.')) {
+                e.preventDefault();
+                window.location.href = parts[0] + '.html' + (parts[1] ? '#' + parts[1] : '');
+            }
+        });
+    }
+
+});

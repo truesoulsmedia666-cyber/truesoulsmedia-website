@@ -4,411 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/logo.png">
-    <meta name="theme-color" content="#a855f7">
+    <meta name="theme-color" content="#090A0C">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="True Souls Media">
-    <title>True Souls Media LLP | Full-Service Creative Agency in Kerala</title>
-    <meta name="description" content="True Souls Media LLP is Kerala's premier full-service creative agency offering wedding planning, photography, videography, event management, digital marketing, and podcast production.">
-    <meta name="keywords" content="wedding planner kottayam, wedding planner kerala, best wedding photographer kottayam, wedding photography kottayam, wedding planning kerala, destination wedding kerala, wedding videographer kottayam, wedding planner kochi, kerala wedding photography, cinematic wedding film kerala, truesoulsmedia, true souls media, event management kottayam">
-    <!-- Preload LCP image for Core Web Vitals -->
-    <link rel="preload" href="assets/hero_wedding_1776598144800.webp" as="image" fetchpriority="high">
+    <title>Website Development &amp; Digital Marketing Agency in Pala, Kottayam | True Souls Media LLP</title>
+    <meta name="description" content="True Souls Media LLP is a creative, website development, digital marketing, SEO, branding, media production, and event agency in Pala, Kottayam, Kerala. Websites from ₹14,999.">
+    <meta name="keywords" content="website designers in Pala, website development company in Kottayam, web design company in Kerala, digital marketing agency in Pala, digital marketing agency in Kottayam, SEO company in Kerala, social media marketing agency in Kottayam, branding agency in Kerala, wedding photography in Pala, event management in Kottayam, podcast studio in Kerala, True Souls Media LLP">
+    <link rel="preload" href="assets/portfolio_digital_1776598215494.webp" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Preload Inter 700 for mobile LCP (logo-text) -->
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- Load fonts non-blocking to avoid render-blocking penalty -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
-    <!-- Preload boxicons font to avoid font-display flash -->
-    <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <noscript></noscript>
+
     <!-- Critical CSS inlined to prevent render-blocking -->
     <style>
       *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
       html{scroll-behavior:smooth}
-      body{font-family:'Inter',system-ui,sans-serif;background:#000;color:#9ca3af;line-height:1.6;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-      .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:70px;display:flex;align-items:center;background:rgba(0,0,0,0.7);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.05)}
-      .nav-container{max-width:1280px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+      body{font-family:'Inter',system-ui,sans-serif;background:#090A0C;color:#94A3B8;line-height:1.65;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+      .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:74px;display:flex;align-items:center;background:rgba(9,10,12,0.84);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08)}
+      .nav-container{max-width:1320px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
       .nav-links, .nav-dropdown-menu, .nav-dropdown-menu li{list-style:none;list-style-type:none;margin:0;padding:0}
       .nav-dropdown-menu{position:absolute;opacity:0;visibility:hidden}
-      .logo{text-decoration:none;display:flex;align-items:center;gap:.6rem}
-      .logo-text{font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:-.02em}
-      .nav-logo{width:36px;height:36px;border-radius:8px;object-fit:cover}
+      .logo{text-decoration:none;display:flex;align-items:center;gap:.65rem}
+      .logo-text{font-size:1.08rem;font-weight:800;color:#F8FAFC;letter-spacing:-.03em}
+      .nav-logo{width:36px;height:36px;border-radius:8px;object-fit:cover;border:1px solid rgba(200,255,0,0.25)}
       main{position:relative;z-index:10}
-      .gradient-text{background:linear-gradient(135deg,#fff 0%,#e8d0ff 40%,#a5aeff 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-      h1{font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:#fff;padding-bottom:.15em}
-      .section{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:8rem 2rem;position:relative}
-      .scroll-reveal{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
-      .scroll-reveal.active{opacity:1;transform:translateY(0)}
-      .ambient-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-      #bg-canvas{position:fixed;top:0;left:0;width:100vw;height:100dvh;z-index:1;pointer-events:none}
-      #bg-canvas-container{position:fixed;inset:0;z-index:2;pointer-events:none}
-      .bg-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease}
-      .bg-layer.active{opacity:.22}
-      .image-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.65) 100%)}
-      .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#a855f7 0%,#6366f1 100%);color:#fff;border:none;padding:.9rem 2.2rem;border-radius:999px;font-size:.95rem;font-weight:600;text-decoration:none;cursor:pointer;transition:all .4s cubic-bezier(.2,.8,.2,1)}
-      .whatsapp-float{position:fixed;bottom:2rem;right:2rem;z-index:9999;width:56px;height:56px;background:linear-gradient(135deg,#25d366,#128c7e);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.6rem;text-decoration:none}
-      .portfolio-filter-btn {
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.08);
-          color: #cbd5e1;
-          padding: 0.6rem 1.4rem;
-          border-radius: 999px;
-          font-size: 0.85rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-          font-family: 'Inter', sans-serif;
-      }
-      .portfolio-filter-btn:hover {
-          background: rgba(168, 85, 247, 0.15);
-          border-color: rgba(168, 85, 247, 0.4);
-          color: #fff;
-          box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
-          transform: translateY(-1px);
-      }
-      .portfolio-filter-btn.active {
-          background: rgba(168, 85, 247, 0.35);
-          border-color: rgba(168, 85, 247, 0.7);
-          color: #fff;
-          box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-          transform: translateY(-1px);
-      }
-      .portfolio-card-item {
-          transition: opacity 0.4s ease, transform 0.4s ease;
-      }
-      .portfolio-card-item:hover img {
-          transform: scale(1.06);
-      }
-      .hero-spotlight {
-          display: block;
-      }
-      @media (max-width: 768px) {
-          .hero-spotlight {
-              display: none !important;
-          }
-      }
+      .gradient-text{background:linear-gradient(135deg,#FFFFFF 0%,#F1F5F9 42%,#C8FF00 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+      h1{font-size:clamp(2.75rem,6.2vw,5.4rem);font-weight:800;line-height:1.08;letter-spacing:-.035em;color:#F8FAFC;padding-bottom:.12em}
+      .section{min-height:auto;display:flex;align-items:center;justify-content:center;padding:7rem 2rem;position:relative}
+      .btn-primary{display:inline-flex;align-items:center;gap:.55rem;background:#C8FF00;color:#090A0C!important;border:1px solid #C8FF00;padding:.92rem 2.1rem;border-radius:999px;font-size:.94rem;font-weight:700;text-decoration:none;cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1)}
     </style>
-    <!-- Full CSS loaded asynchronously (non-render-blocking) -->
-    <link rel="stylesheet" href="style.css?v=12" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style.css?v=12"></noscript>
+    <link rel="stylesheet" href="style.css?v=14" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css?v=14"></noscript>
+    <link rel="stylesheet" href="service-page.css?v=14" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="service-page.css?v=14"></noscript>
     <link rel="canonical" href="https://www.truesoulsmedia.com/">
-    <!-- Alternate language tags -->
     <link rel="alternate" hreflang="en-IN" href="https://www.truesoulsmedia.com/">
     <link rel="alternate" hreflang="x-default" href="https://www.truesoulsmedia.com/">
     <meta name="google-site-verification" content="wh_GGhOPanFeS6fRZF_IMT-l-QvMAspYB34lWXCkCz8" />
     <meta name="google-site-verification" content="e2169afc29e685da" />
     <meta name="google-site-verification" content="c6ae91bb280d8945" />
-    <!-- SEO JSON-LD Schema - Full-Service Creative Agency -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "True Souls Media LLP",
-      "alternateName": "Truesoulsmedia",
-      "image": "https://truesoulsmedia.com/assets/logo.png",
-      "@id": "https://www.truesoulsmedia.com/",
-      "url": "https://www.truesoulsmedia.com/",
-      "telephone": "+919061286660",
-      "email": "truesoulsmedia666@gmail.com",
-      "priceRange": "₹₹₹",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Njondimakkal Jn, Pala-Thodupuzha Rd, Pala",
-        "addressLocality": "Pala",
-        "addressRegion": "Kerala",
-        "postalCode": "686575",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "9.7222241",
-        "longitude": "76.691907"
-      },
-      "hasMap": "https://maps.app.goo.gl/8KPpGourDPTe1BLHA",
-      "areaServed": [
-        {"@type": "City", "name": "Kottayam"},
-        {"@type": "City", "name": "Kochi"},
-        {"@type": "City", "name": "Trivandrum"},
-        {"@type": "State", "name": "Kerala"}
-      ],
-      "description": "True Souls Media LLP is Kerala's premier full-service creative agency based in Kottayam. We specialize in wedding planning, photography, videography, event management, digital marketing, and podcast production across Kerala — Hindu, Christian, Muslim weddings at equal pricing.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Creative Agency Services",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wedding Planning"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wedding Photography"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wedding Videography"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Event Management"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Digital Marketing"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Podcast Production"}}
-        ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "3",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-          "author": {"@type": "Person", "name": "Anjali Thomas"},
-          "reviewBody": "True Souls Media made our wedding unforgettable. The photography and planning was flawless — highly recommend to anyone in Kottayam or Kerala."
-        },
-        {
-          "@type": "Review",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-          "author": {"@type": "Person", "name": "Rahul Menon"},
-          "reviewBody": "Best wedding planner in Kottayam. They handled everything from venue to décor to photography. 100% satisfied!"
-        }
-      ],
-      "sameAs": [
-        "https://www.instagram.com/truesoulsmedia_",
-        "https://www.facebook.com/profile.php?id=61574503418456",
-        "https://www.linkedin.com/in/truesouls-media-b91a8b400"
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Who is the best wedding planner in Kerala?",
-          "acceptedAnswer": {"@type": "Answer", "text": "True Souls Media LLP is the best wedding planner in Kerala, based in Kottayam. With 4+ years of experience and 200+ weddings planned, they provide full-service wedding planning, cinematic photography, videography, and event management for Hindu, Christian, Muslim, and inter-faith couples at equal, transparent pricing across all of Kerala. Contact: +91-9061286660."}
-        },
-        {
-          "@type": "Question",
-          "name": "Who is the best wedding planner in Kottayam?",
-          "acceptedAnswer": {"@type": "Answer", "text": "True Souls Media LLP is Kottayam's #1 wedding planner and photography studio with 4+ years of experience and 200+ weddings planned. They offer luxury wedding planning, 4K cinematic photography, videography, and complete event management."}
-        },
-        {
-          "@type": "Question",
-          "name": "What is the best wedding planner in Kottayam, Kerala?",
-          "acceptedAnswer": {"@type": "Answer", "text": "True Souls Media LLP is Kottayam's leading luxury wedding planner and cinematic photography studio, serving all of Kerala with equal pricing for all religions — Hindu, Christian, Muslim, and inter-faith."}
-        },
-        {
-          "@type": "Question",
-          "name": "How much does wedding photography cost in Kottayam?",
-          "acceptedAnswer": {"@type": "Answer", "text": "True Souls Media offers wedding photography packages starting at ₹80,000 (Basic), ₹1,35,000 (Standard), and ₹2,75,000 (Premium) — all inclusive of album, calendar, frames, and USB delivery."}
-        },
-        {
-          "@type": "Question",
-          "name": "Do you plan destination weddings in Kerala?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Yes! True Souls Media handles destination weddings across Kerala including Kochi, Trivandrum, Munnar, Alleppey, Wayanad, and beyond. Outstation travel is billed separately."}
-        }
-      ]
-    }
-    </script>
-    <!-- ═══ SEO: Open Graph (Facebook, WhatsApp, LinkedIn previews) ══════════════ -->
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.truesoulsmedia.com/">
-    <meta property="og:title" content="Best Wedding Planner &amp; Photography in Kottayam | True Souls Media">
-    <meta property="og:description" content="Kerala's #1 luxury wedding planner &amp; cinematic photography studio in Kottayam. Wedding planning, photography, videography &amp; event management. All religions · Equal pricing.">
-    <meta property="og:image" content="https://truesoulsmedia.com/assets/hero_wedding_1776598144800.webp">
+    <meta property="og:title" content="We Build Brands. Websites. Experiences. | True Souls Media LLP">
+    <meta property="og:description" content="Kerala-based Website Development, Digital Marketing, SEO, AI Automation, Media Production &amp; Event Agency in Pala, Kottayam. Websites from ₹14,999.">
+    <meta property="og:image" content="https://www.truesoulsmedia.com/assets/portfolio_digital_1776598215494.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="True Souls Media LLP — Kerala luxury wedding photography and planning studio, Kottayam">
     <meta property="og:locale" content="en_IN">
     <meta property="og:site_name" content="True Souls Media LLP">
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@truesoulsmedia_">
-    <meta name="twitter:creator" content="@truesoulsmedia_">
-    <meta name="twitter:title" content="Best Wedding Planner &amp; Photography in Kottayam, Kerala">
-    <meta name="twitter:description" content="Kerala's #1 luxury wedding planner &amp; cinematic photography studio. All religions · Equal pricing. Packages from ₹80,000.">
-    <meta name="twitter:image" content="https://truesoulsmedia.com/assets/hero_wedding_1776598144800.webp">
-    <meta name="twitter:image:alt" content="True Souls Media — Kerala wedding photography">
-    <!-- Pinterest verification (AEO: visual search) -->
-    <meta name="p:domain_verify" content="truesoulsmedia">
-    <!-- GEO: Geographic meta tags -->
+    <meta name="twitter:site" content="@truesoulsads">
+    <meta name="twitter:title" content="Website Development &amp; Digital Marketing Agency in Pala, Kottayam | True Souls Media LLP">
+    <meta name="twitter:description" content="Custom Websites, SEO, Meta/Google Ads, WhatsApp AI Automation, Studio Production &amp; Events in Kerala.">
+    <meta name="twitter:image" content="https://www.truesoulsmedia.com/assets/portfolio_digital_1776598215494.webp">
+
+    <!-- Geographic Signals (Verified Pala Studio) -->
     <meta name="geo.region" content="IN-KL">
-    <meta name="geo.placename" content="Kottayam, Kerala, India">
-    <meta name="geo.position" content="9.5916;76.5222">
-    <meta name="ICBM" content="9.5916, 76.5222">
-    <!-- AEO: Language and content signals -->
-    <meta name="language" content="English">
-    <meta name="author" content="True Souls Media LLP">
-    <link rel="author" href="https://truesoulsmedia.com/humans.txt">
-    <meta name="coverage" content="Kerala, India">
-    <meta name="distribution" content="Local">
-    <meta name="rating" content="General">
-    <meta name="revisit-after" content="7 days">
-    <!-- GEO+AEO: Organization Schema (tells AI exactly who we are) -->
+    <meta name="geo.placename" content="Pala, Kottayam, Kerala, India">
+    <meta name="geo.position" content="9.7222241;76.691907">
+    <meta name="ICBM" content="9.7222241, 76.691907">
+
+    <!-- Unified JSON-LD Structured Data (Organization + ProfessionalService + FAQPage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://truesoulsmedia.com/#organization",
-      "name": "True Souls Media LLP",
-      "alternateName": ["Truesoulsmedia", "True Souls Media"],
-      "url": "https://truesoulsmedia.com",
-      "logo": "https://truesoulsmedia.com/assets/logo.png",
-      "image": "https://truesoulsmedia.com/assets/hero_wedding_1776598144800.webp",
-      "description": "True Souls Media LLP is Kerala's #1 wedding planner and cinematic photography studio based in Kottayam. We offer full-service wedding planning, photography, videography, event management, digital marketing, and podcast production across Kerala.",
-      "foundingDate": "2022",
-      "telephone": "+919061286660",
-      "email": "truesoulsmedia666@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kottayam",
-        "addressRegion": "Kerala",
-        "postalCode": "686001",
-        "addressCountry": "IN"
-      },
-      "areaServed": {"@type": "State", "name": "Kerala"},
-      "knowsAbout": ["Wedding Planning", "Wedding Photography", "Wedding Videography", "Event Management", "Digital Marketing", "Podcast Production", "Cinematic Photography"],
-      "sameAs": [
-        "https://www.instagram.com/truesoulsmedia_",
-        "https://www.facebook.com/profile.php?id=61574503418456",
-        "https://www.linkedin.com/in/truesouls-media-b91a8b400",
-        "https://wa.me/919061286660"
-      ]
-    }
-    </script>
-    <!-- AEO: SiteLinksSearchBox -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://truesoulsmedia.com/#website",
-      "url": "https://truesoulsmedia.com",
-      "name": "True Souls Media LLP",
-      "description": "Kerala's #1 wedding planner, photographer, and event management company in Kottayam",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {"@type": "EntryPoint", "urlTemplate": "https://truesoulsmedia.com/?q={search_term_string}"},
-        "query-input": "required name=search_term_string"
-      },
-      "publisher": {"@id": "https://truesoulsmedia.com/#organization"}
-    }
-    </script>
-    <!-- AEO: AggregateRating (Star ratings in search results) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://truesoulsmedia.com/#localbusiness",
-      "name": "True Souls Media LLP",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "3",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
+      "@graph": [
         {
-          "@type": "Review",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-          "author": {"@type": "Person", "name": "Anjali Thomas"},
-          "reviewBody": "True Souls Media made our wedding unforgettable. The photography and planning was flawless — highly recommend to anyone in Kottayam or Kerala."
+          "@type": ["ProfessionalService", "LocalBusiness", "Organization"],
+          "@id": "https://www.truesoulsmedia.com/#organization",
+          "name": "True Souls Media LLP",
+          "legalName": "True Souls Media LLP",
+          "taxID": "32AAZFT9777C1ZF",
+          "identifier": "LLPIN: ACX-5488",
+          "url": "https://www.truesoulsmedia.com/",
+          "logo": "https://www.truesoulsmedia.com/assets/logo.png",
+          "image": "https://www.truesoulsmedia.com/assets/portfolio_digital_1776598215494.webp",
+          "telephone": "+919061286660",
+          "email": "truesoulsmedia666@gmail.com",
+          "priceRange": "₹₹₹",
+          "foundingDate": "2022",
+          "founders": [
+            {"@type": "Person", "name": "Noel George"},
+            {"@type": "Person", "name": "Abin J Antony"}
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Njondimakkal Jn, Pala-Thodupuzha Rd, Pala",
+            "addressLocality": "Pala, Kottayam",
+            "addressRegion": "Kerala",
+            "postalCode": "686575",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "9.7222241",
+            "longitude": "76.691907"
+          },
+          "hasMap": "https://maps.app.goo.gl/8KPpGourDPTe1BLHA",
+          "areaServed": [
+            {"@type": "City", "name": "Pala"},
+            {"@type": "City", "name": "Kottayam"},
+            {"@type": "City", "name": "Kochi"},
+            {"@type": "City", "name": "Trivandrum"},
+            {"@type": "State", "name": "Kerala"},
+            {"@type": "Country", "name": "India"}
+          ],
+          "knowsAbout": [
+            "Website Design and Development",
+            "Digital Marketing and SEO",
+            "Social Media Management",
+            "Meta Ads and Google Ads",
+            "Marketing Automation and AI Integration",
+            "Branding and Creative Design",
+            "Commercial Photography and Videography",
+            "Wedding Photography and Cinematography",
+            "Event Management and Production",
+            "Podcast Production"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/truesoulsads/",
+            "https://www.instagram.com/truesoulsstudio/",
+            "https://www.instagram.com/truesoulsmedia/",
+            "https://www.instagram.com/truesoulsmedia_/",
+            "https://www.facebook.com/profile.php?id=61574503418456",
+            "https://www.linkedin.com/in/truesouls-media-b91a8b400",
+            "https://wa.me/919061286660"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "3",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
         },
         {
-          "@type": "Review",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-          "author": {"@type": "Person", "name": "Rahul Menon"},
-          "reviewBody": "Best wedding planner in Kottayam. They handled everything from venue to décor to photography. 100% satisfied!"
+          "@type": "FAQPage",
+          "@id": "https://www.truesoulsmedia.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much does website design and development cost in Pala, Kottayam?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "True Souls Media LLP offers website design and development packages starting at ₹14,999 for a Starter Business Website (up to 5 pages), ₹29,999 for a Professional Business Website (up to 10 pages + CMS), ₹49,999 for a Premium Custom UI/UX Website, and ₹69,999 for a Full E-Commerce Store with Razorpay/UPI integration (+ 18% GST)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are True Souls Media LLP's monthly digital marketing and SEO packages?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Monthly digital marketing retainers start at ₹14,999/month (Starter Growth), ₹24,999/month (Business Growth with Meta + Google Ads), and ₹39,999/month (Performance Growth with Reels production and CRM automation). Standalone Local SEO starts at ₹9,999/month and Social Media Management starts at ₹11,999/month (+ 18% GST, ad spend billed directly)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does True Souls Media LLP also handle branding, podcasts, weddings, and events?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Through our specialist creative divisions (@truesoulsstudio and @truesoulsmedia), we provide Branding & Logo Design (from ₹9,999), Commercial Product & Reels Shoots (from ₹9,999), Podcast Studio Recording in Pala (from ₹3,999/session or ₹18,000/month), Event Management (from ₹45,000), and Wedding Photography & Planning (from ₹65,000 / ₹75,000)."
+              }
+            }
+          ]
         }
       ]
-    }
-    </script>
-    <!-- AEO: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "@id": "https://truesoulsmedia.com/#breadcrumb",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://truesoulsmedia.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Wedding Planner", "item": "https://truesoulsmedia.com/wedding-planner"},
-        {"@type": "ListItem", "position": 3, "name": "Photography", "item": "https://truesoulsmedia.com/photography"},
-        {"@type": "ListItem", "position": 4, "name": "Events", "item": "https://truesoulsmedia.com/events"},
-        {"@type": "ListItem", "position": 5, "name": "Digital Marketing", "item": "https://truesoulsmedia.com/digital-marketing"},
-        {"@type": "ListItem", "position": 6, "name": "Podcast", "item": "https://truesoulsmedia.com/podcast"}
-      ]
-    }
-    </script>
-    <!-- GEO+AEO: Speakable (Voice search / AI assistant answers) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "@id": "https://truesoulsmedia.com/#webpage",
-      "url": "https://truesoulsmedia.com",
-      "name": "Best Wedding Planner & Photography in Kottayam, Kerala | True Souls Media",
-      "description": "Kerala's #1 luxury wedding planner and cinematic photography studio in Kottayam. Expert wedding planning, photography, videography and event management.",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".hero-badge", "h1", "#home p", "#featured-answer", ".stat-number"]
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://truesoulsmedia.com/assets/hero_wedding_1776598144800.webp",
-        "width": 1200,
-        "height": 630,
-        "caption": "True Souls Media — Kerala luxury wedding photography and planning"
-      },
-      "breadcrumb": {"@id": "https://truesoulsmedia.com/#breadcrumb"},
-      "dateModified": "2026-06-01",
-      "inLanguage": "en-IN"
-    }
-    </script>
-    <!-- AIO: ItemList schema — all services for AI knowledge graph -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "True Souls Media Services",
-      "description": "Complete list of services offered by True Souls Media LLP in Kerala",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Wedding Planning", "url": "https://truesoulsmedia.com/wedding-planner", "description": "Full-service wedding planning in Kerala — venue, décor, vendors, catering and coordination. Serves Kottayam, Kochi, Munnar, Alleppey and all of Kerala."},
-        {"@type": "ListItem", "position": 2, "name": "Wedding Photography & Videography", "url": "https://truesoulsmedia.com/photography", "description": "4K cinematic wedding photography and videography in Kottayam. Packages from ₹80,000 including album, calendar, frames and USB. All religions, equal pricing."},
-        {"@type": "ListItem", "position": 3, "name": "Event Management", "url": "https://truesoulsmedia.com/events", "description": "End-to-end event management for weddings, receptions, corporate events and concerts across Kerala. Packages from ₹75,000."},
-        {"@type": "ListItem", "position": 4, "name": "Digital Marketing", "url": "https://truesoulsmedia.com/digital-marketing", "description": "Full-service digital marketing agency in Kottayam — SEO, social media, Google Ads, Meta Ads. Packages from ₹6,000/month."},
-        {"@type": "ListItem", "position": 5, "name": "Podcast Production", "url": "https://truesoulsmedia.com/podcast", "description": "Professional podcast production studio in Kottayam — recording, editing, video podcasts, distribution to Spotify, Apple Podcasts and YouTube. Packages from ₹18,000/month."}
-      ]
-    }
-    </script>
-    <!-- SXO: HowTo schema — answers 'how to book a wedding planner in Kerala' -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Book True Souls Media as Your Wedding Planner in Kerala",
-      "description": "Simple steps to hire True Souls Media LLP as your wedding planner in Kottayam, Kerala",
-      "totalTime": "PT5M",
-      "step": [
-        {"@type": "HowToStep", "position": 1, "name": "Contact Us", "text": "Call or WhatsApp +91-9061286660, or fill the enquiry form on our website.", "url": "https://truesoulsmedia.com/#contact"},
-        {"@type": "HowToStep", "position": 2, "name": "Free Consultation", "text": "We schedule a free consultation (in-person or video call) to understand your vision, date, budget, and style."},
-        {"@type": "HowToStep", "position": 3, "name": "Receive Custom Proposal", "text": "We send a detailed wedding plan with vendor recommendations, timeline, and transparent pricing within 48 hours."},
-        {"@type": "HowToStep", "position": 4, "name": "Confirm Booking", "text": "Pay 30% advance to lock your wedding date. We handle everything from here."},
-        {"@type": "HowToStep", "position": 5, "name": "Enjoy Your Wedding", "text": "Relax and enjoy every moment — our team manages every detail on your big day across Kerala."}
-      ]
-    }
-    </script>
-    <!-- AIO: Event schema — targets seasonal wedding season queries -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Free Wedding Planning Consultation — True Souls Media",
-      "description": "Book a free wedding planning consultation with Kerala's #1 wedding planner in Kottayam. We help you plan your perfect wedding across all of Kerala.",
-      "startDate": "2026-01-01",
-      "endDate": "2026-12-31",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-      "location": {"@type": "Place", "name": "True Souls Media LLP", "address": {"@type": "PostalAddress", "addressLocality": "Kottayam", "addressRegion": "Kerala", "postalCode": "686575", "addressCountry": "IN"}},
-      "organizer": {"@type": "Organization", "name": "True Souls Media LLP", "url": "https://truesoulsmedia.com"},
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "url": "https://truesoulsmedia.com/#contact", "validFrom": "2026-01-01"}
     }
     </script>
 </head>
@@ -426,39 +193,42 @@
     <div class="glow-orb orb-2"></div>
     <div class="glow-orb orb-3"></div>
     <div class="image-overlay"></div>
-    <img src="assets/hero_wedding_1776598144800.webp" class="bg-layer active" data-index="0" alt="Kerala luxury wedding photography" fetchpriority="high" width="1920" height="1080">
-    <img src="assets/portfolio_events_1776598196076.webp" class="bg-layer" data-index="1" alt="Event management" loading="lazy" decoding="async" width="1920" height="1080">
-    <img src="assets/portfolio_digital_1776598215494.webp" class="bg-layer" data-index="2" alt="Digital marketing" loading="lazy" decoding="async" width="1920" height="1080">
-    <img src="assets/portfolio_podcast_1776598232723.webp" class="bg-layer" data-index="3" alt="Podcast production" loading="lazy" decoding="async" width="1920" height="1080">
+    <img src="assets/portfolio_digital_1776598215494.webp" class="bg-layer active" data-index="0" alt="Website development and digital marketing agency in Kerala" fetchpriority="high" width="1920" height="1080">
+    <img src="assets/portfolio_events_1776598196076.webp" class="bg-layer" data-index="1" alt="Corporate event production and brand launches" loading="lazy" decoding="async" width="1920" height="1080">
+    <img src="assets/hero_wedding_1776598144800.webp" class="bg-layer" data-index="2" alt="Cinematic wedding media and studio production" loading="lazy" decoding="async" width="1920" height="1080">
+    <img src="assets/portfolio_podcast_1776598232723.webp" class="bg-layer" data-index="3" alt="Podcast studio production in Pala, Kottayam" loading="lazy" decoding="async" width="1920" height="1080">
 </div>
 
-<!-- NAVBAR -->
+<!-- GLOBAL NAVBAR (2026–2027 Commercial Priority) -->
 <nav class="navbar">
     <div class="nav-container">
-        <a href="#home" class="logo">
-            <img src="assets/logo.webp" alt="Truesoulsmedia" class="nav-logo" width="36" height="36" onerror="this.style.display='none'">
-            <span class="logo-text">Truesoulsmedia</span>
+        <a href="index.html" class="logo">
+            <img src="assets/logo.webp" alt="True Souls Media LLP" class="nav-logo" width="36" height="36" onerror="this.style.display='none'">
+            <span class="logo-text">True Souls Media</span>
         </a>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
+            <li><a href="website-development.html">Website Development</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
             <li class="nav-dropdown">
-                <a href="#services">Services <svg class="icon bx-chevron-down" viewBox="0 0 24 24" width="16" height="16" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg></a>
+                <a href="#services">Creative &amp; Studio <svg class="icon bx-chevron-down" viewBox="0 0 24 24" width="16" height="16" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg></a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="wedding-planner.html"><svg class="icon bx-heart" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 20.007a1.002 1.002 0 0 1-.707-.293L5.05 13.472A5.474 5.474 0 0 1 3 9.539c0-3.053 2.484-5.539 5.539-5.539a5.485 5.485 0 0 1 3.461 1.218 5.485 5.485 0 0 1 3.461-1.218C18.516 4 21 6.486 21 9.539a5.474 5.474 0 0 1-2.05 3.933l-6.243 6.243a1.002 1.002 0 0 1-.707.292zM8.539 6C6.588 6 5 7.588 5 9.539c0 1.291.523 2.502 1.472 3.414l5.528 5.528 5.528-5.528a4.675 4.675 0 0 0 1.472-3.414C19 7.588 17.412 6 15.461 6c-1.332 0-2.528.847-2.981 2.112a1.002 1.002 0 0 1-1.895 0C10.067 6.847 8.871 6 8.539 6z"/></svg> Wedding Planning</a></li>
-                    <li><a href="photography.html"><svg class="icon bx-camera" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"/><path d="M20 5h-2.586l-2.707-2.707A.996.996 0 0 0 14 2h-4a.996.996 0 0 0-.707.293L6.586 5H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2zm0 13H4V7h3.414l2.707-2.707A.996.996 0 0 1 10.828 4h2.344a.996.996 0 0 1 .707.293L16.586 7H20v11z"/></svg> Photography &amp; Film</a></li>
-                    <li><a href="events.html"><svg class="icon bx-calendar-event" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/><rect x="7" y="12" width="2" height="2"/><rect x="11" y="12" width="2" height="2"/><rect x="15" y="12" width="2" height="2"/></svg> Event Management</a></li>
-                    <li><a href="digital-marketing.html"><svg class="icon bx-trending-up" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="m20.293 10.293 1.414-1.414L15 2.172 8.293 8.879 3.707 4.293 2.293 5.707 8.293 11.71l6.707-6.707z"/><path d="M16 8h6v6z"/></svg> Digital Marketing</a></li>
-                    <li><a href="podcast.html"><svg class="icon bx-microphone" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 2c-1.859 0-3.37 1.477-3.486 3.31L8.5 5.5v5c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5v-5c0-1.859-1.477-3.37-3.31-3.486L12 2zm1.5 8.5c0 .827-.673 1.5-1.5 1.5s-1.5-.673-1.5-1.5v-5c0-.827.673-1.5 1.5-1.5s1.5.673 1.5 1.5v5z"/><path d="M19 10h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.52 2.61 6.43 6 6.92V20H8v2h8v-2h-3v-3.08c3.39-.49 6-3.4 6-6.92z"/></svg> Podcast Studio</a></li>
+                    <li><a href="website-development.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM4 18V8h16l.001 10H4z"/></svg> Website Design &amp; Dev</a></li>
+                    <li><a href="digital-marketing.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="m20.293 10.293 1.414-1.414L15 2.172 8.293 8.879 3.707 4.293 2.293 5.707 8.293 11.71l6.707-6.707z"/><path d="M16 8h6v6z"/></svg> SEO, Ads &amp; AI Automation</a></li>
+                    <li><a href="branding.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10c1.466 0 2.961-.371 4.102-1.018.885-.501 1.387-1.518 1.249-2.53-.134-.987-.979-1.727-1.976-1.727h-1.125c-.965 0-1.75-.785-1.75-1.75 0-.827.576-1.522 1.351-1.703l2.628-.613C19.654 11.918 22 9.104 22 5.75 22 3.682 17.514 2 12 2z"/></svg> Branding &amp; Commercial Shoots</a></li>
+                    <li><a href="podcast.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2c-1.859 0-3.37 1.477-3.486 3.31L8.5 5.5v5c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5v-5c0-1.859-1.477-3.37-3.31-3.486L12 2z"/><path d="M19 10h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.52 2.61 6.43 6 6.92V20H8v2h8v-2h-3v-3.08c3.39-.49 6-3.4 6-6.92z"/></svg> Podcast Production Studio</a></li>
+                    <li><a href="photography.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"/><path d="M20 5h-2.586l-2.707-2.707A.996.996 0 0 0 14 2h-4a.996.996 0 0 0-.707.293L6.586 5H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2z"/></svg> Wedding Photography &amp; Film</a></li>
+                    <li><a href="wedding-planner.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 20.007a1.002 1.002 0 0 1-.707-.293L5.05 13.472A5.474 5.474 0 0 1 3 9.539c0-3.053 2.484-5.539 5.539-5.539a5.485 5.485 0 0 1 3.461 1.218 5.485 5.485 0 0 1 3.461-1.218C18.516 4 21 6.486 21 9.539a5.474 5.474 0 0 1-2.05 3.933l-6.243 6.243a1.002 1.002 0 0 1-.707.292z"/></svg> Wedding Planning</a></li>
+                    <li><a href="events.html"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 16H5V10h14v10z"/></svg> Event Management</a></li>
                 </ul>
             </li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
             <li><a href="about.html">About</a></li>
-      <li><a href="careers.html">Careers</a></li>
+            <li><a href="careers.html">Careers</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-actions" style="display:flex;align-items:center;gap:1rem;">
-            <a href="digital-marketing.html#audit" class="btn-primary desktop-btn" style="padding:0.6rem 1.4rem;font-size:0.85rem;">Book Free Digital Growth Audit</a>
+            <a href="#contact" class="btn-primary desktop-btn" style="padding:0.65rem 1.35rem;font-size:0.84rem;">Get a Free Website Consultation</a>
             <div class="mobile-menu-btn" id="mobileMenuBtn" style="color:var(--text-white);cursor:pointer;display:none;align-items:center;justify-content:center;">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </div>
@@ -468,391 +238,772 @@
 
 <main id="main-content">
 
-<!-- AI & Search Engine Entity Summary — crawlable, not visible to users -->
-<div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;" aria-hidden="true">
-  <p>True Souls Media LLP (LLPIN: ACX-5488) is a legally registered Limited Liability Partnership in India, founded in 2022 by Noel George and Abin J Antony. The company is headquartered in Kottayam, Kerala, India (PIN: 686575) and operates as Kerala's premier wedding planning and cinematic photography studio. Services include: wedding planning, wedding photography, wedding videography, event management, digital marketing, and podcast production. True Souls Media LLP serves all 14 districts of Kerala including Kottayam, Kochi, Trivandrum, Thrissur, Alappuzha, Wayanad, Kozhikode, Palakkad, Munnar, and Idukki. Contact: +91-9061286660. Email: truesoulsmedia666@gmail.com. Website: https://truesoulsmedia.com. Portfolio: https://truesoulsmedia.com/photography. About: https://truesoulsmedia.com/about.</p>
-</div>
-
-<!-- HERO -->
-<section id="home" class="section" data-bg-index="0" style="min-height:100vh;flex-direction:column;text-align:center;padding-top:8rem;">
-    <!-- Hero spotlight glow -->
-    <div class="hero-spotlight" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:900px;height:600px;background:radial-gradient(ellipse at center, rgba(168,85,247,0.18) 0%, rgba(99,102,241,0.08) 50%, transparent 75%);pointer-events:none;z-index:0;"></div>
+<!-- 1. HERO SECTION -->
+<section id="home" class="section" data-bg-index="0" style="min-height:94dvh;flex-direction:column;text-align:center;padding-top:9.5rem;padding-bottom:5rem;">
     <div class="container" style="display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;">
-        <div class="hero-badge scroll-reveal">✦ Kerala's #1 Full-Service Creative Agency — Kottayam</div>
-        <h1 class="gradient-text scroll-reveal" style="max-width:900px;text-align:center;margin-bottom:1.5rem;">
-            Kerala's Full-Service
-            Creative &amp; Growth Agency
+        <div class="hero-badge scroll-reveal">✦ CREATIVE · DIGITAL GROWTH · WEB ENGINEERING · PALA, KOTTAYAM ✦</div>
+        <h1 class="gradient-text scroll-reveal" style="max-width:980px;text-align:center;margin-bottom:1.4rem;">
+            We Build Brands.<br>Websites. Experiences.
         </h1>
-        <p class="scroll-reveal" style="max-width:640px;text-align:center;font-size:1.2rem;margin-bottom:1rem;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.8);">True Souls Media LLP — Kottayam's full-service creative agency. Wedding planning, cinematic photography &amp; videography, event management, digital marketing, and podcast production.
-            Hindu · Christian · Muslim — all traditions, one equal price.
+        <p id="featured-answer" class="scroll-reveal" style="max-width:740px;text-align:center;font-size:1.18rem;margin-bottom:1.5rem;color:#E2E8F0;line-height:1.7;">
+            True Souls Media LLP is a Kerala-based creative, digital marketing, web development, media production, and event agency helping ambitious brands grow online and offline.
         </p>
-        <p class="scroll-reveal" style="color:#a855f7;font-weight:700;font-size:0.9rem;letter-spacing:0.08em;margin-bottom:0.75rem;">✦ WEDDING PLANNER · PHOTOGRAPHY · VIDEOGRAPHY · EVENTS · DIGITAL MARKETING · PODCAST ✦</p>
-        <div class="scroll-reveal" style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem;">
-            <span style="color:#22c55e;font-weight:700;font-size:0.88rem;display:inline-flex;align-items:center;gap:0.3rem;"><svg class="icon bx-camera" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"/><path d="M20 5h-2.586l-2.707-2.707A.996.996 0 0 0 14 2h-4a.996.996 0 0 0-.707.293L6.586 5H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2zm0 13H4V7h3.414l2.707-2.707A.996.996 0 0 1 10.828 4h2.344a.996.996 0 0 1 .707.293L16.586 7H20v11z"/></svg> Photography from ₹80,000</span>
-            <span style="color:#22c55e;font-weight:700;font-size:0.88rem;display:inline-flex;align-items:center;gap:0.3rem;"><svg class="icon bx-trending-up" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="m20.293 10.293 1.414-1.414L15 2.172 8.293 8.879 3.707 4.293 2.293 5.707 8.293 11.71l6.707-6.707z"/><path d="M16 8h6v6z"/></svg> Digital Marketing from ₹6,000/mo</span>
-            <span style="color:#22c55e;font-weight:700;font-size:0.88rem;display:inline-flex;align-items:center;gap:0.3rem;"><svg class="icon bx-microphone" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 2c-1.859 0-3.37 1.477-3.486 3.31L8.5 5.5v5c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5v-5c0-1.859-1.477-3.37-3.31-3.486L12 2zm1.5 8.5c0 .827-.673 1.5-1.5 1.5s-1.5-.673-1.5-1.5v-5c0-.827.673-1.5 1.5-1.5s1.5.673 1.5 1.5v5z"/><path d="M19 10h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.52 2.61 6.43 6 6.92V20H8v2h8v-2h-3v-3.08c3.39-.49 6-3.4 6-6.92z"/></svg> Podcast from ₹4,000/hr</span>
+
+        <!-- Starting Price Quick-Jump Bar -->
+        <div class="scroll-reveal" style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:2rem;">
+            <a href="website-development.html" class="service-price-tag" style="text-decoration:none;margin:0;padding:0.42rem 0.95rem;font-size:0.82rem;">⚡ Business Websites from ₹14,999</a>
+            <a href="digital-marketing.html" class="service-price-tag" style="text-decoration:none;margin:0;padding:0.42rem 0.95rem;font-size:0.82rem;">📈 Digital Growth from ₹14,999/mo</a>
+            <a href="digital-marketing.html#seo-packages" class="service-price-tag" style="text-decoration:none;margin:0;padding:0.42rem 0.95rem;font-size:0.82rem;">🔍 Local SEO from ₹9,999/mo</a>
+            <a href="pricing.html" class="service-price-tag" style="text-decoration:none;margin:0;padding:0.42rem 0.95rem;font-size:0.82rem;background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.18);color:#F8FAFC;">🎬 Studio, Weddings &amp; Events →</a>
         </div>
+
+        <!-- Primary & Secondary Hero CTAs -->
         <div class="scroll-reveal" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
-            <a href="#services" class="btn-primary"><svg class="icon bx-rocket" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M19.071 4.929a10 10 0 0 0-7.071-2.929 1 1 0 0 0-.707.293l-8 8a1 1 0 0 0-.213 1.09L5 15l-3 3v3h3l3-3 3.707 1.854a1 1 0 0 0 1.09-.213l8-8a1 1 0 0 0 .293-.707 10 10 0 0 0-2.929-7.071zm-9.98 10.021-2.182-2.182 6.586-6.586 2.182 2.182-6.586 6.586z"/></svg> Explore Services</a>
-            <a href="digital-marketing.html#audit" class="btn-glass" style="border:2px solid rgba(168,85,247,0.5);">
-                <svg class="icon bx-bar-chart-alt-2" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M7 17h2v-7H7v7zm4 0h2V7h-2v10zm4 0h2v-4h-2v4zM5 22h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"/></svg> Book Free Digital Growth Audit</a>
+            <a href="#contact" class="btn-primary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM4 18V8h16l.001 10H4z"/></svg>
+                Get a Free Website Consultation
+            </a>
+            <a href="#portfolio" class="btn-glass">
+                Explore Our Work ↓
+            </a>
         </div>
 
-        <!-- Stats -->
-        <div class="stats-row scroll-reveal">
-            <div class="stat-item"><div class="stat-number">4+</div><div class="stat-label">Years Experience</div></div>
-            <div class="stat-item"><div class="stat-number">200+</div><div class="stat-label">Weddings Captured</div></div>
-            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Client Satisfaction</div></div>
+        <!-- 2. TRUST BAR & AGENCY CREDENTIALS -->
+        <div class="stats-row scroll-reveal" style="width:100%;max-width:1080px;">
+            <div class="stat-item"><div class="stat-number">10</div><div class="stat-label">In-House Verticals</div></div>
+            <div class="stat-item"><div class="stat-number">4+ Yrs</div><div class="stat-label">Registered LLP (ACX-5488)</div></div>
+            <div class="stat-item"><div class="stat-number">200+</div><div class="stat-label">Productions &amp; Campaigns</div></div>
+            <div class="stat-item"><div class="stat-number">14</div><div class="stat-label">Kerala Districts Served</div></div>
         </div>
     </div>
-
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="section" data-bg-index="1" style="padding:8rem 2rem;">
+<!-- 3. CORE SERVICES OVERVIEW (10 SERVICES IN COMMERCIAL PRIORITY ORDER) -->
+<section id="services" class="section" data-bg-index="0" style="padding:6.5rem 2rem;">
     <div class="container">
-        <div style="text-align:center;margin-bottom:5rem;position:relative;">
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:250px;background:radial-gradient(circle at center, rgba(168,85,247,0.3) 0%, rgba(99,102,241,0.1) 40%, transparent 70%);pointer-events:none;z-index:-1;filter:blur(30px);"></div>
-            <div class="hero-badge scroll-reveal">Our Services</div>
-            <h2 class="scroll-reveal" style="text-shadow:0 0 20px rgba(255,255,255,0.2);">Full-Service<br><span class="gradient-text">Creative Agency</span></h2>
+        <div style="text-align:center;margin-bottom:3.5rem;">
+            <div class="hero-badge scroll-reveal">✦ FULL-STACK CREATIVE &amp; GROWTH ECOSYSTEM ✦</div>
+            <h2 class="scroll-reveal">10 Specialist Services.<br><span class="gradient-text">One Accountable Agency.</span></h2>
+            <p class="scroll-reveal" style="max-width:680px;margin:0.75rem auto 0;color:#CBD5E1;">From high-converting custom websites and performance advertising to 4K studio production and luxury events—engineered under one roof in Pala, Kottayam.</p>
         </div>
+
         <div class="services-grid">
-            <a href="wedding-planner.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
-                <div class="service-icon"><svg class="icon bx-heart" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 20.007a1.002 1.002 0 0 1-.707-.293L5.05 13.472A5.474 5.474 0 0 1 3 9.539c0-3.053 2.484-5.539 5.539-5.539a5.485 5.485 0 0 1 3.461 1.218 5.485 5.485 0 0 1 3.461-1.218C18.516 4 21 6.486 21 9.539a5.474 5.474 0 0 1-2.05 3.933l-6.243 6.243a1.002 1.002 0 0 1-.707.292zM8.539 6C6.588 6 5 7.588 5 9.539c0 1.291.523 2.502 1.472 3.414l5.528 5.528 5.528-5.528a4.675 4.675 0 0 0 1.472-3.414C19 7.588 17.412 6 15.461 6c-1.332 0-2.528.847-2.981 2.112a1.002 1.002 0 0 1-1.895 0C10.067 6.847 8.871 6 8.539 6z"/></svg></div>
-                <h3>Wedding Planning</h3>
-                <p>Full-service wedding planning in Kerala — venue, décor, vendors, catering &amp; flawless coordination on your special day.</p>
-                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:#a855f7;font-size:0.9rem;font-weight:600;margin-top:1.5rem;">Explore <svg class="icon bx-arrow-back" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L3.586 11l6.707 6.707 1.414-1.414L6.414 13H21z"/></svg></span>
+            <!-- 1. Website Design & Development (PRIORITY #1) -->
+            <a href="website-development.html" class="service-card priority-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM4 18V8h16l.001 10H4z"/></svg></div>
+                        <span class="service-price-tag">From ₹14,999</span>
+                    </div>
+                    <h3>Website Design &amp; Development</h3>
+                    <p>Fast, mobile-first business websites, custom UI/UX, E-commerce stores with Razorpay/UPI, and web applications built for SEO and lead conversion.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">View Website Packages →</span>
             </a>
-            <a href="photography.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;transition-delay:0.1s">
-                <div class="service-icon"><svg class="icon bx-camera" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"/><path d="M20 5h-2.586l-2.707-2.707A.996.996 0 0 0 14 2h-4a.996.996 0 0 0-.707.293L6.586 5H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2zm0 13H4V7h3.414l2.707-2.707A.996.996 0 0 1 10.828 4h2.344a.996.996 0 0 1 .707.293L16.586 7H20v11z"/></svg></div>
-                <h3>Wedding Photography &amp; Film</h3>
-                <p>Full-frame 4K cinematic wedding photography &amp; videography. All religions, all traditions — one equal price. Drone included.</p>
-                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:#a855f7;font-size:0.9rem;font-weight:600;margin-top:1.5rem;">Explore <svg class="icon bx-arrow-back" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L3.586 11l6.707 6.707 1.414-1.414L6.414 13H21z"/></svg></span>
+
+            <!-- 2. Digital Marketing & Growth Retainers (PRIORITY #2) -->
+            <a href="digital-marketing.html" class="service-card priority-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="m20.293 10.293 1.414-1.414L15 2.172 8.293 8.879 3.707 4.293 2.293 5.707 8.293 11.71l6.707-6.707z"/><path d="M16 8h6v6z"/></svg></div>
+                        <span class="service-price-tag">From ₹14,999/mo</span>
+                    </div>
+                    <h3>Digital Marketing Retainers</h3>
+                    <p>Full-funnel monthly growth retainers combining content strategy, Meta &amp; Google Ads, local search visibility, and transparent ROI reporting.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">Explore Growth Plans →</span>
             </a>
-            <a href="events.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;transition-delay:0.2s">
-                <div class="service-icon"><svg class="icon bx-calendar-event" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/><rect x="7" y="12" width="2" height="2"/><rect x="11" y="12" width="2" height="2"/><rect x="15" y="12" width="2" height="2"/></svg></div>
-                <h3>Event Management</h3>
-                <p>End-to-end event management for receptions, engagements &amp; pre-wedding parties — intimate to grand-scale.</p>
-                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:#a855f7;font-size:0.9rem;font-weight:600;margin-top:1.5rem;">Explore <svg class="icon bx-arrow-back" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L3.586 11l6.707 6.707 1.414-1.414L6.414 13H21z"/></svg></span>
+
+            <!-- 3. SEO & Local Search Ranking -->
+            <a href="digital-marketing.html#seo-packages" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/></svg></div>
+                        <span class="service-price-tag">From ₹9,999/mo</span>
+                    </div>
+                    <h3>SEO &amp; Local Search Dominance</h3>
+                    <p>Rank on Page 1 for Kottayam, Kochi, and Kerala commercial searches with technical SEO, Google Business Profile optimization, and schema markup.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">See SEO Tiers →</span>
             </a>
-            <a href="digital-marketing.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;transition-delay:0.3s">
-                <div class="service-icon"><svg class="icon bx-trending-up" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="m20.293 10.293 1.414-1.414L15 2.172 8.293 8.879 3.707 4.293 2.293 5.707 8.293 11.71l6.707-6.707z"/><path d="M16 8h6v6z"/></svg></div>
-                <h3>Digital Marketing</h3>
-                <p>Data-driven growth strategies across all platforms. SEO, ads, content, and analytics that convert audiences to clients.</p>
-                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:#a855f7;font-size:0.9rem;font-weight:600;margin-top:1.5rem;">Explore <svg class="icon bx-arrow-back" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L3.586 11l6.707 6.707 1.414-1.414L6.414 13H21z"/></svg></span>
+
+            <!-- 4. Social Media & Reels Management -->
+            <a href="digital-marketing.html#smm-packages" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></div>
+                        <span class="service-price-tag">From ₹11,999/mo</span>
+                    </div>
+                    <h3>Social Media &amp; Reels Studio</h3>
+                    <p>Scroll-stopping Instagram &amp; YouTube Shorts content, on-location shoot days, custom carousels, and community growth via @truesoulsads.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">View Social Packages →</span>
             </a>
-            <a href="podcast.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;transition-delay:0.4s">
-                <div class="service-icon"><svg class="icon bx-microphone" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 2c-1.859 0-3.37 1.477-3.486 3.31L8.5 5.5v5c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5v-5c0-1.859-1.477-3.37-3.31-3.486L12 2zm1.5 8.5c0 .827-.673 1.5-1.5 1.5s-1.5-.673-1.5-1.5v-5c0-.827.673-1.5 1.5-1.5s1.5.673 1.5 1.5v5z"/><path d="M19 10h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.52 2.61 6.43 6 6.92V20H8v2h8v-2h-3v-3.08c3.39-.49 6-3.4 6-6.92z"/></svg></div>
-                <h3>Podcast Production</h3>
-                <p>Professional podcast studio — recording, editing, video podcasts, and distribution to Spotify, Apple Podcasts &amp; YouTube.</p>
-                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:#a855f7;font-size:0.9rem;font-weight:600;margin-top:1.5rem;">Explore <svg class="icon bx-arrow-back" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L3.586 11l6.707 6.707 1.414-1.414L6.414 13H21z"/></svg></span>
+
+            <!-- 5. Marketing Automation & AI Integration -->
+            <a href="digital-marketing.html#automation-packages" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg></div>
+                        <span class="service-price-tag">From ₹9,999</span>
+                    </div>
+                    <h3>AI &amp; WhatsApp Automation</h3>
+                    <p>Official WhatsApp Business API flows, Meta Lead Ad auto-responders, AI website chatbots, and CRM pipeline automation that close leads 24/7.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">Automate Your Leads →</span>
+            </a>
+
+            <!-- 6. Branding & Creative Design -->
+            <a href="branding.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10c1.466 0 2.961-.371 4.102-1.018.885-.501 1.387-1.518 1.249-2.53-.134-.987-.979-1.727-1.976-1.727h-1.125c-.965 0-1.75-.785-1.75-1.75 0-.827.576-1.522 1.351-1.703l2.628-.613C19.654 11.918 22 9.104 22 5.75 22 3.682 17.514 2 12 2z"/></svg></div>
+                        <span class="service-price-tag">From ₹9,999</span>
+                    </div>
+                    <h3>Branding &amp; Identity Design</h3>
+                    <p>Strategic brand identity systems, vector logo design, typography &amp; color guidelines, packaging mockups, and launch collateral.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">Explore Branding →</span>
+            </a>
+
+            <!-- 7. Commercial Photography & Videography -->
+            <a href="branding.html#commercial-production" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18 7c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-3.333L22 17V7l-4 3.333V7z"/></svg></div>
+                        <span class="service-price-tag">From ₹9,999</span>
+                    </div>
+                    <h3>Commercial Photo &amp; Ad Films</h3>
+                    <p>E-commerce product shoots, corporate portraits, architectural &amp; hospitality coverage, Reels batch days, and 4K brand commercials.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">View Studio Rates →</span>
+            </a>
+
+            <!-- 8. Podcast Production Studio -->
+            <a href="podcast.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2c-1.859 0-3.37 1.477-3.486 3.31L8.5 5.5v5c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5v-5c0-1.859-1.477-3.37-3.31-3.486L12 2z"/><path d="M19 10h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.52 2.61 6.43 6 6.92V20H8v2h8v-2h-3v-3.08c3.39-.49 6-3.4 6-6.92z"/></svg></div>
+                        <span class="service-price-tag">From ₹3,999/session</span>
+                    </div>
+                    <h3>Podcast Production Studio</h3>
+                    <p>Soundproof multi-camera 4K podcast studio in Pala, Kottayam. Walk-in recording sessions, full episode editing, viral Reels cuts &amp; Spotify/YouTube distribution.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">Book Studio Slot →</span>
+            </a>
+
+            <!-- 9. Wedding Photography & Cinematography -->
+            <a href="photography.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"/><path d="M20 5h-2.586l-2.707-2.707A.996.996 0 0 0 14 2h-4a.996.996 0 0 0-.707.293L6.586 5H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2z"/></svg></div>
+                        <span class="service-price-tag">From ₹65,000</span>
+                    </div>
+                    <h3>Wedding Photography &amp; Film</h3>
+                    <p>Full-frame 4K wedding cinematography, candid storytelling, aerial drone coverage, and luxury albums across Kerala. Hindu · Christian · Muslim equal pricing.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">Wedding Media Packages →</span>
+            </a>
+
+            <!-- 10. Event Management & Wedding Planning -->
+            <a href="events.html" class="service-card scroll-reveal" style="text-decoration:none;color:inherit;">
+                <div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 16H5V10h14v10z"/></svg></div>
+                        <span class="service-price-tag">From ₹45,000</span>
+                    </div>
+                    <h3>Event Management &amp; Planning</h3>
+                    <p>Turnkey corporate launches, stage &amp; LED wall production, luxury wedding planning (<a href="wedding-planner.html" style="color:var(--accent-lime);">from ₹75,000</a>), and live concert logistics across Kerala.</p>
+                </div>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent-lime);font-size:0.9rem;font-weight:700;margin-top:1.5rem;">Explore Event Production →</span>
             </a>
         </div>
     </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio" class="section" data-bg-index="2" style="padding:8rem 2rem;">
+<!-- 4. WEBSITE DESIGN & DEVELOPMENT SHOWCASE (COMMERCIAL PRIORITY #1) -->
+<section id="web-development-showcase" class="section" data-bg-index="0" style="padding:6rem 2rem;background:rgba(17,19,24,0.55);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
-        <div style="text-align:center;margin-bottom:5rem;position:relative;">
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:250px;background:radial-gradient(circle at center, rgba(168,85,247,0.3) 0%, rgba(99,102,241,0.1) 40%, transparent 70%);pointer-events:none;z-index:-1;filter:blur(30px);"></div>
-            <div class="hero-badge scroll-reveal">Our Work</div>
-            <h2 class="scroll-reveal" style="text-shadow:0 0 20px rgba(255,255,255,0.2);">Visual <span class="gradient-text">Intelligence</span></h2>
-            <p class="scroll-reveal" style="max-width:500px;margin:1rem auto 0;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.8);">Click any category to explore our full service offering.</p>
+        <div class="editorial-grid">
+            <div class="scroll-reveal" style="display:flex;flex-direction:column;justify-content:center;">
+                <div class="hero-badge" style="width:fit-content;">✦ PRIORITY #1 · WEBSITE DESIGN &amp; DEVELOPMENT ✦</div>
+                <h2>Websites Engineered to Rank Fast &amp; <span class="gradient-text">Convert Visitors Into Revenue.</span></h2>
+                <p style="color:#CBD5E1;margin-bottom:1.5rem;font-size:1.05rem;">
+                    Stop losing high-intent customers to slow, outdated templates. Our Pala-based engineering and UI/UX team builds lightning-fast, mobile-first websites tailored for Kerala businesses, clinics, hospitality brands, builders, and D2C e-commerce stores.
+                </p>
+                <div class="hairline-grid" style="margin-bottom:2rem;">
+                    <div class="hairline-cell">
+                        <strong style="color:var(--accent-lime);font-size:1.1rem;display:block;margin-bottom:0.3rem;">95+ Core Web Vitals</strong>
+                        <span style="font-size:0.86rem;color:#94A3B8;">Sub-2s load speed, clean semantic HTML5/React architecture &amp; WebP optimization.</span>
+                    </div>
+                    <div class="hairline-cell">
+                        <strong style="color:var(--accent-lime);font-size:1.1rem;display:block;margin-bottom:0.3rem;">SEO &amp; Schema Ready</strong>
+                        <span style="font-size:0.86rem;color:#94A3B8;">Built-in LocalBusiness JSON-LD, meta tags, XML sitemap &amp; Google Search Console setup.</span>
+                    </div>
+                    <div class="hairline-cell">
+                        <strong style="color:var(--accent-lime);font-size:1.1rem;display:block;margin-bottom:0.3rem;">WhatsApp + CRM Funnel</strong>
+                        <span style="font-size:0.86rem;color:#94A3B8;">Every form and button routes leads directly to your WhatsApp &amp; sales pipeline.</span>
+                    </div>
+                </div>
+                <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                    <a href="website-development.html" class="btn-primary">Explore All 5 Website Packages →</a>
+                    <a href="#contact" class="btn-glass">Request Custom Website Quote</a>
+                </div>
+            </div>
+
+            <!-- Quick Website Tier Stack -->
+            <div class="scroll-reveal" style="display:flex;flex-direction:column;gap:1rem;">
+                <div class="sp-package tier-silver" style="padding:1.5rem 1.75rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+                        <div>
+                            <span class="tier-tag tag-starter" style="margin-bottom:0.4rem;">Starter Business Website</span>
+                            <h3 style="margin:0;font-size:1.15rem;">Up to 5 Responsive Pages</h3>
+                            <p style="font-size:0.84rem;color:#94A3B8;margin-top:0.25rem;">Mobile-first design, WhatsApp CTA, contact form, basic on-page SEO · 7–10 business days</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="sp-price" style="font-size:1.75rem;margin:0;">₹14,999</div>
+                            <span style="font-size:0.75rem;color:#64748B;">+ 18% GST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-package tier-featured" style="padding:1.5rem 1.75rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+                        <div>
+                            <span class="tier-tag tag-growth" style="margin-bottom:0.4rem;">★ Most Popular · Professional Website</span>
+                            <h3 style="margin:0;font-size:1.15rem;">Up to 10 Pages + CMS &amp; Local SEO</h3>
+                            <p style="font-size:0.84rem;color:#CBD5E1;margin-top:0.25rem;">Custom UI, blog/CMS, speed optimization, GA4 + GSC + Schema · 2–3 weeks</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="sp-price" style="font-size:1.75rem;margin:0;color:var(--accent-lime);">₹29,999</div>
+                            <span style="font-size:0.75rem;color:#94A3B8;">+ 18% GST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-package tier-gold" style="padding:1.5rem 1.75rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+                        <div>
+                            <span class="tier-tag tag-business" style="margin-bottom:0.4rem;">Premium Business Website</span>
+                            <h3 style="margin:0;font-size:1.15rem;">Up to 18 Pages + Custom Motion &amp; CRM</h3>
+                            <p style="font-size:0.84rem;color:#94A3B8;margin-top:0.25rem;">Bespoke Figma UI/UX, multi-step lead funnels, booking &amp; CRM integration · 3–5 weeks</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="sp-price" style="font-size:1.75rem;margin:0;">₹49,999</div>
+                            <span style="font-size:0.75rem;color:#64748B;">+ 18% GST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sp-package tier-diamond" style="padding:1.5rem 1.75rem;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+                        <div>
+                            <span class="tier-tag tag-corporate" style="margin-bottom:0.4rem;">E-Commerce &amp; Custom Web Apps</span>
+                            <h3 style="margin:0;font-size:1.15rem;">Online Store (Razorpay/UPI) or Custom Portal</h3>
+                            <p style="font-size:0.84rem;color:#94A3B8;margin-top:0.25rem;">Up to 50 products, Shiprocket/Delhivery shipping, GST invoicing, or custom React/Node web apps</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="sp-price" style="font-size:1.75rem;margin:0;">₹69,999+</div>
+                            <span style="font-size:0.75rem;color:#64748B;">+ 18% GST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. DIGITAL MARKETING & AI AUTOMATION SOLUTIONS (PRIORITY #2) -->
+<section id="digital-growth-showcase" class="section" data-bg-index="0" style="padding:6.5rem 2rem;">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:3.5rem;">
+            <div class="hero-badge scroll-reveal">✦ PRIORITY #2 · PERFORMANCE MARKETING &amp; AI AUTOMATION (@truesoulsads) ✦</div>
+            <h2 class="scroll-reveal">Predictable Lead Generation.<br><span class="gradient-text">Measurable Return on Ad Spend.</span></h2>
+            <p class="scroll-reveal" style="max-width:680px;margin:0.75rem auto 0;color:#CBD5E1;">No vanity metrics or vague promises. Every monthly retainer is structured around defined creative deliverables, qualified WhatsApp/CRM leads, and transparent reporting.</p>
         </div>
 
-        <!-- Portfolio Category Filter Tabs — Filter projects dynamically -->
-        <div class="scroll-reveal" style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin-bottom:3.5rem;">
-            <button type="button" class="portfolio-filter-btn active" data-filter="all">All Projects</button>
-            <button type="button" class="portfolio-filter-btn" data-filter="wedding">Wedding &amp; Film</button>
-            <button type="button" class="portfolio-filter-btn" data-filter="event">Event Management</button>
-            <button type="button" class="portfolio-filter-btn" data-filter="marketing">Digital Marketing</button>
+        <div class="sp-grid-3 scroll-reveal">
+            <div class="sp-package tier-silver">
+                <div>
+                    <span class="tier-tag tag-starter">Starter Growth Retainer</span>
+                    <div class="sp-price">₹14,999 <span class="sp-price-suffix">/ month</span></div>
+                    <p style="font-size:0.78rem;color:#64748B;margin-bottom:1.25rem;">+ 18% GST · Ad spend billed directly</p>
+                    <h3>Local Brand Presence</h3>
+                    <ul class="sp-list">
+                        <li><i>✓</i> 2 Social Platforms (Instagram + Facebook)</li>
+                        <li><i>✓</i> 10 Custom Graphic Posts + 2 Edited Reels / mo</li>
+                        <li><i>✓</i> Google Business Profile (Local SEO) Management</li>
+                        <li><i>✓</i> 1 Meta Ads Campaign Setup &amp; Monitoring</li>
+                        <li><i>✓</i> Monthly Analytics &amp; Lead Report</li>
+                    </ul>
+                </div>
+                <a href="digital-marketing.html#packages" class="btn-silver">View Full Deliverables</a>
+            </div>
+
+            <div class="sp-package tier-featured">
+                <div class="featured-badge">Most Popular</div>
+                <div>
+                    <span class="tier-tag tag-growth">Business Growth Retainer</span>
+                    <div class="sp-price" style="color:var(--accent-lime);">₹24,999 <span class="sp-price-suffix">/ month</span></div>
+                    <p style="font-size:0.78rem;color:#94A3B8;margin-bottom:1.25rem;">+ 18% GST · Ad spend billed directly</p>
+                    <h3>Multi-Channel Lead Engine</h3>
+                    <ul class="sp-list">
+                        <li><i>✓</i> 3 Platforms (Instagram, Facebook, LinkedIn/YouTube)</li>
+                        <li><i>✓</i> 12 Static/Carousel Posts + 4 Edited Reels / mo</li>
+                        <li><i>✓</i> Meta Ads + Google Search Ads Management</li>
+                        <li><i>✓</i> On-Page SEO (up to 10 target keywords)</li>
+                        <li><i>✓</i> Bi-Weekly Strategy Call + Looker Studio Dashboard</li>
+                    </ul>
+                </div>
+                <a href="digital-marketing.html#packages" class="btn-gold">Start Business Growth →</a>
+            </div>
+
+            <div class="sp-package tier-gold">
+                <div>
+                    <span class="tier-tag tag-business">Performance Growth Retainer</span>
+                    <div class="sp-price">₹39,999 <span class="sp-price-suffix">/ month</span></div>
+                    <p style="font-size:0.78rem;color:#64748B;margin-bottom:1.25rem;">+ 18% GST · Ad spend billed directly</p>
+                    <h3>Scale + Studio Shoot + CRM</h3>
+                    <ul class="sp-list">
+                        <li><i>✓</i> 15 Custom Posts + 8 High-Retention Reels / mo</li>
+                        <li><i>✓</i> 1 Half-Day On-Location Shoot in Kottayam District</li>
+                        <li><i>✓</i> Full-Funnel Meta + Google + Retargeting Ads</li>
+                        <li><i>✓</i> Regional SEO (20 Keywords + 2 SEO Blogs/mo)</li>
+                        <li><i>✓</i> WhatsApp Lead Automation &amp; Dedicated Manager</li>
+                    </ul>
+                </div>
+                <a href="digital-marketing.html#packages" class="btn-silver">Explore Performance Plan</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. SELECTED WORK / CASE STUDIES (PRESERVING EXISTING PORTFOLIO + WEB & BRANDING) -->
+<section id="portfolio" class="section" data-bg-index="2" style="padding:6.5rem 2rem;background:rgba(17,19,24,0.45);border-top:1px solid var(--border);">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:3.5rem;">
+            <div class="hero-badge scroll-reveal">✦ SELECTED WORK &amp; PRODUCTIONS ✦</div>
+            <h2 class="scroll-reveal">Crafted for <span class="gradient-text">Measurable Impact</span></h2>
+            <p class="scroll-reveal" style="max-width:580px;margin:0.75rem auto 0;color:#CBD5E1;">Filter across our web engineering, digital marketing, podcast studio, corporate events, and wedding productions.</p>
+        </div>
+
+        <div class="scroll-reveal" style="display:flex;justify-content:center;gap:0.65rem;flex-wrap:wrap;margin-bottom:3rem;">
+            <button type="button" class="portfolio-filter-btn active" data-filter="all">All Work</button>
+            <button type="button" class="portfolio-filter-btn" data-filter="web">Websites &amp; Digital</button>
+            <button type="button" class="portfolio-filter-btn" data-filter="marketing">Performance Marketing</button>
             <button type="button" class="portfolio-filter-btn" data-filter="podcast">Podcast Studio</button>
+            <button type="button" class="portfolio-filter-btn" data-filter="event">Corporate &amp; Events</button>
+            <button type="button" class="portfolio-filter-btn" data-filter="wedding">Weddings &amp; Film</button>
         </div>
 
-        <div class="portfolio-grid scroll-reveal" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem; transition:all 0.5s ease;">
-            
-            <!-- Item 1: Wedding -->
-            <a href="wedding-planner.html" class="portfolio-card-item" data-category="wedding" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); display:block; text-decoration:none; cursor:pointer;">
-                <img src="assets/portfolio_wedding_real_1.webp" alt="Kerala Hindu Mandap Decoration" loading="lazy" decoding="async" width="400" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
-                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
-                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Wedding planning &amp; decor</span>
-                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Royal Gold Hindu Mandap</h3>
-                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Pala, Kottayam</p>
-                </div>
-            </a>
-
-            <!-- Item 2: Wedding -->
-            <a href="wedding-planner.html" class="portfolio-card-item" data-category="wedding" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); display:block; text-decoration:none; cursor:pointer;">
-                <img src="assets/portfolio_wedding_real_2.webp" alt="Christian Church Wedding with White Floral Arch" loading="lazy" decoding="async" width="400" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
-                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
-                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Wedding Ceremony</span>
-                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">White Floral Church Wedding</h3>
-                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">St. Mary's Church, Kottayam</p>
-                </div>
-            </a>
-
-            <!-- Item 3: Event -->
-            <a href="events.html" class="portfolio-card-item" data-category="event" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); display:block; text-decoration:none; cursor:pointer;">
-                <img src="assets/portfolio_event_real_1.webp" alt="Corporate Product Launch Kochi" loading="lazy" decoding="async" width="400" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
-                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
-                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Event Management</span>
-                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Tech Launch Stage</h3>
-                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Grand Hyatt, Kochi</p>
-                </div>
-            </a>
-
-            <!-- Item 4: Podcast -->
-            <a href="podcast.html" class="portfolio-card-item" data-category="podcast" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); display:block; text-decoration:none; cursor:pointer;">
-                <img src="assets/portfolio_podcast_real_1.webp" alt="The Podcast Hubs Studio Recording Session" loading="lazy" width="600" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
-                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
-                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Podcast Production</span>
-                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">The Podcast Hubs Studio</h3>
-                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">True Souls Studio, Kottayam</p>
+        <div class="portfolio-grid scroll-reveal">
+            <!-- Web & Digital Showcase Card -->
+            <a href="website-development.html" class="portfolio-card-item" data-category="web" style="position:relative;overflow:hidden;border-radius:18px;height:360px;border:1px solid rgba(200,255,0,0.28);display:block;text-decoration:none;">
+                <img src="assets/portfolio_digital_1776598215494.webp" alt="High-Conversion Agency & Business Website Architecture" loading="lazy" decoding="async" width="600" height="400" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.35) 55%, transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;">
+                    <span style="color:var(--accent-lime);font-size:0.74rem;font-weight:700;text-transform:uppercase;margin-bottom:0.35rem;letter-spacing:0.06em;">Website Design &amp; SEO Architecture</span>
+                    <h3 style="color:#fff;font-size:1.25rem;margin:0;font-weight:700;">High-Speed Business &amp; E-Commerce Web Systems</h3>
+                    <p style="color:#CBD5E1;font-size:0.83rem;margin-top:0.3rem;">95+ Core Web Vitals · WhatsApp CRM Funnel · Pala, Kottayam</p>
                 </div>
             </a>
 
             <!-- Item 5: Marketing -->
-            <a href="digital-marketing.html" class="portfolio-card-item" data-category="marketing" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); display:block; text-decoration:none; cursor:pointer;">
-                <img src="assets/portfolio_digital_1776598215494.webp" alt="Digital Marketing Analytics Dashboard" loading="lazy" width="600" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
-                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
-                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Digital Marketing</span>
-                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Analytics &amp; Campaign Strategy</h3>
-                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Google Analytics &amp; Performance Dashboard</p>
+            <a href="digital-marketing.html" class="portfolio-card-item" data-category="marketing" style="position:relative;overflow:hidden;border-radius:18px;height:360px;border:1px solid rgba(255,255,255,0.09);display:block;text-decoration:none;">
+                <img src="assets/portfolio_digital_1776598215494.webp" alt="Digital Marketing Analytics Dashboard" loading="lazy" width="600" height="400" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.35) 55%, transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;">
+                    <span style="color:var(--accent-lime);font-size:0.74rem;font-weight:700;text-transform:uppercase;margin-bottom:0.35rem;letter-spacing:0.06em;">Digital Marketing · @truesoulsads</span>
+                    <h3 style="color:#fff;font-size:1.25rem;margin:0;font-weight:700;">Analytics &amp; Performance Campaign Strategy</h3>
+                    <p style="color:#CBD5E1;font-size:0.83rem;margin-top:0.3rem;">Google Analytics, Meta Ads &amp; Search Console Growth</p>
                 </div>
             </a>
 
-            <!-- Item 6: Wedding (Additional) -->
-            <a href="photography.html" class="portfolio-card-item" data-category="wedding" style="position:relative; overflow:hidden; border-radius:16px; height:360px; border:1px solid rgba(255,255,255,0.08); transition:all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); display:block; text-decoration:none; cursor:pointer;">
-                <img src="assets/portfolio_wedding_1776598179199.webp" alt="Couple on Kerala Houseboat at Sunset" loading="lazy" width="600" height="400" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;">
-                <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:2rem; transition:all 0.4s ease;">
-                    <span style="color:#a855f7; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.05em;">Cinematic Film</span>
-                    <h3 style="color:#fff; font-size:1.25rem; margin:0; font-weight:600;">Backwater Sunset Shoot</h3>
-                    <p style="color:#aaa; font-size:0.82rem; margin-top:0.25rem;">Alleppey Backwaters, Kerala</p>
+            <!-- Item 4: Podcast -->
+            <a href="podcast.html" class="portfolio-card-item" data-category="podcast" style="position:relative;overflow:hidden;border-radius:18px;height:360px;border:1px solid rgba(255,255,255,0.09);display:block;text-decoration:none;">
+                <img src="assets/portfolio_podcast_real_1.webp" alt="The Podcast Hubs Studio Recording Session" loading="lazy" width="600" height="400" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.35) 55%, transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;">
+                    <span style="color:var(--accent-lime);font-size:0.74rem;font-weight:700;text-transform:uppercase;margin-bottom:0.35rem;letter-spacing:0.06em;">Podcast Production · @truesoulsstudio</span>
+                    <h3 style="color:#fff;font-size:1.25rem;margin:0;font-weight:700;">The Podcast Hubs Multi-Cam Studio</h3>
+                    <p style="color:#CBD5E1;font-size:0.83rem;margin-top:0.3rem;">True Souls Studio, Pala, Kottayam</p>
                 </div>
             </a>
 
+            <!-- Item 3: Event -->
+            <a href="events.html" class="portfolio-card-item" data-category="event" style="position:relative;overflow:hidden;border-radius:18px;height:360px;border:1px solid rgba(255,255,255,0.09);display:block;text-decoration:none;">
+                <img src="assets/portfolio_event_real_1.webp" alt="Corporate Product Launch Kochi" loading="lazy" decoding="async" width="400" height="400" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.35) 55%, transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;">
+                    <span style="color:var(--accent-lime);font-size:0.74rem;font-weight:700;text-transform:uppercase;margin-bottom:0.35rem;letter-spacing:0.06em;">Corporate Event Production</span>
+                    <h3 style="color:#fff;font-size:1.25rem;margin:0;font-weight:700;">Tech Launch Stage &amp; AV Production</h3>
+                    <p style="color:#CBD5E1;font-size:0.83rem;margin-top:0.3rem;">Grand Hyatt, Kochi</p>
+                </div>
+            </a>
+
+            <!-- Item 1: Wedding -->
+            <a href="wedding-planner.html" class="portfolio-card-item" data-category="wedding" style="position:relative;overflow:hidden;border-radius:18px;height:360px;border:1px solid rgba(255,255,255,0.09);display:block;text-decoration:none;">
+                <img src="assets/portfolio_wedding_real_1.webp" alt="Kerala Hindu Mandap Decoration" loading="lazy" decoding="async" width="400" height="400" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.35) 55%, transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;">
+                    <span style="color:var(--accent-lime);font-size:0.74rem;font-weight:700;text-transform:uppercase;margin-bottom:0.35rem;letter-spacing:0.06em;">Wedding Planning &amp; Decor · @truesoulsmedia</span>
+                    <h3 style="color:#fff;font-size:1.25rem;margin:0;font-weight:700;">Royal Gold Hindu Mandap</h3>
+                    <p style="color:#CBD5E1;font-size:0.83rem;margin-top:0.3rem;">Pala, Kottayam</p>
+                </div>
+            </a>
+
+            <!-- Item 2: Wedding -->
+            <a href="wedding-planner.html" class="portfolio-card-item" data-category="wedding" style="position:relative;overflow:hidden;border-radius:18px;height:360px;border:1px solid rgba(255,255,255,0.09);display:block;text-decoration:none;">
+                <img src="assets/portfolio_wedding_real_2.webp" alt="Christian Church Wedding with White Floral Arch" loading="lazy" decoding="async" width="400" height="400" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.35) 55%, transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;">
+                    <span style="color:var(--accent-lime);font-size:0.74rem;font-weight:700;text-transform:uppercase;margin-bottom:0.35rem;letter-spacing:0.06em;">Wedding Ceremony</span>
+                    <h3 style="color:#fff;font-size:1.25rem;margin:0;font-weight:700;">White Floral Church Wedding</h3>
+                    <p style="color:#CBD5E1;font-size:0.83rem;margin-top:0.3rem;">St. Mary's Church, Kottayam</p>
+                </div>
+            </a>
+
+            <!-- Item 6: Wedding Backwater -->
+            <a href="photography.html" class="portfolio-card-item" data-category="wedding" style="position:relative;overflow:hidden;border-radius:18px;height:360px;border:1px solid rgba(255,255,255,0.09);display:block;text-decoration:none;">
+                <img src="assets/portfolio_wedding_1776598179199.webp" alt="Couple on Kerala Houseboat at Sunset" loading="lazy" width="600" height="400" style="width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(9,10,12,0.95) 0%, rgba(9,10,12,0.35) 55%, transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;">
+                    <span style="color:var(--accent-lime);font-size:0.74rem;font-weight:700;text-transform:uppercase;margin-bottom:0.35rem;letter-spacing:0.06em;">Cinematic Film · @truesoulsmedia</span>
+                    <h3 style="color:#fff;font-size:1.25rem;margin:0;font-weight:700;">Backwater Sunset Shoot</h3>
+                    <p style="color:#CBD5E1;font-size:0.83rem;margin-top:0.3rem;">Alleppey Backwaters, Kerala</p>
+                </div>
+            </a>
         </div>
     </div>
 </section>
 
-<!-- MID-PAGE CTA BANNER -->
-<section style="padding: 4rem 2rem; position: relative; z-index: 2;">
-    <div class="container" style="max-width: 1000px; text-align: center;">
-        <div class="glass-card scroll-reveal" style="padding: 3.5rem 2rem; border: 1px solid rgba(168, 85, 247, 0.25); background: radial-gradient(circle at top right, rgba(168,85,247,0.1), transparent 60%);">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Ready to Bring Your <span class="gradient-text">Vision to Life?</span></h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem auto; color: #ccc; font-size: 1.05rem; line-height: 1.6;">Whether you are planning a grand wedding in Kerala, need high-impact digital marketing, or want to record a professional podcast, we're here to help.</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                <a href="#contact" class="btn-primary"><svg class="icon bx-calendar" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 16H5V9h14v11zm0-13H5V6h14v1z"/></svg> Book Free Consultation</a>
-                <a href="https://wa.me/919061286660" target="_blank" rel="noopener" class="btn-glass" style="background: rgba(37, 211, 102, 0.15); border-color: rgba(37, 211, 102, 0.3); color: #fff;"><svg class="icon bxl-whatsapp" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> WhatsApp Us</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="section" data-bg-index="0" style="padding:8rem 2rem;">
+<!-- 7. OUR 5-STEP PROCESS & WHY CHOOSE TRUE SOULS -->
+<section id="process" class="section" data-bg-index="1" style="padding:6.5rem 2rem;">
     <div class="container">
-        <div style="text-align:center;margin-bottom:5rem;position:relative;">
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:250px;background:radial-gradient(circle at center, rgba(168,85,247,0.3) 0%, rgba(99,102,241,0.1) 40%, transparent 70%);pointer-events:none;z-index:-1;filter:blur(30px);"></div>
-            <div class="hero-badge scroll-reveal">Client Love</div>
-            <h2 class="scroll-reveal" style="text-shadow:0 0 20px rgba(255,255,255,0.2);">What Our <span class="gradient-text">Clients Say</span></h2>
-            <p class="scroll-reveal" style="max-width:500px;margin:1rem auto 0;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.8);">Real stories from real couples and clients across Kerala.</p>
+        <div style="text-align:center;margin-bottom:3.5rem;">
+            <div class="hero-badge scroll-reveal">✦ HOW WE WORK ✦</div>
+            <h2 class="scroll-reveal">Built on Speed, Clarity &amp; <span class="gradient-text">Execution Discipline</span></h2>
+            <p class="scroll-reveal" style="max-width:640px;margin:0.75rem auto 0;color:#CBD5E1;">Whether we are launching your company website or producing a multi-camera commercial shoot, every project follows our 5-stage operating system.</p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1100px;margin:0 auto;">
-            <div class="glass-card scroll-reveal" style="padding:2rem;position:relative;">
-                <div style="display:flex;gap:0.3rem;margin-bottom:1rem;color:#fbbf24;font-size:1.1rem;"><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
-                <p style="color:#ddd;font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem;font-style:italic;">&ldquo;True Souls Media made our wedding unforgettable. The photography and planning was flawless &mdash; highly recommend to anyone in Kottayam or Kerala.&rdquo;</p>
-                <div style="display:flex;align-items:center;gap:0.75rem;">
-                    <img src="assets/anjali.webp" alt="Anjali Thomas" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,0.15);" loading="lazy" decoding="async">
-                    <div><p style="color:#fff;font-weight:600;font-size:0.9rem;margin:0;">Anjali Thomas</p><p style="color:#9ca3af;font-size:0.8rem;margin:0;">Wedding · Kottayam</p></div>
-                </div>
+
+        <div class="hairline-grid scroll-reveal">
+            <div class="hairline-cell">
+                <span style="color:var(--accent-lime);font-weight:900;font-size:1.5rem;display:block;margin-bottom:0.5rem;">01</span>
+                <h3 style="font-size:1.1rem;margin-bottom:0.4rem;">Discovery &amp; Audit</h3>
+                <p style="font-size:0.88rem;color:#94A3B8;margin:0;">We audit your current website, search visibility, competitors, and commercial goals in a free strategy session.</p>
             </div>
-            <div class="glass-card scroll-reveal" style="padding:2rem;position:relative;transition-delay:0.1s;">
-                <div style="display:flex;gap:0.3rem;margin-bottom:1rem;color:#fbbf24;font-size:1.1rem;"><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
-                <p style="color:#ddd;font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem;font-style:italic;">&ldquo;Best wedding planner in Kottayam. They handled everything from venue to d&eacute;cor to photography. 100% satisfied!&rdquo;</p>
-                <div style="display:flex;align-items:center;gap:0.75rem;">
-                    <img src="assets/rahul.webp" alt="Rahul Menon" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,0.15);" loading="lazy" decoding="async">
-                    <div><p style="color:#fff;font-weight:600;font-size:0.9rem;margin:0;">Rahul Menon</p><p style="color:#9ca3af;font-size:0.8rem;margin:0;">Wedding · Kochi</p></div>
-                </div>
+            <div class="hairline-cell">
+                <span style="color:var(--accent-lime);font-weight:900;font-size:1.5rem;display:block;margin-bottom:0.5rem;">02</span>
+                <h3 style="font-size:1.1rem;margin-bottom:0.4rem;">Scope &amp; Architecture</h3>
+                <p style="font-size:0.88rem;color:#94A3B8;margin:0;">You receive a fixed-price proposal with exact deliverables, revision rounds, GST breakdown, and milestone dates.</p>
             </div>
-            <div class="glass-card scroll-reveal" style="padding:2rem;position:relative;transition-delay:0.2s;">
-                <div style="display:flex;gap:0.3rem;margin-bottom:1rem;color:#fbbf24;font-size:1.1rem;"><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
-                <p style="color:#ddd;font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem;font-style:italic;">&ldquo;We hired True Souls Media for our corporate event and they exceeded every expectation. Professional, creative, and on-time. Highly recommended!&rdquo;</p>
-                <div style="display:flex;align-items:center;gap:0.75rem;">
-                    <img src="assets/sreejith.webp" alt="Sreejith Kumar" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,0.15);" loading="lazy" decoding="async">
-                    <div><p style="color:#fff;font-weight:600;font-size:0.9rem;margin:0;">Sreejith Kumar</p><p style="color:#9ca3af;font-size:0.8rem;margin:0;">Corporate Event · Trivandrum</p></div>
-                </div>
+            <div class="hairline-cell">
+                <span style="color:var(--accent-lime);font-weight:900;font-size:1.5rem;display:block;margin-bottom:0.5rem;">03</span>
+                <h3 style="font-size:1.1rem;margin-bottom:0.4rem;">Design &amp; Production</h3>
+                <p style="font-size:0.88rem;color:#94A3B8;margin:0;">Our UI/UX designers, full-stack developers, and 4K studio crew execute from our Pala headquarters.</p>
             </div>
-        </div>
-        <div class="scroll-reveal" style="text-align:center;margin-top:2.5rem;">
-            <p style="color:#a855f7;font-weight:600;font-size:0.95rem;"><svg class="icon bxs-star" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> Trusted by 200+ Clients across Kerala</p>
+            <div class="hairline-cell">
+                <span style="color:var(--accent-lime);font-weight:900;font-size:1.5rem;display:block;margin-bottom:0.5rem;">04</span>
+                <h3 style="font-size:1.1rem;margin-bottom:0.4rem;">Launch &amp; Automation</h3>
+                <p style="font-size:0.88rem;color:#94A3B8;margin:0;">Rigorous QA across mobile/desktop, schema indexing, GA4 tracking, and WhatsApp CRM lead routing.</p>
+            </div>
+            <div class="hairline-cell">
+                <span style="color:var(--accent-lime);font-weight:900;font-size:1.5rem;display:block;margin-bottom:0.5rem;">05</span>
+                <h3 style="font-size:1.1rem;margin-bottom:0.4rem;">Scale &amp; Optimization</h3>
+                <p style="font-size:0.88rem;color:#94A3B8;margin:0;">Continuous SEO, Meta/Google Ads optimization, and monthly content refreshes to compound your growth.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section" data-bg-index="0" style="padding:8rem 2rem;">
+<!-- 8. TESTIMONIALS & FOUNDERS -->
+<section id="testimonials" class="section" data-bg-index="0" style="padding:6.5rem 2rem;background:rgba(17,19,24,0.45);border-top:1px solid var(--border);">
     <div class="container">
-        <div style="text-align:center;margin-bottom:5rem;position:relative;">
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:250px;background:radial-gradient(circle at center, rgba(168,85,247,0.3) 0%, rgba(99,102,241,0.1) 40%, transparent 70%);pointer-events:none;z-index:-1;filter:blur(30px);"></div>
-            <div class="hero-badge scroll-reveal">The Visionaries</div>
-            <h2 class="scroll-reveal" style="text-shadow:0 0 20px rgba(255,255,255,0.2);">Meet Our <span class="gradient-text">Founders</span></h2>
-            <p class="scroll-reveal" style="max-width:600px;margin:1rem auto 0;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.8);">The creative minds and driving forces behind True Souls Media.</p>
+        <div style="text-align:center;margin-bottom:3.5rem;">
+            <div class="hero-badge scroll-reveal">✦ VERIFIED CLIENT STORIES ✦</div>
+            <h2 class="scroll-reveal">Trusted Across <span class="gradient-text">Kerala</span></h2>
         </div>
-        
-        <div style="display:flex;flex-wrap:wrap;gap:3rem;justify-content:center;margin-top:2rem;">
-            <!-- Founder 1: Noel George -->
-            <div class="glass-card scroll-reveal" style="flex:1;min-width:300px;max-width:400px;text-align:center;padding:2.5rem;display:flex;flex-direction:column;align-items:center;">
-                <div style="width:180px;height:180px;border-radius:50%;overflow:hidden;margin-bottom:1.5rem;border:4px solid rgba(168,85,247,0.5);box-shadow:0 10px 30px rgba(0,0,0,0.5);">
-                    <img src="assets/noel.webp" alt="Noel George" style="width:100%;height:100%;object-fit:cover;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1120px;margin:0 auto 5rem;">
+            <div class="glass-card scroll-reveal" style="padding:2rem;">
+                <div style="color:var(--accent-lime);margin-bottom:0.85rem;font-size:1rem;">★★★★★</div>
+                <p style="color:#E2E8F0;font-size:0.94rem;line-height:1.7;margin-bottom:1.5rem;font-style:italic;">&ldquo;True Souls Media made our wedding unforgettable. The photography and planning was flawless &mdash; highly recommend to anyone in Kottayam or Kerala.&rdquo;</p>
+                <div style="display:flex;align-items:center;gap:0.75rem;">
+                    <img src="assets/anjali.webp" alt="Anjali Thomas" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(200,255,0,0.35);" loading="lazy" decoding="async">
+                    <div><p style="color:#fff;font-weight:700;font-size:0.9rem;margin:0;">Anjali Thomas</p><p style="color:#94A3B8;font-size:0.8rem;margin:0;">Wedding Client · Kottayam</p></div>
                 </div>
-                <h3 style="font-size:1.5rem;margin-bottom:0.5rem;color:#fff;">Noel George</h3>
-                <p style="color:#a855f7;font-weight:600;margin-bottom:1rem;font-size:0.95rem;">Co-Founder &amp; Creative Director</p>
-                <p style="color:#ddd;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6;">A visionary in visual storytelling with a keen eye for cinematic detail. Under his direction, True Souls Media transforms ordinary moments into breathtaking memories.</p>
-                <a href="https://www.instagram.com/_mr.lobo_/" target="_blank" class="social-icon" style="background:rgba(255,255,255,0.1);padding:0.6rem;border-radius:50%;color:#fff;display:inline-flex;" aria-label="Follow Noel George on Instagram" rel="noopener"><svg class="icon bxl-instagram" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
             </div>
-
-            <!-- Founder 2: abinjantony -->
-            <div class="glass-card scroll-reveal" style="flex:1;min-width:300px;max-width:400px;text-align:center;padding:2.5rem;display:flex;flex-direction:column;align-items:center;">
-                <div style="width:180px;height:180px;border-radius:50%;overflow:hidden;margin-bottom:1.5rem;border:4px solid rgba(168,85,247,0.5);box-shadow:0 10px 30px rgba(0,0,0,0.5);">
-                    <img src="assets/abinjantony.webp" alt="Abin J Antony" style="width:100%;height:100%;object-fit:cover;">
+            <div class="glass-card scroll-reveal" style="padding:2rem;">
+                <div style="color:var(--accent-lime);margin-bottom:0.85rem;font-size:1rem;">★★★★★</div>
+                <p style="color:#E2E8F0;font-size:0.94rem;line-height:1.7;margin-bottom:1.5rem;font-style:italic;">&ldquo;Best wedding planner in Kottayam. They handled everything from venue to d&eacute;cor to photography. 100% satisfied!&rdquo;</p>
+                <div style="display:flex;align-items:center;gap:0.75rem;">
+                    <img src="assets/rahul.webp" alt="Rahul Menon" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(200,255,0,0.35);" loading="lazy" decoding="async">
+                    <div><p style="color:#fff;font-weight:700;font-size:0.9rem;margin:0;">Rahul Menon</p><p style="color:#94A3B8;font-size:0.8rem;margin:0;">Wedding Client · Kochi</p></div>
                 </div>
-                <h3 style="font-size:1.5rem;margin-bottom:0.5rem;color:#fff;">Abin J Antony</h3>
-                <p style="color:#a855f7;font-weight:600;margin-bottom:1rem;font-size:0.95rem;">Co-Founder &amp; Strategy Lead</p>
-                <p style="color:#ddd;font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6;">The strategic powerhouse driving our growth and client success. Specializing in event management and digital marketing to build lasting brand impressions.</p>
-                <a href="https://www.instagram.com/abinjantony/" target="_blank" class="social-icon" style="background:rgba(255,255,255,0.1);padding:0.6rem;border-radius:50%;color:#fff;display:inline-flex;" aria-label="Follow Abin J Antony on Instagram" rel="noopener"><svg class="icon bxl-instagram" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+            </div>
+            <div class="glass-card scroll-reveal" style="padding:2rem;">
+                <div style="color:var(--accent-lime);margin-bottom:0.85rem;font-size:1rem;">★★★★★</div>
+                <p style="color:#E2E8F0;font-size:0.94rem;line-height:1.7;margin-bottom:1.5rem;font-style:italic;">&ldquo;We hired True Souls Media for our corporate event and they exceeded every expectation. Professional, creative, and on-time. Highly recommended!&rdquo;</p>
+                <div style="display:flex;align-items:center;gap:0.75rem;">
+                    <img src="assets/sreejith.webp" alt="Sreejith Kumar" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(200,255,0,0.35);" loading="lazy" decoding="async">
+                    <div><p style="color:#fff;font-weight:700;font-size:0.9rem;margin:0;">Sreejith Kumar</p><p style="color:#94A3B8;font-size:0.8rem;margin:0;">Corporate Event · Trivandrum</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Founders -->
+        <div id="about" style="text-align:center;margin-bottom:3rem;">
+            <div class="hero-badge scroll-reveal">✦ LEADERSHIP ✦</div>
+            <h2 class="scroll-reveal">Meet Our <span class="gradient-text">Founders</span></h2>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;">
+            <div class="glass-card scroll-reveal" style="flex:1;min-width:290px;max-width:420px;text-align:center;padding:2.25rem;display:flex;flex-direction:column;align-items:center;">
+                <div style="width:140px;height:140px;border-radius:50%;overflow:hidden;margin-bottom:1.25rem;border:3px solid rgba(200,255,0,0.5);">
+                    <img src="assets/noel.webp" alt="Noel George — Co-Founder & Creative Director" loading="lazy" width="140" height="140" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <h3 style="font-size:1.35rem;margin-bottom:0.35rem;color:#fff;">Noel George</h3>
+                <p style="color:var(--accent-lime);font-weight:700;margin-bottom:0.85rem;font-size:0.88rem;">Co-Founder &amp; Creative Director</p>
+                <p style="color:#CBD5E1;font-size:0.9rem;margin-bottom:1.25rem;line-height:1.6;">Leading visual direction, 4K film production, brand aesthetics, and studio engineering at True Souls Media LLP.</p>
+                <a href="https://www.instagram.com/_mr.lobo_/" target="_blank" rel="noopener" class="ig-pill">@_mr.lobo_ ↗</a>
+            </div>
+            <div class="glass-card scroll-reveal" style="flex:1;min-width:290px;max-width:420px;text-align:center;padding:2.25rem;display:flex;flex-direction:column;align-items:center;">
+                <div style="width:140px;height:140px;border-radius:50%;overflow:hidden;margin-bottom:1.25rem;border:3px solid rgba(200,255,0,0.5);">
+                    <img src="assets/abinjantony.webp" alt="Abin J Antony — Co-Founder & Strategy Lead" loading="lazy" width="140" height="140" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <h3 style="font-size:1.35rem;margin-bottom:0.35rem;color:#fff;">Abin J Antony</h3>
+                <p style="color:var(--accent-lime);font-weight:700;margin-bottom:0.85rem;font-size:0.88rem;">Co-Founder &amp; Strategy Lead</p>
+                <p style="color:#CBD5E1;font-size:0.9rem;margin-bottom:1.25rem;line-height:1.6;">Driving digital growth architecture, performance marketing campaigns, client strategy, and large-scale event operations.</p>
+                <a href="https://www.instagram.com/abinjantony/" target="_blank" rel="noopener" class="ig-pill">@abinjantony ↗</a>
             </div>
         </div>
     </div>
 </section>
-<section id="contact" class="section" data-bg-index="3" style="padding:8rem 2rem;">
-    <div class="container" style="max-width:640px;">
+
+<!-- 9. AGENCY FAQ -->
+<section id="faq" class="section" data-bg-index="0" style="padding:6rem 2rem;">
+    <div class="container" style="max-width:920px;">
+        <div style="text-align:center;margin-bottom:3rem;">
+            <div class="hero-badge scroll-reveal">✦ FREQUENTLY ASKED QUESTIONS ✦</div>
+            <h2 class="scroll-reveal">Clear Answers. <span class="gradient-text">Zero Guesswork.</span></h2>
+        </div>
+        <div class="sp-faq scroll-reveal">
+            <div class="sp-faq-item">
+                <h3>1. How much does a business or e-commerce website cost at True Souls Media LLP?</h3>
+                <p>Our Starter Business Website (up to 5 responsive pages) starts at <strong>₹14,999</strong>, Professional Business Website (up to 10 pages + CMS + Local SEO) is <strong>₹29,999</strong>, Premium Business Website is <strong>₹49,999</strong>, and Full E-Commerce Stores with Razorpay/UPI start at <strong>₹69,999</strong> (+ 18% GST). Domain, hosting, and paid third-party licenses are billed at actuals so you retain 100% ownership.</p>
+            </div>
+            <div class="sp-faq-item">
+                <h3>2. What is included in your monthly Digital Marketing &amp; SEO retainers?</h3>
+                <p>Our monthly retainers start at <strong>₹14,999/month</strong> (Starter Growth), <strong>₹24,999/month</strong> (Business Growth), and <strong>₹39,999/month</strong> (Performance Growth with on-location Reels shoots and WhatsApp automation). Standalone Local SEO starts at <strong>₹9,999/month</strong>. Paid ad spend is paid directly to Meta/Google from your ad account for 100% billing transparency.</p>
+            </div>
+            <div class="sp-faq-item">
+                <h3>3. Do you provide GST invoices for B2B clients?</h3>
+                <p>Yes. True Souls Media LLP is a registered Limited Liability Partnership (<strong>LLPIN: ACX-5488</strong>, <strong>GSTIN: 32AAZFT9777C1ZF</strong>). All commercial packages carry a compliant GST tax invoice so businesses can claim Input Tax Credit (ITC).</p>
+            </div>
+            <div class="sp-faq-item">
+                <h3>4. Where is your studio located and which areas do you serve?</h3>
+                <p>Our flagship studio and office is located at <strong>Njondimakkal Jn, Pala-Thodupuzha Rd, Pala, Kottayam, Kerala 686575</strong>. We serve clients across all 14 districts of Kerala (Kottayam, Kochi, Trivandrum, Thrissur, Kozhikode, Munnar, Alappuzha) as well as remote web &amp; digital clients across India and the GCC.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 10. LEAD MAGNET BANNER -->
+<section style="padding:2rem 2rem 4rem;">
+    <div class="container" style="max-width:1080px;">
+        <div class="glass-card scroll-reveal" style="padding:3rem 2.5rem;border-color:rgba(200,255,0,0.38);background:linear-gradient(135deg, rgba(200,255,0,0.09) 0%, rgba(17,19,24,0.94) 70%);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;">
+            <div style="max-width:620px;">
+                <div class="hero-badge" style="margin-bottom:0.85rem;">✦ FREE WEBSITE &amp; DIGITAL GROWTH AUDIT ✦</div>
+                <h2 style="font-size:clamp(1.6rem,3.2vw,2.3rem);margin-bottom:0.65rem;">Want a Custom Video Audit of Your Current Website, SEO &amp; Ads?</h2>
+                <p style="color:#CBD5E1;font-size:0.96rem;margin:0;">Our strategists will review your website speed, Google rankings in Kerala, and social media funnel—and send you a prioritized action plan within 48 hours.</p>
+            </div>
+            <div style="display:flex;gap:0.85rem;flex-wrap:wrap;">
+                <a href="#contact" class="btn-primary">Claim Free Website Audit →</a>
+                <a href="pricing.html" class="btn-glass">Compare All Pricing</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 11. TRUE SOULS — SALES CRM CONSULTATION & QUOTATION FORM -->
+<section id="contact" class="section" data-bg-index="3" style="padding:6rem 2rem;">
+    <div class="container" style="max-width:780px;">
         <div class="glass-card scroll-reveal">
-            <div class="hero-badge" style="margin-bottom:1.5rem;">Free Consultation</div>
-            <h2 style="margin-bottom:0.5rem;">Let's Build Your<br><span class="gradient-text">Vision Together</span></h2>
-            <p style="margin-bottom:0.5rem;">Tell us about your project. We'll respond within 24 hours.</p>
+            <div class="hero-badge" style="margin-bottom:1rem;">✦ TRUE SOULS — SALES CRM · PROJECT CONSULTATION ✦</div>
+            <h2 style="margin-bottom:0.5rem;">Request a Proposal or <span class="gradient-text">Free Consultation</span></h2>
+            <p style="margin-bottom:1.25rem;color:#CBD5E1;font-size:0.95rem;">Tell us what you are building. Your inquiry goes directly to our founders and is logged in <strong>TRUE SOULS — SALES CRM</strong> for a response within 2–4 business hours.</p>
+
             <div class="form-notification" id="formNotification"></div>
-            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+
+            <form class="contact-form tsm-crm-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="d9dba101-a247-42f8-8758-21a336fb9de8">
-                <input type="hidden" name="subject" value="New Client Enquiry — Truesoulsmedia">
-                <input type="hidden" name="from_name" value="Truesoulsmedia Website">
+                <input type="hidden" name="subject" value="New Lead [TRUE SOULS — SALES CRM] — True Souls Media LLP">
+                <input type="hidden" name="from_name" value="TRUE SOULS — SALES CRM">
                 <input type="hidden" name="redirect" value="false">
-                <label for="name" class="sr-only">Your Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
-                <label for="email" class="sr-only">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Email Address" required>
-                <label for="phone" class="sr-only">WhatsApp / Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="WhatsApp / Phone Number">
-                <label for="service" class="sr-only">Select Service</label>
-                <div class="custom-select-wrapper">
-                    <select id="service" name="service" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;pointer-events:none;" required>
-                        <option value="" disabled selected>Select Service</option>
-                        <option value="wedding-planning">Wedding Planning (Full Service)</option>
-                        <option value="wedding">Wedding Photography &amp; Film</option>
-                        <option value="events">Reception / Event Management</option>
-                        <option value="prewedding">Pre-Wedding Shoot</option>
-                        <option value="digital">Digital Marketing</option>
-                        <option value="podcast">Podcast Production</option>
-                    </select>
-                    <div class="custom-select-trigger" id="customSelectTrigger">
-                        <span>Select Service</span>
-                        <svg class="icon bx-chevron-down" viewBox="0 0 24 24" width="16" height="16" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"/></svg>
+                <!-- Anti-spam honeypot -->
+                <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+                <div class="form-row-2">
+                    <div>
+                        <label for="name" class="sr-only">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Full Name *" required>
                     </div>
-                    <div class="custom-select-options" id="customSelectOptions">
-                        <div class="custom-option" data-value="wedding-planning">
-                            <svg class="icon bx-heart" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 20.007a1.002 1.002 0 0 1-.707-.293L5.05 13.472A5.474 5.474 0 0 1 3 9.539c0-3.053 2.484-5.539 5.539-5.539a5.485 5.485 0 0 1 3.461 1.218 5.485 5.485 0 0 1 3.461-1.218C18.516 4 21 6.486 21 9.539a5.474 5.474 0 0 1-2.05 3.933l-6.243 6.243a1.002 1.002 0 0 1-.707.292zM8.539 6C6.588 6 5 7.588 5 9.539c0 1.291.523 2.502 1.472 3.414l5.528 5.528 5.528-5.528a4.675 4.675 0 0 0 1.472-3.414C19 7.588 17.412 6 15.461 6c-1.332 0-2.528.847-2.981 2.112a1.002 1.002 0 0 1-1.895 0C10.067 6.847 8.871 6 8.539 6z"/></svg> Wedding Planning (Full Service)
-                        </div>
-                        <div class="custom-option" data-value="wedding">
-                            <svg class="icon bx-camera" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"/><path d="M20 5h-2.586l-2.707-2.707A.996.996 0 0 0 14 2h-4a.996.996 0 0 0-.707.293L6.586 5H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2zm0 13H4V7h3.414l2.707-2.707A.996.996 0 0 1 10.828 4h2.344a.996.996 0 0 1 .707.293L16.586 7H20v11z"/></svg> Wedding Photography &amp; Film
-                        </div>
-                        <div class="custom-option" data-value="events">
-                            <svg class="icon bx-calendar-event" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/><rect x="7" y="12" width="2" height="2"/><rect x="11" y="12" width="2" height="2"/><rect x="15" y="12" width="2" height="2"/></svg> Reception / Event Management
-                        </div>
-                        <div class="custom-option" data-value="prewedding">
-                            <svg class="icon bx-image" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM5 19V5h14l.002 14H5z"/><path d="m10 14-1-1-3 4h12l-4-5z"/><circle cx="8.5" cy="8.5" r="1.5"/></svg> Pre-Wedding Shoot
-                        </div>
-                        <div class="custom-option" data-value="digital">
-                            <svg class="icon bx-trending-up" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="m20.293 10.293 1.414-1.414L15 2.172 8.293 8.879 3.707 4.293 2.293 5.707 8.293 11.71l6.707-6.707z"/><path d="M16 8h6v6z"/></svg> Digital Marketing
-                        </div>
-                        <div class="custom-option" data-value="podcast">
-                            <svg class="icon bx-microphone" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 2c-1.859 0-3.37 1.477-3.486 3.31L8.5 5.5v5c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5v-5c0-1.859-1.477-3.37-3.31-3.486L12 2zm1.5 8.5c0 .827-.673 1.5-1.5 1.5s-1.5-.673-1.5-1.5v-5c0-.827.673-1.5 1.5-1.5s1.5.673 1.5 1.5v5z"/><path d="M19 10h-2c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.52 2.61 6.43 6 6.92V20H8v2h8v-2h-3v-3.08c3.39-.49 6-3.4 6-6.92z"/></svg> Podcast Production
-                        </div>
+                    <div>
+                        <label for="company" class="sr-only">Company / Brand Name</label>
+                        <input type="text" id="company" name="company" placeholder="Business / Brand Name (Optional)">
                     </div>
                 </div>
-                <textarea name="message" placeholder="Tell us about your requirements..." rows="4"></textarea>
-                <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1rem;">
-                    <svg class="icon bx-send" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="m21.42 10.922-18-9A1 1 0 0 0 2.05 3.19l3 8.163v1.293l-3 8.163a1 1 0 0 0 1.37 1.268l18-9a1 1 0 0 0 0-1.782zM4.743 4.258l14.07 7.035H6.287L4.743 4.258zm1.544 14.88 1.544-7.103h12.527l-14.071 7.103z"/></svg> Send Message
+
+                <div class="form-row-2">
+                    <div>
+                        <label for="phone" class="sr-only">Phone / WhatsApp Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="WhatsApp / Phone Number *" required>
+                    </div>
+                    <div>
+                        <label for="email" class="sr-only">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address *" required>
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div>
+                        <label for="service" class="sr-only">Primary Service Needed</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select Primary Service *</option>
+                            <option value="Website Design & Development">1. Website Design &amp; Development (from ₹14,999)</option>
+                            <option value="E-Commerce Website">2. E-Commerce Website (from ₹69,999)</option>
+                            <option value="Digital Marketing Retainer">3. Digital Marketing Monthly Retainer (from ₹14,999/mo)</option>
+                            <option value="SEO & Local Search">4. SEO &amp; Google Ranking (from ₹9,999/mo)</option>
+                            <option value="Social Media & Reels">5. Social Media &amp; Reels Production (from ₹11,999/mo)</option>
+                            <option value="AI & WhatsApp Automation">6. WhatsApp API, AI Chatbot &amp; CRM Automation (from ₹9,999)</option>
+                            <option value="Branding & Creative Design">7. Branding, Logo &amp; Packaging Design (from ₹9,999)</option>
+                            <option value="Commercial Photo & Video">8. Commercial Product / Ad Film Shoot (from ₹9,999)</option>
+                            <option value="Podcast Production">9. Podcast Studio Recording &amp; Production (from ₹3,999)</option>
+                            <option value="Wedding Photography & Planning">10. Wedding Photography, Film &amp; Planning (from ₹65,000)</option>
+                            <option value="Event Management">11. Corporate / Social Event Management (from ₹45,000)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="budget" class="sr-only">Estimated Budget Range</label>
+                        <select id="budget" name="budget" required>
+                            <option value="" disabled selected>Estimated Budget Range *</option>
+                            <option value="₹10,000 – ₹25,000">₹10,000 – ₹25,000</option>
+                            <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option>
+                            <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
+                            <option value="₹1,00,000 – ₹3,00,000">₹1,00,000 – ₹3,00,000</option>
+                            <option value="₹3,00,000+">₹3,00,000+</option>
+                            <option value="Need Guidance / Custom Quote">Need Guidance / Custom Quote</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row-2">
+                    <div>
+                        <label for="timeline" class="sr-only">Project Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="" disabled selected>Expected Timeline</option>
+                            <option value="Urgent (Within 1–2 Weeks)">Urgent (Within 1–2 Weeks)</option>
+                            <option value="Within 30 Days">Within 30 Days</option>
+                            <option value="1 – 3 Months">1 – 3 Months</option>
+                            <option value="Flexible / Exploring">Flexible / Exploring</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="city" class="sr-only">City / Location</label>
+                        <input type="text" id="city" name="city" placeholder="City / Location (e.g., Pala, Kottayam, Kochi)">
+                    </div>
+                </div>
+
+                <label for="message" class="sr-only">Project Details</label>
+                <textarea id="message" name="message" placeholder="Tell us about your business goals, website pages needed, or event date..." rows="4"></textarea>
+
+                <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1.05rem;font-size:1rem;">
+                    Get Custom Quote &amp; Free Strategy Call →
                 </button>
+                <p style="font-size:0.78rem;color:#64748B;text-align:center;margin:0.25rem 0 0;">
+                    🔒 100% Confidential · Protected under our <a href="privacy-policy.html" style="color:#94A3B8;text-decoration:underline;">DPDP Act Privacy Policy</a> · Or WhatsApp directly at <a href="https://wa.me/919061286660" target="_blank" rel="noopener" style="color:var(--accent-lime);font-weight:700;text-decoration:none;">+91 90612 86660</a>
+                </p>
             </form>
         </div>
     </div>
 </section>
-</main>
 
 <!-- GOOGLE MAPS & LOCATION -->
-<section style="padding:0 2rem 4rem;">
-    <div class="container" style="max-width:960px;">
-        <div class="glass-card scroll-reveal" style="padding:2.5rem;border-radius:24px;background:rgba(18,18,24,0.7);border:1px solid rgba(168,85,247,0.25);box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+<section style="padding:0 2rem 4.5rem;">
+    <div class="container" style="max-width:980px;">
+        <div class="glass-card scroll-reveal" style="padding:2.5rem;border-radius:24px;">
             <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;margin-bottom:1.75rem;">
                 <div>
-                    <div class="hero-badge" style="margin-bottom:0.75rem;display:inline-flex;">Our Studio &amp; Office</div>
-                    <h3 style="font-size:1.75rem;margin:0 0 0.5rem;color:#fff;">Visit <span class="gradient-text">True Souls Media</span></h3>
-                    <p style="color:#ccc;font-size:0.95rem;margin:0;display:flex;align-items:center;gap:0.5rem;line-height:1.5;">
-                        <svg class="icon bx-map" viewBox="0 0 24 24" width="20" height="20" style="vertical-align:middle;flex-shrink:0;color:#a855f7;" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        <span><strong>Njondimakkal Jn</strong>, Pala-Thodupuzha Rd, Pala, Kerala 686575</span>
+                    <div class="hero-badge" style="margin-bottom:0.75rem;display:inline-flex;">✦ FLAGSHIP STUDIO &amp; HEADQUARTERS ✦</div>
+                    <h3 style="font-size:1.75rem;margin:0 0 0.5rem;color:#fff;">Visit <span class="gradient-text">True Souls Media LLP</span></h3>
+                    <p style="color:#CBD5E1;font-size:0.95rem;margin:0;line-height:1.5;">
+                        <strong>Njondimakkal Jn</strong>, Pala-Thodupuzha Rd, Pala, Kottayam, Kerala 686575
                     </p>
                 </div>
                 <div>
-                    <a href="https://maps.app.goo.gl/8KPpGourDPTe1BLHA" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.85rem 1.6rem;text-decoration:none;font-weight:600;font-size:0.95rem;">
-                        <svg class="icon bx-navigation" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="m3.4 20.4 17.45-7.48a1 1 0 0 0 0-1.84L3.4 3.6a.993.993 0 0 0-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z"/></svg> Get Directions
+                    <a href="https://maps.app.goo.gl/8KPpGourDPTe1BLHA" target="_blank" rel="noopener" class="btn-primary">
+                        Get Directions ↗
                     </a>
                 </div>
             </div>
-            <div style="border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:inset 0 0 20px rgba(0,0,0,0.5);">
+            <div style="border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.09);">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d983.1291779551676!2d76.691907!3d9.722224099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6ada507aaf9c3b3%3A0x51e7d1a417b729b4!2sTrue%20Souls%20Media%20LLP!5e0!3m2!1sen!2sin!4v1790408977514!5m2!1sen!2sin"
-                    width="100%" height="380" style="border:0;display:block;"
+                    width="100%" height="360" style="border:0;display:block;"
                     allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     title="True Souls Media LLP Location Map — Njondimakkal Jn, Pala, Kerala"></iframe>
             </div>
         </div>
     </div>
 </section>
+</main>
 
-<!-- FOOTER -->
+<!-- STANDARDIZED GLOBAL FOOTER (WITH GSTIN, LLPIN & 3 INSTAGRAM HANDLES) -->
 <footer class="footer">
+    <div class="ig-division-pills">
+        <a href="https://www.instagram.com/truesoulsads/" target="_blank" rel="noopener" class="ig-pill" aria-label="True Souls Ads on Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            <span><strong>@truesoulsads</strong> · Digital Marketing &amp; Ads</span>
+        </a>
+        <a href="https://www.instagram.com/truesoulsstudio/" target="_blank" rel="noopener" class="ig-pill" aria-label="True Souls Studio on Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            <span><strong>@truesoulsstudio</strong> · Studio &amp; Commercial Production</span>
+        </a>
+        <a href="https://www.instagram.com/truesoulsmedia/" target="_blank" rel="noopener" class="ig-pill" aria-label="True Souls Media Weddings on Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg>
+            <span><strong>@truesoulsmedia</strong> · Wedding Media &amp; Films</span>
+        </a>
+    </div>
+
     <div class="social-links">
-        <a href="https://wa.me/919061286660" target="_blank" class="social-icon" aria-label="Chat with us on WhatsApp" rel="noopener"><svg class="icon bxl-whatsapp" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
-        <a href="https://www.instagram.com/truesoulsmedia_" target="_blank" class="social-icon" aria-label="Follow us on Instagram" rel="noopener"><svg class="icon bxl-instagram" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
-        <a href="https://www.facebook.com/profile.php?id=61574503418456" target="_blank" class="social-icon" aria-label="Follow us on Facebook" rel="noopener"><svg class="icon bxl-facebook" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg></a>
-        <a href="https://www.linkedin.com/in/truesouls-media-b91a8b400" target="_blank" class="social-icon" aria-label="Connect on LinkedIn" rel="noopener"><svg class="icon bxl-linkedin" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-        <a href="mailto:truesoulsmedia666@gmail.com" class="social-icon" aria-label="Email us at truesoulsmedia666@gmail.com"><svg class="icon bx-envelope" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+        <a href="https://wa.me/919061286660" target="_blank" class="social-icon" aria-label="Chat with us on WhatsApp" rel="noopener"><svg class="icon bxl-whatsapp" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61574503418456" target="_blank" class="social-icon" aria-label="Follow us on Facebook" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg></a>
+        <a href="https://www.linkedin.com/in/truesouls-media-b91a8b400" target="_blank" class="social-icon" aria-label="Connect on LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+        <a href="mailto:truesoulsmedia666@gmail.com" class="social-icon" aria-label="Email us at truesoulsmedia666@gmail.com"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
     </div>
-    <div style="max-width: 800px; margin: 0 auto 1.5rem auto; padding: 0 1rem; color: #a0a0a0; font-size: 0.85rem; line-height: 1.6;">
-        <p style="margin-bottom:0.5rem;color:#fff;font-weight:600;font-size:1rem;letter-spacing:0.05em;">TRUE SOULS MEDIA LLP</p>
-        <p style="margin-bottom:0.25rem;">LLPIN: ACX-5488</p>
-        <p>Registered Address: Njondimakkal Jn, Pala-Thodupuzha Rd, Pala, Kerala 686575 · <a href="https://maps.app.goo.gl/8KPpGourDPTe1BLHA" target="_blank" rel="noopener" style="color:#a855f7;text-decoration:none;font-weight:600;">View on Google Maps ↗</a></p>
+
+    <div style="max-width:860px;margin:0 auto 1.5rem auto;padding:0 1rem;color:#94A3B8;font-size:0.85rem;line-height:1.7;">
+        <p style="margin-bottom:0.4rem;color:#F8FAFC;font-weight:800;font-size:1rem;letter-spacing:0.04em;">TRUE SOULS MEDIA LLP</p>
+        <p style="margin-bottom:0.25rem;color:#CBD5E1;">LLPIN: <strong>ACX-5488</strong> &nbsp;·&nbsp; GSTIN: <strong>32AAZFT9777C1ZF</strong></p>
+        <p style="margin-bottom:0.25rem;">Registered Address: Njondimakkal Jn, Pala-Thodupuzha Rd, Pala, Kottayam, Kerala 686575, India · <a href="https://maps.app.goo.gl/8KPpGourDPTe1BLHA" target="_blank" rel="noopener" style="color:var(--accent-lime);text-decoration:none;font-weight:600;">View on Google Maps ↗</a></p>
+        <p>Phone / WhatsApp: <a href="tel:+919061286660" style="color:#E2E8F0;text-decoration:none;">+91 90612 86660</a> &nbsp;·&nbsp; Email: <a href="mailto:truesoulsmedia666@gmail.com" style="color:#E2E8F0;text-decoration:none;">truesoulsmedia666@gmail.com</a></p>
     </div>
-    <p style="font-size:0.85rem;color:#777;">&copy; 2026 True Souls Media LLP · All rights reserved.</p>
-    <p style="font-size:0.75rem;color:#555;margin-top:0.75rem;">
-        <a href="privacy-policy.html" style="color:#777;text-decoration:none;">Privacy Policy</a> · 
-        <a href="terms-and-conditions.html" style="color:#777;text-decoration:none;">Terms &amp; Conditions</a> · 
-        <a href="refund-policy.html" style="color:#777;text-decoration:none;">Refund Policy</a>
+
+    <p style="font-size:0.82rem;color:#64748B;">&copy; 2026–2027 True Souls Media LLP · All rights reserved.</p>
+    <p style="font-size:0.78rem;color:#64748B;margin-top:0.75rem;">
+        <a href="website-development.html" style="color:#94A3B8;text-decoration:none;">Website Development</a> ·
+        <a href="digital-marketing.html" style="color:#94A3B8;text-decoration:none;">Digital Marketing</a> ·
+        <a href="branding.html" style="color:#94A3B8;text-decoration:none;">Branding &amp; Studio</a> ·
+        <a href="pricing.html" style="color:#94A3B8;text-decoration:none;">Pricing</a> ·
+        <a href="careers.html" style="color:#94A3B8;text-decoration:none;">Careers</a> ·
+        <a href="privacy-policy.html" style="color:#94A3B8;text-decoration:none;">Privacy Policy</a> ·
+        <a href="terms-and-conditions.html" style="color:#94A3B8;text-decoration:none;">Terms &amp; Conditions</a> ·
+        <a href="refund-policy.html" style="color:#94A3B8;text-decoration:none;">Refund Policy</a>
     </p>
 </footer>
 
 <!-- Mobile Sticky Bottom Bar -->
 <div class="mobile-sticky-bar">
-    <a href="https://wa.me/919061286660" target="_blank" rel="noopener" class="mobile-sticky-bar-wa"><svg class="icon bxl-whatsapp" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> WhatsApp</a>
-    <a href="tel:+919061286660" class="mobile-sticky-bar-call"><svg class="icon bx-phone" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M17.707 12.293a.999.999 0 0 0-1.414 0l-1.594 1.594c-.739-.27-2.425-1.407-3.298-2.28-.873-.873-2.01-2.559-2.28-3.298L10.707 6.72a.999.999 0 0 0 0-1.414L7.893 2.493a.999.999 0 0 0-1.414 0L4.72 4.25c-.947.947-1.162 2.378-.533 3.52 1.562 2.822 5.093 8.353 7.915 9.915 1.142.629 2.573.414 3.52-.533l1.757-1.757a.999.999 0 0 0 0-1.414l-2.813-2.813z"/></svg> Call Now</a>
-    <a href="#contact" class="mobile-sticky-bar-consult"><svg class="icon bx-calendar" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 16H5V9h14v11zm0-13H5V6h14v1z"/></svg> Consult</a>
+    <a href="https://wa.me/919061286660" target="_blank" rel="noopener" class="mobile-sticky-bar-wa"><svg class="icon bxl-whatsapp" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> WhatsApp</a>
+    <a href="tel:+919061286660" class="mobile-sticky-bar-call">Call Now</a>
+    <a href="#contact" class="mobile-sticky-bar-consult">Get Quote</a>
 </div>
 
-<a href="https://wa.me/919061286660" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <svg class="icon bxl-whatsapp" viewBox="0 0 24 24" width="18" height="18" style="vertical-align:middle;display:inline-block;" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+<a href="https://wa.me/919061286660" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg class="icon bxl-whatsapp" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
-<script src="script.js?v=6" defer></script>
-<script src="chatbot.js?v=2" defer></script>
+<script src="script.js?v=8" defer></script>
+<script src="chatbot.js?v=4" defer></script>
 </body>
 </html>
