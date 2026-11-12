@@ -303,7 +303,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Custom Select Dropdowns
+    // 6. Custom Select Dropdowns (Auto-upgrade plain <select> inside .contact-form + bind interactions)
+    document.querySelectorAll('.contact-form select').forEach((sel) => {
+        if (sel.closest('.custom-select-wrapper')) return;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'custom-select-wrapper';
+        sel.parentNode.insertBefore(wrapper, sel);
+        wrapper.appendChild(sel);
+        sel.classList.add('visually-hidden-select');
+
+        const selectedOpt = sel.options[sel.selectedIndex] || sel.options[0];
+        const placeholderText = sel.options[0] ? sel.options[0].textContent.trim() : 'Select Option';
+        const hasInitialValue = Boolean(sel.value);
+
+        const trigger = document.createElement('div');
+        trigger.className = 'custom-select-trigger';
+        trigger.setAttribute('role', 'button');
+        trigger.setAttribute('tabindex', '0');
+        trigger.dataset.placeholder = placeholderText;
+        if (hasInitialValue) {
+            trigger.style.color = 'var(--text-white)';
+        }
+        trigger.innerHTML = `<span>${(selectedOpt ? selectedOpt.textContent : placeholderText).trim()}</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+
+        const optionsList = document.createElement('div');
+        optionsList.className = 'custom-select-options';
+        Array.from(sel.options).forEach((opt) => {
+            if (opt.disabled && !opt.value) return;
+            const item = document.createElement('div');
+            item.className = 'custom-option' + (sel.value && opt.value === sel.value ? ' selected' : '');
+            item.setAttribute('data-value', opt.value);
+            item.textContent = opt.textContent.trim();
+            optionsList.appendChild(item);
+        });
+
+        wrapper.appendChild(trigger);
+        wrapper.appendChild(optionsList);
+    });
+
     document.querySelectorAll('.custom-select-wrapper').forEach((customSelectWrapper) => {
         const trigger = customSelectWrapper.querySelector('.custom-select-trigger');
         const optionsList = customSelectWrapper.querySelector('.custom-select-options');
@@ -312,11 +349,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!trigger || !optionsList || !nativeSelect) return;
         const triggerText = trigger.querySelector('span');
+        const defaultPlaceholder = trigger.dataset.placeholder || (nativeSelect.options[0] ? nativeSelect.options[0].textContent.trim() : 'Select Option');
 
-        trigger.addEventListener('click', (e) => {
+        const toggleMenu = (e) => {
             e.stopPropagation();
-            trigger.classList.toggle('active');
-            optionsList.classList.toggle('open');
+            const isOpen = optionsList.classList.contains('open');
+            document.querySelectorAll('.custom-select-options.open').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('.custom-select-trigger.active').forEach(el => el.classList.remove('active'));
+            if (!isOpen) {
+                trigger.classList.add('active');
+                optionsList.classList.add('open');
+            }
+        };
+
+        trigger.addEventListener('click', toggleMenu);
+        trigger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu(e);
+            } else if (e.key === 'Escape') {
+                trigger.classList.remove('active');
+                optionsList.classList.remove('open');
+            }
         });
 
         customOptions.forEach(opt => {
@@ -344,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const parentForm = customSelectWrapper.closest('form');
         if (parentForm) {
             parentForm.addEventListener('reset', () => {
-                if (triggerText) triggerText.textContent = 'Select Primary Service';
+                if (triggerText) triggerText.textContent = defaultPlaceholder;
                 trigger.style.color = '';
                 customOptions.forEach(o => o.classList.remove('selected'));
             });

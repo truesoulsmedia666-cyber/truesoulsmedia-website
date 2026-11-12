@@ -19,7 +19,7 @@ Services & Approved 2026–2027 Starting Prices (+ 18% GST):
 4. Wedding Photography & Planning (photography.html / wedding-planner.html): Essential Coverage ₹65,000, Basic ₹80,000, Standard ₹1,35,000, Premium ₹2,75,000; Wedding Planning ₹75,000 (Day-Of), ₹1,50,000 (Signature), ₹3,00,000+ (Royal Destination).
 5. Event Management (events.html): Intimate Events ₹45,000, Silver ₹85,000, Gold ₹1,50,000, Diamond ₹3,00,000.
 6. Podcast Production (podcast.html): 2-Hour Studio Session ₹3,999, Single Episode ₹6,999, Monthly Packages ₹18,000 / ₹35,000 / ₹75,000.
-Instagram Channels: @truesoulsads (Digital Marketing & Ads), @truesoulsstudio (Studio & Commercial Production), @truesoulsmedia (Wedding Media).
+Instagram Channels: @truesoulsads (Digital Marketing & Ads), @truesoulsstudio (Studio & Commercial Production), @truesoulsmedia_ (Wedding Media).
 Careers: Direct job/internship/freelance crew inquiries to https://www.truesoulsmedia.com/careers (careers.html).
 Full Pricing Hub: https://www.truesoulsmedia.com/pricing (pricing.html).
 Booking Guidance: Direct ready clients to WhatsApp https://wa.me/919061286660 (or call +91 90612 86660) or the consultation form at index.html#contact.`;
